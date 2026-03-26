@@ -65,6 +65,9 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'26*) **EHRWorld: A Patient-Centric Medical World Model for Long-Horizon Clinical Trajectories**
   [[📝 Paper](https://arxiv.org/abs/2602.03569)]
 
+- (*AI Medicine'26*) **World Model Enhanced Offline Reinforcement Learning for Sequential Intervention Optimization in Acute Kidney Injury**
+  [[📝 Paper](https://www.sciltp.com/journals/aim/articles/2602002965)]
+
 - (*arXiv'26*) **The Patient is not a Moving Document: A World Model Training Paradigm for Longitudinal EHR**
   [[📝 Paper](https://arxiv.org/abs/2601.22128)]
 
@@ -88,6 +91,9 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'25*) **Visuomotor Grasping with World Models for Surgical Robots**
   [[📝 Paper](https://arxiv.org/abs/2508.11200)]
 
+- (*bioRxiv'25*) **STELLA: Towards a Biomedical World Model with Self-Evolving Multimodal Agents**
+  [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.07.01.662467v2)] [[💻 Code](https://github.com/zaixizhang/STELLA)] [[🌐 Project](https://stella-agent.com/)]
+
 - (*ICCV'25*) **Medical World Model: Generative Simulation of Tumor Evolution for Treatment Planning**
   [[📝 Paper](https://arxiv.org/abs/2506.02327)] [[💻 Code](https://github.com/scott-yjyang/MeWM)] [[🌐 Project](https://yijun-yang.github.io/MeWM/)]
 
@@ -96,6 +102,9 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*CVPR'25*) **EchoWorld: Learning Motion-Aware World Models for Echocardiography Probe Guidance**
   [[📝 Paper](https://arxiv.org/abs/2504.13065)]
+
+- (*bioRxiv'25*) **Generative World Models to compute protein folding pathways**
+  [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.03.26.645554v1)]
 
 - (*MICCAI Workshop'25*) **Surgical Vision World Model**
   [[📝 Paper](https://arxiv.org/abs/2503.02904)] [[💻 Code](https://github.com/bhattarailab/Surgical-Vision-World-Model)]
@@ -143,6 +152,12 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*bioRxiv'26*) **Towards building a World Model to simulate perturbation-induced cellular dynamics by AlphaCell**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.03.02.709176v1)]
 
+- (*bioRxiv'25*) **STELLA: Towards a Biomedical World Model with Self-Evolving Multimodal Agents**
+  [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.07.01.662467v2)] [[💻 Code](https://github.com/zaixizhang/STELLA)] [[🌐 Project](https://stella-agent.com/)]
+
+- (*bioRxiv'25*) **Generative World Models to compute protein folding pathways**
+  [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.03.26.645554v1)]
+
 ### Longitudinal EHR and Clinical Trajectories
 
 - (*medRxiv'26*) **MedOS: AI-XR-Cobot World Model for Clinical Perception and Action**
@@ -161,6 +176,9 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*arXiv'26*) **Brain-WM: Brain Glioblastoma World Model**
   [[📝 Paper](https://arxiv.org/abs/2603.07562)] [[💻 Code](https://github.com/thibault-wch/Brain-GBM-world-model)]
+
+- (*AI Medicine'26*) **World Model Enhanced Offline Reinforcement Learning for Sequential Intervention Optimization in Acute Kidney Injury**
+  [[📝 Paper](https://www.sciltp.com/journals/aim/articles/2602002965)]
 
 - (*MICCAI'25*) **World Model for AI Autonomous Navigation in Mechanical Thrombectomy**
   [[📝 Paper](https://arxiv.org/abs/2509.25518)]
