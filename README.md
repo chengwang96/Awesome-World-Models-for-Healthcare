@@ -38,6 +38,9 @@ A curated list of papers and open-source resources on **world models for healthc
 
 ### 2026
 
+- (*arXiv'26*) **Lingshu-Cell: A Generative Cellular World Model for Transcriptome Modeling Toward Virtual Cells**
+  [[📝 Paper](https://arxiv.org/abs/2603.25240)]
+
 - (*arXiv'26*) **EyeWorld: A Generative World Model of Ocular State and Dynamics**
   [[📝 Paper](https://arxiv.org/abs/2603.14039)]
 
@@ -82,11 +85,17 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'25*) **CLARITY: Medical World Model for Guiding Treatment Decisions by Modeling Context-Aware Disease Trajectories in Latent Space**
   [[📝 Paper](https://arxiv.org/abs/2512.08029)]
 
+- (*arXiv'25*) **VCWorld: A Biological World Model for Virtual Cell Simulation**
+  [[📝 Paper](https://arxiv.org/abs/2512.00306)]
+
 - (*arXiv'25*) **How Far Are Surgeons from Surgical World Models? A Pilot Study on Zero-shot Surgical Video Generation with Expert Assessment**
   [[📝 Paper](https://arxiv.org/abs/2511.01775)]
 
 - (*arXiv'25*) **ODesign: A World Model for Biomolecular Interaction Design**
   [[📝 Paper](https://arxiv.org/abs/2510.22304)] [[💻 Code](https://github.com/The-Institute-for-AI-Molecular-Design/ODesign)] [[🌐 Project](https://odesign1.github.io/)]
+
+- (*arXiv'25*) **Cosmos-Surg-dVRK: World Foundation Model-based Automated Online Evaluation of Surgical Robot Policy Learning**
+  [[📝 Paper](https://arxiv.org/abs/2510.16240)]
 
 - (*bioRxiv'25*) **GeneJepa: A Predictive World Model of the Transcriptome**
   [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.10.14.682378v1)] [[💻 Code](https://github.com/BiostateAI/GeneJEPA)] [[🌐 Weights](https://huggingface.co/elonlit/GeneJEPA)]
@@ -124,10 +133,16 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*MICCAI Workshop'25*) **Surgical Vision World Model**
   [[📝 Paper](https://arxiv.org/abs/2503.02904)] [[💻 Code](https://github.com/bhattarailab/Surgical-Vision-World-Model)]
 
+- (*MIDL'25*) **4D-VQ-GAN: A World Model for Synthesizing Medical Scans at Any Time Point for Personalized Disease Progression Modeling of Idiopathic Pulmonary Fibrosis**
+  [[📝 Paper](https://openreview.net/forum?id=tU3IpPQCEc)] [[💻 Code](https://github.com/anzhao920/4DVQGAN)] [[📝 arXiv](https://arxiv.org/abs/2502.05713)]
+
 ### 2024
 
 - (*arXiv'24*) **Structure-aware World Model for Probe Guidance via Large-scale Self-supervised Pre-train**
   [[📝 Paper](https://arxiv.org/abs/2406.19756)]
+
+- (*MICCAI'24*) **Cardiac Copilot: Automatic Probe Guidance for Echocardiography with World Model** (introduces Cardiac Dreamer as the world model for cardiac spatial structures)
+  [[📝 Paper](https://arxiv.org/abs/2406.13165)]
 
 - (*arXiv'24*) **World Models for General Surgical Grasping**
   [[📝 Paper](https://arxiv.org/abs/2405.17940)]
@@ -173,13 +188,25 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*CVPR'25*) **EchoWorld: Learning Motion-Aware World Models for Echocardiography Probe Guidance**
   [[📝 Paper](https://arxiv.org/abs/2504.13065)]
 
+- (*MIDL'25*) **4D-VQ-GAN: A World Model for Synthesizing Medical Scans at Any Time Point for Personalized Disease Progression Modeling of Idiopathic Pulmonary Fibrosis**
+  [[📝 Paper](https://openreview.net/forum?id=tU3IpPQCEc)] [[💻 Code](https://github.com/anzhao920/4DVQGAN)] [[📝 arXiv](https://arxiv.org/abs/2502.05713)]
+
 - (*arXiv'24*) **Structure-aware World Model for Probe Guidance via Large-scale Self-supervised Pre-train**
   [[📝 Paper](https://arxiv.org/abs/2406.19756)]
 
+- (*MICCAI'24*) **Cardiac Copilot: Automatic Probe Guidance for Echocardiography with World Model** (introduces Cardiac Dreamer as the world model for cardiac spatial structures)
+  [[📝 Paper](https://arxiv.org/abs/2406.13165)]
+
 ### Computational Biology and Cellular Dynamics
+
+- (*arXiv'26*) **Lingshu-Cell: A Generative Cellular World Model for Transcriptome Modeling Toward Virtual Cells**
+  [[📝 Paper](https://arxiv.org/abs/2603.25240)]
 
 - (*bioRxiv'26*) **Towards building a World Model to simulate perturbation-induced cellular dynamics by AlphaCell**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.03.02.709176v1)]
+
+- (*arXiv'25*) **VCWorld: A Biological World Model for Virtual Cell Simulation**
+  [[📝 Paper](https://arxiv.org/abs/2512.00306)]
 
 - (*arXiv'25*) **ODesign: A World Model for Biomolecular Interaction Design**
   [[📝 Paper](https://arxiv.org/abs/2510.22304)] [[💻 Code](https://github.com/The-Institute-for-AI-Molecular-Design/ODesign)] [[🌐 Project](https://odesign1.github.io/)]
@@ -224,6 +251,9 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*ICCV'25*) **Medical World Model: Generative Simulation of Tumor Evolution for Treatment Planning**
   [[📝 Paper](https://arxiv.org/abs/2506.02327)] [[💻 Code](https://github.com/scott-yjyang/MeWM)] [[🌐 Project](https://yijun-yang.github.io/MeWM/)]
 
+- (*MIDL'25*) **4D-VQ-GAN: A World Model for Synthesizing Medical Scans at Any Time Point for Personalized Disease Progression Modeling of Idiopathic Pulmonary Fibrosis**
+  [[📝 Paper](https://openreview.net/forum?id=tU3IpPQCEc)] [[💻 Code](https://github.com/anzhao920/4DVQGAN)] [[📝 arXiv](https://arxiv.org/abs/2502.05713)]
+
 - (*NeurIPS'25 Workshop*) **Beyond Generative AI: World Models for Clinical Prediction, Counterfactuals, and Planning**
   [[📝 Paper](https://arxiv.org/abs/2511.16333)]
 
@@ -247,17 +277,26 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'25*) **How Far Are Surgeons from Surgical World Models? A Pilot Study on Zero-shot Surgical Video Generation with Expert Assessment**
   [[📝 Paper](https://arxiv.org/abs/2511.01775)]
 
+- (*arXiv'25*) **Cosmos-Surg-dVRK: World Foundation Model-based Automated Online Evaluation of Surgical Robot Policy Learning**
+  [[📝 Paper](https://arxiv.org/abs/2510.16240)]
+
 - (*MICCAI'25*) **World Model for AI Autonomous Navigation in Mechanical Thrombectomy**
   [[📝 Paper](https://arxiv.org/abs/2509.25518)]
 
 - (*arXiv'25*) **Visuomotor Grasping with World Models for Surgical Robots**
   [[📝 Paper](https://arxiv.org/abs/2508.11200)]
 
+- (*CVPR'25*) **EchoWorld: Learning Motion-Aware World Models for Echocardiography Probe Guidance**
+  [[📝 Paper](https://arxiv.org/abs/2504.13065)]
+
 - (*arXiv'25*) **Towards Suturing World Models: Learning Predictive Models for Robotic Surgical Tasks**
   [[📝 Paper](https://arxiv.org/abs/2503.12531)] [[🌐 Project](https://mkturkcan.github.io/suturingmodels/)]
 
 - (*MICCAI Workshop'25*) **Surgical Vision World Model**
   [[📝 Paper](https://arxiv.org/abs/2503.02904)] [[💻 Code](https://github.com/bhattarailab/Surgical-Vision-World-Model)]
+
+- (*MICCAI'24*) **Cardiac Copilot: Automatic Probe Guidance for Echocardiography with World Model** (introduces Cardiac Dreamer as the world model for cardiac spatial structures)
+  [[📝 Paper](https://arxiv.org/abs/2406.13165)]
 
 - (*arXiv'24*) **World Models for General Surgical Grasping**
   [[📝 Paper](https://arxiv.org/abs/2405.17940)]
