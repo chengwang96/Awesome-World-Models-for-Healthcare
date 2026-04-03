@@ -65,6 +65,15 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*CVPR'26*) **MRI Contrast Enhancement Kinetics World Model**
   [[📝 Paper](https://arxiv.org/abs/2602.19285)] [[💻 Code](https://github.com/DD0922/MRI-Contrast-Enhancement-Kinetics-World-Model)]
 
+- (*arXiv'26*) **Neuro-Symbolic Synergy for Interactive World Modeling**
+  [[📝 Paper](https://arxiv.org/abs/2602.10480)]
+
+- (*Neuroscience & Biobehavioral Reviews'25*) **A beautiful loop: An active inference theory of consciousness**
+  [[📝 Paper](https://doi.org/10.1016/j.neubiorev.2025.106296)]
+
+- (*arXiv'25*) **Critiques of world models**
+  [[📝 Paper](https://arxiv.org/abs/2507.05169)]
+
 - (*medRxiv'26*) **MedOS: AI-XR-Cobot World Model for Clinical Perception and Action**
   [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.02.18.26345936v1)]
 
