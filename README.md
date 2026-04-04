@@ -74,6 +74,9 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'25*) **Critiques of world models**
   [[📝 Paper](https://arxiv.org/abs/2507.05169)]
 
+- (*arXiv'26*) **Safety, Security, and Cognitive Risks in World Models**
+  [[📝 Paper](https://arxiv.org/abs/2604.01346)]
+
 - (*medRxiv'26*) **MedOS: AI-XR-Cobot World Model for Clinical Perception and Action**
   [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.02.18.26345936v1)]
 
