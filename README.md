@@ -103,6 +103,9 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'25*) **How Far Are Surgeons from Surgical World Models? A Pilot Study on Zero-shot Surgical Video Generation with Expert Assessment**
   [[📝 Paper](https://arxiv.org/abs/2511.01775)]
 
+- (*arXiv'25*) **Evolving Diagnostic Agents in a Virtual Clinical Environment**
+  [[📝 Paper](https://arxiv.org/abs/2510.24654)]
+
 - (*arXiv'25*) **ODesign: A World Model for Biomolecular Interaction Design**
   [[📝 Paper](https://arxiv.org/abs/2510.22304)] [[💻 Code](https://github.com/The-Institute-for-AI-Molecular-Design/ODesign)] [[🌐 Project](https://odesign1.github.io/)]
 
@@ -256,6 +259,9 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*arXiv'25*) **CLARITY: Medical World Model for Guiding Treatment Decisions by Modeling Context-Aware Disease Trajectories in Latent Space**
   [[📝 Paper](https://arxiv.org/abs/2512.08029)]
+
+- (*arXiv'25*) **Evolving Diagnostic Agents in a Virtual Clinical Environment**
+  [[📝 Paper](https://arxiv.org/abs/2510.24654)]
 
 - (*MICCAI'25*) **World Model for AI Autonomous Navigation in Mechanical Thrombectomy**
   [[📝 Paper](https://arxiv.org/abs/2509.25518)]
