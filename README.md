@@ -89,6 +89,9 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'26*) **The Patient is not a Moving Document: A World Model Training Paradigm for Longitudinal EHR**
   [[📝 Paper](https://arxiv.org/abs/2601.22128)]
 
+- (*arXiv'26*) **EchoJEPA: A Latent Predictive Foundation Model for Echocardiography**
+  [[📝 Paper](https://arxiv.org/abs/2602.02603)]
+
 ### 2025
 
 - (*arXiv'25*) **Cosmos-H-Surgical: Learning Surgical Robot Policies from Videos via World Modeling**
