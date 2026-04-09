@@ -89,6 +89,18 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'26*) **The Patient is not a Moving Document: A World Model Training Paradigm for Longitudinal EHR**
   [[📝 Paper](https://arxiv.org/abs/2601.22128)]
 
+- (*arXiv'26*) **Generating Counterfactual Patient Timelines from Real-World Data**
+  [[📝 Paper](https://arxiv.org/abs/2604.02337)]
+
+- (*arXiv'26*) **RAVEN: Scaling Recurrence-Aware Foundation Models for Clinical Records via Next-Visit Prediction**
+  [[📝 Paper](https://arxiv.org/abs/2603.24562)]
+
+- (*npj Digital Medicine'26*) **The Portability Paradox of Foundation Models for Clinical Decision Support**
+  [[📝 Paper](https://doi.org/10.1038/s41746-026-02615-4)]
+
+- (*npj Digital Medicine'26*) **ClinicRealm: Re-evaluating Large Language Models with Conventional Machine Learning for Non-Generative Clinical Prediction Tasks**
+  [[📝 Paper](https://doi.org/10.1038/s41746-026-02539-z)] [[📝 arXiv](https://arxiv.org/abs/2407.18525)] [[💻 Code](https://github.com/yhzhu99/ehr-llm-benchmark)] [[🌐 Project](https://yhzhu99.github.io/ehr-llm-benchmark/)]
+
 - (*arXiv'26*) **EchoJEPA: A Latent Predictive Foundation Model for Echocardiography**
   [[📝 Paper](https://arxiv.org/abs/2602.02603)]
 
@@ -249,6 +261,12 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'26*) **The Patient is not a Moving Document: A World Model Training Paradigm for Longitudinal EHR**
   [[📝 Paper](https://arxiv.org/abs/2601.22128)]
 
+- (*arXiv'26*) **Generating Counterfactual Patient Timelines from Real-World Data**
+  [[📝 Paper](https://arxiv.org/abs/2604.02337)]
+
+- (*arXiv'26*) **RAVEN: Scaling Recurrence-Aware Foundation Models for Clinical Records via Next-Visit Prediction**
+  [[📝 Paper](https://arxiv.org/abs/2603.24562)]
+
 - (*arXiv'25*) **Generative Medical Event Models Improve with Scale (CoMET)**
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
 
@@ -277,6 +295,12 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*NeurIPS'25 Workshop*) **Beyond Generative AI: World Models for Clinical Prediction, Counterfactuals, and Planning**
   [[📝 Paper](https://arxiv.org/abs/2511.16333)]
+
+- (*npj Digital Medicine'26*) **The Portability Paradox of Foundation Models for Clinical Decision Support**
+  [[📝 Paper](https://doi.org/10.1038/s41746-026-02615-4)]
+
+- (*npj Digital Medicine'26*) **ClinicRealm: Re-evaluating Large Language Models with Conventional Machine Learning for Non-Generative Clinical Prediction Tasks**
+  [[📝 Paper](https://doi.org/10.1038/s41746-026-02539-z)] [[📝 arXiv](https://arxiv.org/abs/2407.18525)] [[💻 Code](https://github.com/yhzhu99/ehr-llm-benchmark)] [[🌐 Project](https://yhzhu99.github.io/ehr-llm-benchmark/)]
 
 ### Surgical Simulation and Embodied Healthcare
 
