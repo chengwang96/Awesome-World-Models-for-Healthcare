@@ -38,6 +38,12 @@ A curated list of papers and open-source resources on **world models for healthc
 
 ### 2026
 
+- (*arXiv'26*) **Grounding Clinical AI Competency in Human Cognition Through the Clinical World Model and Skill-Mix Framework**
+  [[📝 Paper](https://arxiv.org/abs/2604.08226)]
+
+- (*arXiv'26*) **Validated Synthetic Patient Generation for Small Longitudinal Cohorts: Coagulation Dynamics Across Pregnancy**
+  [[📝 Paper](https://arxiv.org/abs/2604.07557)]
+
 - (*arXiv'26*) **Lingshu-Cell: A Generative Cellular World Model for Transcriptome Modeling Toward Virtual Cells**
   [[📝 Paper](https://arxiv.org/abs/2603.25240)]
 
