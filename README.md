@@ -110,6 +110,9 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'26*) **EchoJEPA: A Latent Predictive Foundation Model for Echocardiography**
   [[📝 Paper](https://arxiv.org/abs/2602.02603)]
 
+- (*arXiv'26*) **Validated Synthetic Patient Generation for Small Longitudinal Cohorts: Coagulation Dynamics Across Pregnancy**
+  [[📝 Paper](https://arxiv.org/abs/2604.07557)] [[💻 Code](https://github.com/varnerlab/SA-generation-legacy-dataset-paper)]
+
 ### 2025
 
 - (*arXiv'25*) **Cosmos-H-Surgical: Learning Surgical Robot Policies from Videos via World Modeling**
@@ -272,6 +275,9 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*arXiv'26*) **RAVEN: Scaling Recurrence-Aware Foundation Models for Clinical Records via Next-Visit Prediction**
   [[📝 Paper](https://arxiv.org/abs/2603.24562)]
+
+- (*arXiv'26*) **Validated Synthetic Patient Generation for Small Longitudinal Cohorts: Coagulation Dynamics Across Pregnancy**
+  [[📝 Paper](https://arxiv.org/abs/2604.07557)] [[💻 Code](https://github.com/varnerlab/SA-generation-legacy-dataset-paper)]
 
 - (*arXiv'25*) **Generative Medical Event Models Improve with Scale (CoMET)**
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
