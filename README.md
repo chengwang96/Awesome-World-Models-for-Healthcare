@@ -146,6 +146,9 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*MICCAI'25*) **World Model for AI Autonomous Navigation in Mechanical Thrombectomy**
   [[📝 Paper](https://arxiv.org/abs/2509.25518)]
 
+- (*arXiv'25*) **medDreamer: Model-Based Reinforcement Learning with Latent Imagination on Complex EHRs for Clinical Decision Support**
+  [[📝 Paper](https://arxiv.org/abs/2505.19785)]
+
 - (*arXiv'25*) **Generative Medical Event Models Improve with Scale (CoMET)**
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
 
@@ -272,6 +275,9 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*arXiv'26*) **Validated Synthetic Patient Generation for Small Longitudinal Cohorts: Coagulation Dynamics Across Pregnancy**
   [[📝 Paper](https://arxiv.org/abs/2604.07557)] [[💻 Code](https://github.com/varnerlab/SA-generation-legacy-dataset-paper)]
+
+- (*arXiv'25*) **medDreamer: Model-Based Reinforcement Learning with Latent Imagination on Complex EHRs for Clinical Decision Support**
+  [[📝 Paper](https://arxiv.org/abs/2505.19785)]
 
 - (*arXiv'25*) **Generative Medical Event Models Improve with Scale (CoMET)**
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
