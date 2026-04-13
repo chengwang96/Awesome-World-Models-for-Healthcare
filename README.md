@@ -107,6 +107,9 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*npj Digital Medicine'26*) **ClinicRealm: Re-evaluating Large Language Models with Conventional Machine Learning for Non-Generative Clinical Prediction Tasks**
   [[📝 Paper](https://doi.org/10.1038/s41746-026-02539-z)] [[📝 arXiv](https://arxiv.org/abs/2407.18525)] [[💻 Code](https://github.com/yhzhu99/ehr-llm-benchmark)] [[🌐 Project](https://yhzhu99.github.io/ehr-llm-benchmark/)]
 
+- (*Nature Communications'26*) **Grounding large language models in clinical diagnostics (ClinDiag-GPT)**
+  [[📝 Paper](https://doi.org/10.1038/s41467-026-70274-w)] [[💻 Code](https://github.com/geteff1/ClinDiag)] [[🌐 Project](https://clindiag.streamlit.app)]
+
 - (*arXiv'26*) **EchoJEPA: A Latent Predictive Foundation Model for Echocardiography**
   [[📝 Paper](https://arxiv.org/abs/2602.02603)]
 
