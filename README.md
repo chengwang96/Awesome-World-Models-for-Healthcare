@@ -20,6 +20,7 @@ A curated list of papers and open-source resources on **world models for healthc
 - [World Model Papers](#-world-model-papers)
 - [By Topic](#-by-topic)
 - [Related Repositories](#-related-repositories)
+- [Special Issues / Calls](#-special-issues--calls)
 - [Contributing](#-contributing)
 - [Contact Us](#-contact-us)
 
@@ -73,6 +74,9 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*arXiv'26*) **Neuro-Symbolic Synergy for Interactive World Modeling**
   [[📝 Paper](https://arxiv.org/abs/2602.10480)]
+
+- (*arXiv'26*) **Contextual Invertible World Models: A Neuro-Symbolic Agentic Framework for Colorectal Cancer Drug Response**
+  [[📝 Paper](https://arxiv.org/abs/2603.02274)]
 
 - (*Neuroscience & Biobehavioral Reviews'25*) **A beautiful loop: An active inference theory of consciousness**
   [[📝 Paper](https://doi.org/10.1016/j.neubiorev.2025.106296)]
@@ -191,7 +195,6 @@ A curated list of papers and open-source resources on **world models for healthc
 ## 🧭 By Topic
 
 > A complementary topic-wise view.
-> Some papers appear in multiple categories.
 
 ### Surveys and Perspectives
 
@@ -206,20 +209,11 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*CVPR'26*) **X-WIN: Building Chest Radiograph World Model via Predictive Sensing**
   [[📝 Paper](https://arxiv.org/abs/2511.14918)]
 
-- (*arXiv'26*) **Brain-WM: Brain Glioblastoma World Model**
-  [[📝 Paper](https://arxiv.org/abs/2603.07562)] [[💻 Code](https://github.com/thibault-wch/Brain-GBM-world-model)]
-
 - (*CVPR'26*) **MRI Contrast Enhancement Kinetics World Model**
   [[📝 Paper](https://arxiv.org/abs/2602.19285)] [[💻 Code](https://github.com/DD0922/MRI-Contrast-Enhancement-Kinetics-World-Model)]
 
-- (*arXiv'25*) **CLARITY: Medical World Model for Guiding Treatment Decisions by Modeling Context-Aware Disease Trajectories in Latent Space**
-  [[📝 Paper](https://arxiv.org/abs/2512.08029)]
-
 - (*arXiv'25*) **Xray2Xray: World Model from Chest X-rays with Volumetric Context**
   [[📝 Paper](https://arxiv.org/abs/2506.19055)]
-
-- (*ICCV'25*) **Medical World Model: Generative Simulation of Tumor Evolution for Treatment Planning**
-  [[📝 Paper](https://arxiv.org/abs/2506.02327)] [[💻 Code](https://github.com/scott-yjyang/MeWM)] [[🌐 Project](https://yijun-yang.github.io/MeWM/)]
 
 - (*CVPR'25*) **CheXWorld: Exploring Image World Modeling for Radiograph Representation Learning**
   [[📝 Paper](https://arxiv.org/abs/2504.13820)] [[💻 Code](https://github.com/LeapLabTHU/CheXWorld)]
@@ -244,6 +238,9 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*bioRxiv'26*) **Towards building a World Model to simulate perturbation-induced cellular dynamics by AlphaCell**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.03.02.709176v1)]
 
+- (*arXiv'26*) **Contextual Invertible World Models: A Neuro-Symbolic Agentic Framework for Colorectal Cancer Drug Response**
+  [[📝 Paper](https://arxiv.org/abs/2603.02274)]
+
 - (*arXiv'25*) **VCWorld: A Biological World Model for Virtual Cell Simulation**
   [[📝 Paper](https://arxiv.org/abs/2512.00306)]
 
@@ -260,9 +257,6 @@ A curated list of papers and open-source resources on **world models for healthc
   [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.03.26.645554v1)]
 
 ### Longitudinal EHR and Clinical Trajectories
-
-- (*medRxiv'26*) **MedOS: AI-XR-Cobot World Model for Clinical Perception and Action**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.02.18.26345936v1)]
 
 - (*arXiv'26*) **EHRWorld: A Patient-Centric Medical World Model for Long-Horizon Clinical Trajectories**
   [[📝 Paper](https://arxiv.org/abs/2602.03569)]
@@ -287,26 +281,17 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'26*) **Brain-WM: Brain Glioblastoma World Model**
   [[📝 Paper](https://arxiv.org/abs/2603.07562)] [[💻 Code](https://github.com/thibault-wch/Brain-GBM-world-model)]
 
-- (*AI Medicine'26*) **World Model Enhanced Offline Reinforcement Learning for Sequential Intervention Optimization in Acute Kidney Injury**
-  [[📝 Paper](https://www.sciltp.com/journals/aim/articles/2602002965)]
-
 - (*arXiv'25*) **CLARITY: Medical World Model for Guiding Treatment Decisions by Modeling Context-Aware Disease Trajectories in Latent Space**
   [[📝 Paper](https://arxiv.org/abs/2512.08029)]
-
-- (*arXiv'25*) **Evolving Diagnostic Agents in a Virtual Clinical Environment**
-  [[📝 Paper](https://arxiv.org/abs/2510.24654)]
-
-- (*MICCAI'25*) **World Model for AI Autonomous Navigation in Mechanical Thrombectomy**
-  [[📝 Paper](https://arxiv.org/abs/2509.25518)]
 
 - (*ICCV'25*) **Medical World Model: Generative Simulation of Tumor Evolution for Treatment Planning**
   [[📝 Paper](https://arxiv.org/abs/2506.02327)] [[💻 Code](https://github.com/scott-yjyang/MeWM)] [[🌐 Project](https://yijun-yang.github.io/MeWM/)]
 
-- (*MIDL'25*) **4D-VQ-GAN: A World Model for Synthesizing Medical Scans at Any Time Point for Personalized Disease Progression Modeling of Idiopathic Pulmonary Fibrosis**
-  [[📝 Paper](https://openreview.net/forum?id=tU3IpPQCEc)] [[💻 Code](https://github.com/anzhao920/4DVQGAN)] [[📝 arXiv](https://arxiv.org/abs/2502.05713)]
+- (*AI Medicine'26*) **World Model Enhanced Offline Reinforcement Learning for Sequential Intervention Optimization in Acute Kidney Injury**
+  [[📝 Paper](https://www.sciltp.com/journals/aim/articles/2602002965)]
 
-- (*NeurIPS'25 Workshop*) **Beyond Generative AI: World Models for Clinical Prediction, Counterfactuals, and Planning**
-  [[📝 Paper](https://arxiv.org/abs/2511.16333)]
+- (*arXiv'25*) **Evolving Diagnostic Agents in a Virtual Clinical Environment**
+  [[📝 Paper](https://arxiv.org/abs/2510.24654)]
 
 - (*npj Digital Medicine'26*) **The Portability Paradox of Foundation Models for Clinical Decision Support**
   [[📝 Paper](https://doi.org/10.1038/s41746-026-02615-4)]
@@ -343,17 +328,11 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'25*) **Visuomotor Grasping with World Models for Surgical Robots**
   [[📝 Paper](https://arxiv.org/abs/2508.11200)]
 
-- (*CVPR'25*) **EchoWorld: Learning Motion-Aware World Models for Echocardiography Probe Guidance**
-  [[📝 Paper](https://arxiv.org/abs/2504.13065)]
-
 - (*arXiv'25*) **Towards Suturing World Models: Learning Predictive Models for Robotic Surgical Tasks**
   [[📝 Paper](https://arxiv.org/abs/2503.12531)] [[🌐 Project](https://mkturkcan.github.io/suturingmodels/)]
 
 - (*MICCAI Workshop'25*) **Surgical Vision World Model**
   [[📝 Paper](https://arxiv.org/abs/2503.02904)] [[💻 Code](https://github.com/bhattarailab/Surgical-Vision-World-Model)]
-
-- (*MICCAI'24*) **Cardiac Copilot: Automatic Probe Guidance for Echocardiography with World Model** (introduces Cardiac Dreamer as the world model for cardiac spatial structures)
-  [[📝 Paper](https://arxiv.org/abs/2406.13165)]
 
 - (*arXiv'24*) **World Models for General Surgical Grasping**
   [[📝 Paper](https://arxiv.org/abs/2405.17940)]
@@ -370,6 +349,15 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - **LMD0311/Awesome-World-Model**
   [[💻 Repository](https://github.com/LMD0311/Awesome-World-Model)]
+
+---
+
+## 📣 Special Issues / Calls
+
+### 2026
+
+- **IEEE Transactions on Medical Imaging Special Issue on Large Multimodal & World Models in Medical Imaging**
+  [[🌐 Call](https://ieeetmi.org/special-issue-world-model/)]
 
 ---
 
