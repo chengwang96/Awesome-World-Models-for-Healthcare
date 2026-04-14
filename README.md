@@ -45,6 +45,15 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'26*) **Validated Synthetic Patient Generation for Small Longitudinal Cohorts: Coagulation Dynamics Across Pregnancy**
   [[📝 Paper](https://arxiv.org/abs/2604.07557)] [[💻 Code](https://github.com/varnerlab/SA-generation-legacy-dataset-paper)]
 
+- (*arXiv'26*) **Toward World Models for Epidemiology**
+  [[📝 Paper](https://arxiv.org/abs/2604.09519)]
+
+- (*arXiv'26*) **WOMBET: World Model-based Experience Transfer for Robust and Sample-efficient Reinforcement Learning**
+  [[📝 Paper](https://arxiv.org/abs/2604.08958)]
+
+- (*npj Health Systems'26*) **Design for a Digital Twin in Clinical Patient Care**
+  [[📝 Paper](https://doi.org/10.1038/s44401-025-00060-1)] [[📝 arXiv](https://arxiv.org/abs/2505.01206)]
+
 - (*arXiv'26*) **Lingshu-Cell: A Generative Cellular World Model for Transcriptome Modeling Toward Virtual Cells**
   [[📝 Paper](https://arxiv.org/abs/2603.25240)]
 
