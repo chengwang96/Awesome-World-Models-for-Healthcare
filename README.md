@@ -42,6 +42,12 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'26*) **Grounding Clinical AI Competency in Human Cognition Through the Clinical World Model and Skill-Mix Framework**
   [[📝 Paper](https://arxiv.org/abs/2604.08226)]
 
+- (*arXiv'26*) **QuarkMedSearch: A Long-Horizon Deep Search Agent for Exploring Medical Intelligence**
+  [[📝 Paper](https://arxiv.org/abs/2604.12867)]
+
+- (*arXiv'26*) **A Longitudinal Health Agent Framework**
+  [[📝 Paper](https://arxiv.org/abs/2604.12019)]
+
 - (*arXiv'26*) **Validated Synthetic Patient Generation for Small Longitudinal Cohorts: Coagulation Dynamics Across Pregnancy**
   [[📝 Paper](https://arxiv.org/abs/2604.07557)] [[💻 Code](https://github.com/varnerlab/SA-generation-legacy-dataset-paper)]
 
