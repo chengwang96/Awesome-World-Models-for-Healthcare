@@ -117,6 +117,9 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'26*) **Generating Counterfactual Patient Timelines from Real-World Data**
   [[📝 Paper](https://arxiv.org/abs/2604.02337)]
 
+- (*arXiv'26*) **Evaluating the impact of longitudinal treatment strategies in the presence of informative monitoring and time-dependent confounding**
+  [[📝 Paper](https://arxiv.org/abs/2604.09898)]
+
 - (*arXiv'26*) **RAVEN: Scaling Recurrence-Aware Foundation Models for Clinical Records via Next-Visit Prediction**
   [[📝 Paper](https://arxiv.org/abs/2603.24562)]
 
@@ -275,6 +278,9 @@ A curated list of papers and open-source resources on **world models for healthc
   [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.03.26.645554v1)]
 
 ### Longitudinal EHR and Clinical Trajectories
+
+- (*arXiv'26*) **Evaluating the impact of longitudinal treatment strategies in the presence of informative monitoring and time-dependent confounding**
+  [[📝 Paper](https://arxiv.org/abs/2604.09898)]
 
 - (*arXiv'26*) **EHRWorld: A Patient-Centric Medical World Model for Long-Horizon Clinical Trajectories**
   [[📝 Paper](https://arxiv.org/abs/2602.03569)]
