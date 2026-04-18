@@ -37,6 +37,8 @@ A curated list of papers and open-source resources on **world models for healthc
 
 > Entries are sorted by year in descending order.
 
+> **Inclusion scope.** We prioritize work where a **world model** (or an explicitly equivalent formulation) is the main object of study: learned simulators or dynamics models of clinically relevant processes—e.g., latent-state prediction, imagination rollouts, patient or disease-trajectory simulation, or environment models for clinical agents. Pure segmentation/classification with a generative or foundation backbone, or continual learning that only uses generative replay without modeling a clinical process as dynamics, is usually **out of scope** even if the title says “foundation” or “generative.” When unsure, open an Issue before a PR.
+
 ### 2026
 
 - (*arXiv'26*) **Grounding Clinical AI Competency in Human Cognition Through the Clinical World Model and Skill-Mix Framework**
@@ -416,6 +418,8 @@ Suggested format:
 ```
 
 Please try to keep the formatting consistent with the existing entries.
+
+Submissions should match the [**inclusion scope**](#-world-model-papers) above (world models or explicit clinical process simulation—not generic medical GenAI unless the paper’s contribution is clearly world-modeling).
 
 ---
 
