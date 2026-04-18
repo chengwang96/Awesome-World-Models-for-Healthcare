@@ -41,15 +41,6 @@ A curated list of papers and open-source resources on **world models for healthc
 
 ### 2026
 
-- (*arXiv'26*) **Grounding Clinical AI Competency in Human Cognition Through the Clinical World Model and Skill-Mix Framework**
-  [[📝 Paper](https://arxiv.org/abs/2604.08226)]
-
-- (*arXiv'26*) **QuarkMedSearch: A Long-Horizon Deep Search Agent for Exploring Medical Intelligence**
-  [[📝 Paper](https://arxiv.org/abs/2604.12867)]
-
-- (*arXiv'26*) **A Longitudinal Health Agent Framework**
-  [[📝 Paper](https://arxiv.org/abs/2604.12019)]
-
 - (*arXiv'26*) **Validated Synthetic Patient Generation for Small Longitudinal Cohorts: Coagulation Dynamics Across Pregnancy**
   [[📝 Paper](https://arxiv.org/abs/2604.07557)] [[💻 Code](https://github.com/varnerlab/SA-generation-legacy-dataset-paper)]
 
@@ -89,20 +80,8 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*CVPR'26*) **MRI Contrast Enhancement Kinetics World Model**
   [[📝 Paper](https://arxiv.org/abs/2602.19285)] [[💻 Code](https://github.com/DD0922/MRI-Contrast-Enhancement-Kinetics-World-Model)]
 
-- (*arXiv'26*) **Neuro-Symbolic Synergy for Interactive World Modeling**
-  [[📝 Paper](https://arxiv.org/abs/2602.10480)]
-
 - (*arXiv'26*) **Contextual Invertible World Models: A Neuro-Symbolic Agentic Framework for Colorectal Cancer Drug Response**
   [[📝 Paper](https://arxiv.org/abs/2603.02274)]
-
-- (*Neuroscience & Biobehavioral Reviews'25*) **A beautiful loop: An active inference theory of consciousness**
-  [[📝 Paper](https://doi.org/10.1016/j.neubiorev.2025.106296)]
-
-- (*arXiv'25*) **Critiques of world models**
-  [[📝 Paper](https://arxiv.org/abs/2507.05169)]
-
-- (*arXiv'26*) **Safety, Security, and Cognitive Risks in World Models**
-  [[📝 Paper](https://arxiv.org/abs/2604.01346)]
 
 - (*medRxiv'26*) **MedOS: AI-XR-Cobot World Model for Clinical Perception and Action**
   [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.02.18.26345936v1)]
@@ -124,18 +103,6 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*arXiv'26*) **RAVEN: Scaling Recurrence-Aware Foundation Models for Clinical Records via Next-Visit Prediction**
   [[📝 Paper](https://arxiv.org/abs/2603.24562)]
-
-- (*npj Digital Medicine'26*) **The Portability Paradox of Foundation Models for Clinical Decision Support**
-  [[📝 Paper](https://doi.org/10.1038/s41746-026-02615-4)]
-
-- (*npj Digital Medicine'26*) **ClinicRealm: Re-evaluating Large Language Models with Conventional Machine Learning for Non-Generative Clinical Prediction Tasks**
-  [[📝 Paper](https://doi.org/10.1038/s41746-026-02539-z)] [[📝 arXiv](https://arxiv.org/abs/2407.18525)] [[💻 Code](https://github.com/yhzhu99/ehr-llm-benchmark)] [[🌐 Project](https://yhzhu99.github.io/ehr-llm-benchmark/)]
-
-- (*Nature Communications'26*) **Grounding large language models in clinical diagnostics (ClinDiag-GPT)**
-  [[📝 Paper](https://doi.org/10.1038/s41467-026-70274-w)] [[💻 Code](https://github.com/geteff1/ClinDiag)] [[🌐 Project](https://clindiag.streamlit.app)]
-
-- (*arXiv'26*) **EchoJEPA: A Latent Predictive Foundation Model for Echocardiography**
-  [[📝 Paper](https://arxiv.org/abs/2602.02603)]
 
 ### 2025
 
@@ -321,12 +288,6 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*arXiv'25*) **Evolving Diagnostic Agents in a Virtual Clinical Environment**
   [[📝 Paper](https://arxiv.org/abs/2510.24654)]
-
-- (*npj Digital Medicine'26*) **The Portability Paradox of Foundation Models for Clinical Decision Support**
-  [[📝 Paper](https://doi.org/10.1038/s41746-026-02615-4)]
-
-- (*npj Digital Medicine'26*) **ClinicRealm: Re-evaluating Large Language Models with Conventional Machine Learning for Non-Generative Clinical Prediction Tasks**
-  [[📝 Paper](https://doi.org/10.1038/s41746-026-02539-z)] [[📝 arXiv](https://arxiv.org/abs/2407.18525)] [[💻 Code](https://github.com/yhzhu99/ehr-llm-benchmark)] [[🌐 Project](https://yhzhu99.github.io/ehr-llm-benchmark/)]
 
 ### Surgical Simulation and Embodied Healthcare
 
