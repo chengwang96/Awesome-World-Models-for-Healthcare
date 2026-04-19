@@ -20,6 +20,7 @@ A curated list of papers and open-source resources on **world models for healthc
 - [World Model Papers](#-world-model-papers)
 - [By Topic](#-by-topic)
 - [Related Repositories](#-related-repositories)
+- [产业模型 / 平台](#-产业模型--平台)
 - [Special Issues / Calls](#-special-issues--calls)
 - [Contributing](#-contributing)
 - [Contact Us](#-contact-us)
@@ -339,6 +340,13 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - **LMD0311/Awesome-World-Model**
   [[💻 Repository](https://github.com/LMD0311/Awesome-World-Model)]
+
+---
+
+## 🏭 产业模型 / 平台
+
+- (*OpenAI'26*) **GPT-Rosalind**
+  [[📝 Blog](https://openai.com/index/introducing-gpt-rosalind/)] [[🌐 Life Sciences](https://openai.com/solutions/industries/life-sciences/)] [[🔗 Request access](https://openai.com/form/life-sciences-access/)] [[💻 Codex plugin](https://github.com/openai/plugins/tree/main/plugins/life-science-research)]
 
 ---
 
