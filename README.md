@@ -20,7 +20,7 @@ A curated list of papers and open-source resources on **world models for healthc
 - [World Model Papers](#-world-model-papers)
 - [By Topic](#-by-topic)
 - [Related Repositories](#-related-repositories)
-- [产业模型 / 平台 (Industry Models / Platforms)](#industry-models-platforms)
+- [Industry Models / Platforms](#industry-models-platforms)
 - [Special Issues / Calls](#-special-issues--calls)
 - [Contributing](#-contributing)
 - [Contact Us](#-contact-us)
@@ -41,6 +41,9 @@ A curated list of papers and open-source resources on **world models for healthc
 > **Inclusion scope.** We prioritize work where a **world model** (or an explicitly equivalent formulation) is the main object of study: learned simulators or dynamics models of clinically relevant processes—e.g., latent-state prediction, imagination rollouts, patient or disease-trajectory simulation, or environment models for clinical agents. Pure segmentation/classification with a generative or foundation backbone, or continual learning that only uses generative replay without modeling a clinical process as dynamics, is usually **out of scope** even if the title says “foundation” or “generative.” When unsure, open an Issue before a PR.
 
 ### 2026
+
+- (*arXiv'26*) **Apollo: A Multimodal and Temporal Foundation Model for Virtual Patient Representations at Healthcare System Scale**
+  [[📝 Paper](https://arxiv.org/abs/2604.18570)]
 
 - (*arXiv'26*) **Validated Synthetic Patient Generation for Small Longitudinal Cohorts: Coagulation Dynamics Across Pregnancy**
   [[📝 Paper](https://arxiv.org/abs/2604.07557)] [[💻 Code](https://github.com/varnerlab/SA-generation-legacy-dataset-paper)]
@@ -249,6 +252,9 @@ A curated list of papers and open-source resources on **world models for healthc
 
 ### Longitudinal EHR and Clinical Trajectories
 
+- (*arXiv'26*) **Apollo: A Multimodal and Temporal Foundation Model for Virtual Patient Representations at Healthcare System Scale**
+  [[📝 Paper](https://arxiv.org/abs/2604.18570)]
+
 - (*arXiv'26*) **Evaluating the impact of longitudinal treatment strategies in the presence of informative monitoring and time-dependent confounding**
   [[📝 Paper](https://arxiv.org/abs/2604.09898)]
 
@@ -345,7 +351,7 @@ A curated list of papers and open-source resources on **world models for healthc
 
 <a id="industry-models-platforms"></a>
 
-## 🏭 产业模型 / 平台 (Industry Models / Platforms)
+## 🏭 Industry Models / Platforms
 
 - (*OpenAI'26*) **GPT-Rosalind**
   [[📝 Blog](https://openai.com/index/introducing-gpt-rosalind/)] [[🌐 Life Sciences](https://openai.com/solutions/industries/life-sciences/)] [[🔗 Request access](https://openai.com/form/life-sciences-access/)] [[💻 Codex plugin](https://github.com/openai/plugins/tree/main/plugins/life-science-research)]
