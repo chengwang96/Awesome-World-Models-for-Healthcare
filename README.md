@@ -42,6 +42,12 @@ A curated list of papers and open-source resources on **world models for healthc
 
 ### 2026
 
+- (*arXiv'26*) **Simulating Clinical Interventions with a Generative Multimodal Model of Human Physiology (HealthFormer)**
+  [[📝 Paper](https://arxiv.org/abs/2604.27899)]
+
+- (*arXiv'26*) **Beyond Patient Invariance: Learning Cardiac Dynamics via Action-Conditioned JEPAs**
+  [[📝 Paper](https://arxiv.org/abs/2604.22618)] [[💻 Code](https://github.com/cljosegfer/lesaude-dynamics)]
+
 - (*arXiv'26*) **Apollo: A Multimodal and Temporal Foundation Model for Virtual Patient Representations at Healthcare System Scale**
   [[📝 Paper](https://arxiv.org/abs/2604.18570)]
 
@@ -107,6 +113,12 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*arXiv'26*) **Evaluating the impact of longitudinal treatment strategies in the presence of informative monitoring and time-dependent confounding**
   [[📝 Paper](https://arxiv.org/abs/2604.09898)]
+
+- (*arXiv'26*) **Policy4OOD: A Knowledge-Guided World Model for Policy Intervention Simulation against the Opioid Overdose Crisis**
+  [[📝 Paper](https://arxiv.org/abs/2602.12373)]
+
+- (*arXiv'26*) **BLINK: Behavioral Latent Modeling of NK Cell Cytotoxicity**
+  [[📝 Paper](https://arxiv.org/abs/2603.05110)]
 
 - (*arXiv'26*) **RAVEN: Scaling Recurrence-Aware Foundation Models for Clinical Records via Next-Visit Prediction**
   [[📝 Paper](https://arxiv.org/abs/2603.24562)]
@@ -195,10 +207,16 @@ A curated list of papers and open-source resources on **world models for healthc
 
 ### Surveys and Perspectives
 
+- (*arXiv'26*) **Grounding Clinical AI Competency in Human Cognition Through the Clinical World Model and Skill-Mix Framework**
+  [[📝 Paper](https://arxiv.org/abs/2604.08226)]
+
 - (*NeurIPS'25 Workshop*) **Beyond Generative AI: World Models for Clinical Prediction, Counterfactuals, and Planning**
   [[📝 Paper](https://arxiv.org/abs/2511.16333)]
 
 ### Medical Imaging and Radiology
+
+- (*arXiv'26*) **Beyond Patient Invariance: Learning Cardiac Dynamics via Action-Conditioned JEPAs**
+  [[📝 Paper](https://arxiv.org/abs/2604.22618)] [[💻 Code](https://github.com/cljosegfer/lesaude-dynamics)]
 
 - (*arXiv'26*) **EyeWorld: A Generative World Model of Ocular State and Dynamics**
   [[📝 Paper](https://arxiv.org/abs/2603.14039)]
@@ -229,6 +247,9 @@ A curated list of papers and open-source resources on **world models for healthc
 
 ### Computational Biology and Cellular Dynamics
 
+- (*arXiv'26*) **BLINK: Behavioral Latent Modeling of NK Cell Cytotoxicity**
+  [[📝 Paper](https://arxiv.org/abs/2603.05110)]
+
 - (*arXiv'26*) **Lingshu-Cell: A Generative Cellular World Model for Transcriptome Modeling Toward Virtual Cells**
   [[📝 Paper](https://arxiv.org/abs/2603.25240)]
 
@@ -254,6 +275,9 @@ A curated list of papers and open-source resources on **world models for healthc
   [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.03.26.645554v1)]
 
 ### Longitudinal EHR and Clinical Trajectories
+
+- (*arXiv'26*) **Simulating Clinical Interventions with a Generative Multimodal Model of Human Physiology (HealthFormer)**
+  [[📝 Paper](https://arxiv.org/abs/2604.27899)]
 
 - (*arXiv'26*) **Apollo: A Multimodal and Temporal Foundation Model for Virtual Patient Representations at Healthcare System Scale**
   [[📝 Paper](https://arxiv.org/abs/2604.18570)]
@@ -283,6 +307,9 @@ A curated list of papers and open-source resources on **world models for healthc
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
 
 ### Treatment Planning and Clinical Decision Support
+
+- (*arXiv'26*) **Policy4OOD: A Knowledge-Guided World Model for Policy Intervention Simulation against the Opioid Overdose Crisis**
+  [[📝 Paper](https://arxiv.org/abs/2602.12373)]
 
 - (*arXiv'26*) **Brain-WM: Brain Glioblastoma World Model**
   [[📝 Paper](https://arxiv.org/abs/2603.07562)] [[💻 Code](https://github.com/thibault-wch/Brain-GBM-world-model)]
