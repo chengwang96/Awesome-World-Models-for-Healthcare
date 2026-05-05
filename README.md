@@ -14,6 +14,21 @@ A curated list of papers and open-source resources on **world models for healthc
 
 ---
 
+## 🎯 Scope
+
+A **world model** learns the dynamics of an environment so that an agent can predict future states, simulate interventions, and plan actions without interacting with the real system. Classic examples include Ha & Schmidhuber (2018), Dreamer (Hafner et al., 2020), and JEPA (LeCun, 2022).
+
+We collect papers that apply world models (or equivalent learned dynamics/simulation models) to:
+
+- **Medical imaging**: radiology, ultrasound, ophthalmology, pathology, contrast kinetics
+- **Surgical simulation & robotics**: video-based prediction, action-conditioned surgical models, robot policy learning
+- **Clinical decision support & treatment planning**: disease trajectory simulation, tumor evolution, counterfactual patient timelines
+- **Longitudinal EHR & patient trajectories**: next-visit prediction, clinical event modeling, synthetic patient generation
+- **Computational biology & drug discovery**: cellular dynamics, transcriptome modeling, protein folding, drug response
+- **Epidemiology & public health**: disease spread modeling, policy intervention simulation
+
+---
+
 ## 📌 Contents
 
 - [Survey Papers](#-survey-papers)
@@ -36,9 +51,7 @@ A curated list of papers and open-source resources on **world models for healthc
 
 ## 📝 World Model Papers
 
-> Entries are sorted by year in descending order.
-
-> **Inclusion scope.** We prioritize work where a **world model** (or an explicitly equivalent formulation) is the main object of study: learned simulators or dynamics models of clinically relevant processes—e.g., latent-state prediction, imagination rollouts, patient or disease-trajectory simulation, or environment models for clinical agents. Pure segmentation/classification with a generative or foundation backbone, or continual learning that only uses generative replay without modeling a clinical process as dynamics, is usually **out of scope** even if the title says “foundation” or “generative.” When unsure, open an Issue before a PR.
+> Entries are sorted by year in descending order. See [Scope](#-scope) for inclusion criteria.
 
 ### 2026
 
@@ -59,12 +72,6 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*arXiv'26*) **Toward World Models for Epidemiology**
   [[📝 Paper](https://arxiv.org/abs/2604.09519)]
-
-- (*arXiv'26*) **WOMBET: World Model-based Experience Transfer for Robust and Sample-efficient Reinforcement Learning**
-  [[📝 Paper](https://arxiv.org/abs/2604.08958)]
-
-- (*npj Health Systems'26*) **Design for a Digital Twin in Clinical Patient Care**
-  [[📝 Paper](https://doi.org/10.1038/s44401-025-00060-1)] [[📝 arXiv](https://arxiv.org/abs/2505.01206)]
 
 - (*arXiv'26*) **Lingshu-Cell: A Generative Cellular World Model for Transcriptome Modeling Toward Virtual Cells**
   [[📝 Paper](https://arxiv.org/abs/2603.25240)]
@@ -110,9 +117,6 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*arXiv'26*) **Generating Counterfactual Patient Timelines from Real-World Data**
   [[📝 Paper](https://arxiv.org/abs/2604.02337)]
-
-- (*arXiv'26*) **Evaluating the impact of longitudinal treatment strategies in the presence of informative monitoring and time-dependent confounding**
-  [[📝 Paper](https://arxiv.org/abs/2604.09898)]
 
 - (*arXiv'26*) **Policy4OOD: A Knowledge-Guided World Model for Policy Intervention Simulation against the Opioid Overdose Crisis**
   [[📝 Paper](https://arxiv.org/abs/2602.12373)]
@@ -161,9 +165,6 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*arXiv'25*) **Visuomotor Grasping with World Models for Surgical Robots**
   [[📝 Paper](https://arxiv.org/abs/2508.11200)]
 
-- (*bioRxiv'25*) **STELLA: Towards a Biomedical World Model with Self-Evolving Multimodal Agents**
-  [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.07.01.662467v2)] [[💻 Code](https://github.com/zaixizhang/STELLA)] [[🌐 Project](https://stella-agent.com/)]
-
 - (*arXiv'25*) **Xray2Xray: World Model from Chest X-rays with Volumetric Context**
   [[📝 Paper](https://arxiv.org/abs/2506.19055)]
 
@@ -206,9 +207,6 @@ A curated list of papers and open-source resources on **world models for healthc
 > A complementary topic-wise view.
 
 ### Surveys and Perspectives
-
-- (*arXiv'26*) **Grounding Clinical AI Competency in Human Cognition Through the Clinical World Model and Skill-Mix Framework**
-  [[📝 Paper](https://arxiv.org/abs/2604.08226)]
 
 - (*NeurIPS'25 Workshop*) **Beyond Generative AI: World Models for Clinical Prediction, Counterfactuals, and Planning**
   [[📝 Paper](https://arxiv.org/abs/2511.16333)]
@@ -268,9 +266,6 @@ A curated list of papers and open-source resources on **world models for healthc
 - (*bioRxiv'25*) **GeneJepa: A Predictive World Model of the Transcriptome**
   [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.10.14.682378v1)] [[💻 Code](https://github.com/BiostateAI/GeneJEPA)] [[🌐 Weights](https://huggingface.co/elonlit/GeneJEPA)]
 
-- (*bioRxiv'25*) **STELLA: Towards a Biomedical World Model with Self-Evolving Multimodal Agents**
-  [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.07.01.662467v2)] [[💻 Code](https://github.com/zaixizhang/STELLA)] [[🌐 Project](https://stella-agent.com/)]
-
 - (*bioRxiv'25*) **Generative World Models to compute protein folding pathways**
   [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.03.26.645554v1)]
 
@@ -281,9 +276,6 @@ A curated list of papers and open-source resources on **world models for healthc
 
 - (*arXiv'26*) **Apollo: A Multimodal and Temporal Foundation Model for Virtual Patient Representations at Healthcare System Scale**
   [[📝 Paper](https://arxiv.org/abs/2604.18570)]
-
-- (*arXiv'26*) **Evaluating the impact of longitudinal treatment strategies in the presence of informative monitoring and time-dependent confounding**
-  [[📝 Paper](https://arxiv.org/abs/2604.09898)]
 
 - (*arXiv'26*) **EHRWorld: A Patient-Centric Medical World Model for Long-Horizon Clinical Trajectories**
   [[📝 Paper](https://arxiv.org/abs/2602.03569)]
@@ -385,6 +377,18 @@ A curated list of papers and open-source resources on **world models for healthc
 <a id="industry-models-platforms"></a>
 
 ## 🏭 Industry Models / Platforms
+
+- (*NVIDIA'25*) **Cosmos World Foundation Model**
+  [[🌐 Platform](https://developer.nvidia.com/cosmos)] [[📝 Blog](https://developer.nvidia.com/blog/nvidia-cosmos-world-foundation-model-for-physical-ai/)]
+  > General-purpose world foundation model platform; extended to surgical simulation via **Cosmos-H-Surgical** and **Cosmos-H-Surgical-Simulator** (see [papers above](#surgical-simulation-and-embodied-healthcare)).
+
+- (*NVIDIA'25*) **Holoscan AI Platform**
+  [[🌐 Platform](https://developer.nvidia.com/holoscan)]
+  > Real-time AI inference platform for surgical robotics and medical device integration, enabling world-model-based decision support in the operating room.
+
+- (*Siemens Healthineers'25*) **Digital Twin for Healthcare**
+  [[🌐 Platform](https://www.siemens-healthineers.com/digital-health)]
+  > Patient-specific digital twin technology for cardiac modeling, radiation therapy planning, and clinical decision support.
 
 - (*OpenAI'26*) **GPT-Rosalind**
   [[📝 Blog](https://openai.com/index/introducing-gpt-rosalind/)] [[🌐 Life Sciences](https://openai.com/solutions/industries/life-sciences/)] [[🔗 Request access](https://openai.com/form/life-sciences-access/)] [[💻 Codex plugin](https://github.com/openai/plugins/tree/main/plugins/life-science-research)]
