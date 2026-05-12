@@ -44,6 +44,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ## 📚 Survey Papers
 
+- (*arXiv'26*) **Grounding Clinical AI Competency in Human Cognition Through the Clinical World Model and Skill-Mix Framework**
+  [[📝 Paper](https://arxiv.org/abs/2604.08226)]
+
 - (*NeurIPS'25 Workshop*) **Beyond Generative AI: World Models for Clinical Prediction, Counterfactuals, and Planning**
   [[📝 Paper](https://arxiv.org/abs/2511.16333)]
 
@@ -60,6 +63,12 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 - (*arXiv'26*) **Beyond Patient Invariance: Learning Cardiac Dynamics via Action-Conditioned JEPAs**
   [[📝 Paper](https://arxiv.org/abs/2604.22618)] [[💻 Code](https://github.com/cljosegfer/lesaude-dynamics)]
+
+- (*arXiv'26*) **Toward Safe Autonomous Robotic Endovascular Interventions using World Models**
+  [[📝 Paper](https://arxiv.org/abs/2604.20151)]
+
+- (*arXiv'26*) **Sonata: A Hybrid World Model for Inertial Kinematics under Clinical Data Scarcity**
+  [[📝 Paper](https://arxiv.org/abs/2604.18058)]
 
 - (*arXiv'26*) **Apollo: A Multimodal and Temporal Foundation Model for Virtual Patient Representations at Healthcare System Scale**
   [[📝 Paper](https://arxiv.org/abs/2604.18570)]
@@ -206,11 +215,6 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 > A complementary topic-wise view.
 
-### Surveys and Perspectives
-
-- (*NeurIPS'25 Workshop*) **Beyond Generative AI: World Models for Clinical Prediction, Counterfactuals, and Planning**
-  [[📝 Paper](https://arxiv.org/abs/2511.16333)]
-
 ### Medical Imaging and Radiology
 
 - (*arXiv'26*) **Beyond Patient Invariance: Learning Cardiac Dynamics via Action-Conditioned JEPAs**
@@ -277,6 +281,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 - (*arXiv'26*) **Apollo: A Multimodal and Temporal Foundation Model for Virtual Patient Representations at Healthcare System Scale**
   [[📝 Paper](https://arxiv.org/abs/2604.18570)]
 
+- (*arXiv'26*) **Sonata: A Hybrid World Model for Inertial Kinematics under Clinical Data Scarcity**
+  [[📝 Paper](https://arxiv.org/abs/2604.18058)]
+
 - (*arXiv'26*) **EHRWorld: A Patient-Centric Medical World Model for Long-Horizon Clinical Trajectories**
   [[📝 Paper](https://arxiv.org/abs/2602.03569)]
 
@@ -319,6 +326,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
   [[📝 Paper](https://arxiv.org/abs/2510.24654)]
 
 ### Surgical Simulation and Embodied Healthcare
+
+- (*arXiv'26*) **Toward Safe Autonomous Robotic Endovascular Interventions using World Models**
+  [[📝 Paper](https://arxiv.org/abs/2604.20151)]
 
 - (*arXiv'26*) **SAW: Toward a Surgical Action World Model via Controllable and Scalable Video Generation**
   [[📝 Paper](https://arxiv.org/abs/2603.13024)]
