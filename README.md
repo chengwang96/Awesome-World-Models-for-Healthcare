@@ -35,6 +35,7 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 - [World Model Papers](#-world-model-papers)
 - [By Topic](#-by-topic)
 - [Related Repositories](#-related-repositories)
+- [Cross-References](#-cross-references)
 - [Industry Models / Platforms](#industry-models-platforms)
 - [Special Issues / Calls](#-special-issues--calls)
 - [Contributing](#-contributing)
@@ -390,6 +391,16 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 - **LMD0311/Awesome-World-Model**
   [[💻 Repository](https://github.com/LMD0311/Awesome-World-Model)]
+
+---
+
+## 🔀 Cross-References
+
+> Adjacent work on world-model–augmented agents and MCP tool simulation—not healthcare-specific, but relevant for clinical agentic systems (see [Related Repositories](#-related-repositories) above).
+
+- (*arXiv'26*) **MCP-Cosmos: World Model-Augmented Agents for Complex Task Execution in MCP Environments**
+  [[📝 Paper](https://arxiv.org/abs/2605.09131)]
+  > BYOWM framework: agents simulate MCP tool state transitions in latent space before execution (IBM).
 
 ---
 
