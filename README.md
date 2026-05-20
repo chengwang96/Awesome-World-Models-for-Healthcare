@@ -62,6 +62,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 - (*arXiv'26*) **Agentifying Patient Dynamics within LLMs through Interacting with Clinical World Model**
   [[📝 Paper](https://arxiv.org/abs/2605.14723)] [[💻 Code](https://github.com/FreedomIntelligence/SepsisAgent)]
 
+- (*arXiv'26*) **ECG-WM: A Physiology-Informed ECG World Model for Clinical Intervention Simulation**
+  [[📝 Paper](https://arxiv.org/abs/2605.17580)] [[🌐 Project](https://chenzk202212.github.io/ECG_World_Model/)]
+
 - (*arXiv'26*) **Simulating Clinical Interventions with a Generative Multimodal Model of Human Physiology (HealthFormer)**
   [[📝 Paper](https://arxiv.org/abs/2604.27899)]
 
@@ -224,6 +227,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 - (*arXiv'26*) **Beyond Patient Invariance: Learning Cardiac Dynamics via Action-Conditioned JEPAs**
   [[📝 Paper](https://arxiv.org/abs/2604.22618)] [[💻 Code](https://github.com/cljosegfer/lesaude-dynamics)]
 
+- (*arXiv'26*) **ECG-WM: A Physiology-Informed ECG World Model for Clinical Intervention Simulation**
+  [[📝 Paper](https://arxiv.org/abs/2605.17580)] [[🌐 Project](https://chenzk202212.github.io/ECG_World_Model/)]
+
 - (*arXiv'26*) **EyeWorld: A Generative World Model of Ocular State and Dynamics**
   [[📝 Paper](https://arxiv.org/abs/2603.14039)]
 
@@ -316,6 +322,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 - (*arXiv'26*) **Agentifying Patient Dynamics within LLMs through Interacting with Clinical World Model**
   [[📝 Paper](https://arxiv.org/abs/2605.14723)] [[💻 Code](https://github.com/FreedomIntelligence/SepsisAgent)]
+
+- (*arXiv'26*) **ECG-WM: A Physiology-Informed ECG World Model for Clinical Intervention Simulation**
+  [[📝 Paper](https://arxiv.org/abs/2605.17580)] [[🌐 Project](https://chenzk202212.github.io/ECG_World_Model/)]
 
 - (*arXiv'26*) **Policy4OOD: A Knowledge-Guided World Model for Policy Intervention Simulation against the Opioid Overdose Crisis**
   [[📝 Paper](https://arxiv.org/abs/2602.12373)]
