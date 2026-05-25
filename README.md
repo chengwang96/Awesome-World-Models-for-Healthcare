@@ -59,11 +59,23 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ### 2026
 
-- (*arXiv'26*) **Agentifying Patient Dynamics within LLMs through Interacting with Clinical World Model**
-  [[📝 Paper](https://arxiv.org/abs/2605.14723)] [[💻 Code](https://github.com/FreedomIntelligence/SepsisAgent)]
+- (*arXiv'26*) **ChronoMedicalWorld: A Medical World Model for Learning Patient Trajectories from Longitudinal Care Data**
+  [[📝 Paper](https://arxiv.org/abs/2605.21963)]
 
 - (*arXiv'26*) **ECG-WM: A Physiology-Informed ECG World Model for Clinical Intervention Simulation**
   [[📝 Paper](https://arxiv.org/abs/2605.17580)] [[🌐 Project](https://chenzk202212.github.io/ECG_World_Model/)]
+
+- (*arXiv'26*) **SWoMo: Neuro-Symbolic World Model for Cataract Surgery Simulation**
+  [[📝 Paper](https://arxiv.org/abs/2605.16530)] [[🌐 Project](https://ssharvienkumar.github.io/SWoMo/)]
+
+- (*arXiv'26*) **Toward World Modeling of Physiological Signals with Chaos-Theoretic Balancing and Latent Dynamics (NormWear-2)**
+  [[📝 Paper](https://arxiv.org/abs/2605.15465)]
+
+- (*arXiv'26*) **Agentifying Patient Dynamics within LLMs through Interacting with Clinical World Model**
+  [[📝 Paper](https://arxiv.org/abs/2605.14723)] [[💻 Code](https://github.com/FreedomIntelligence/SepsisAgent)]
+
+- (*arXiv'26*) **MolWorld: Molecule World Models for Actionable Molecular Optimization**
+  [[📝 Paper](https://arxiv.org/abs/2605.08954)]
 
 - (*arXiv'26*) **Simulating Clinical Interventions with a Generative Multimodal Model of Human Physiology (HealthFormer)**
   [[📝 Paper](https://arxiv.org/abs/2604.27899)]
@@ -259,6 +271,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ### Computational Biology and Cellular Dynamics
 
+- (*arXiv'26*) **MolWorld: Molecule World Models for Actionable Molecular Optimization**
+  [[📝 Paper](https://arxiv.org/abs/2605.08954)]
+
 - (*arXiv'26*) **BLINK: Behavioral Latent Modeling of NK Cell Cytotoxicity**
   [[📝 Paper](https://arxiv.org/abs/2603.05110)]
 
@@ -284,6 +299,12 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
   [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.03.26.645554v1)]
 
 ### Longitudinal EHR and Clinical Trajectories
+
+- (*arXiv'26*) **ChronoMedicalWorld: A Medical World Model for Learning Patient Trajectories from Longitudinal Care Data**
+  [[📝 Paper](https://arxiv.org/abs/2605.21963)]
+
+- (*arXiv'26*) **Toward World Modeling of Physiological Signals with Chaos-Theoretic Balancing and Latent Dynamics (NormWear-2)**
+  [[📝 Paper](https://arxiv.org/abs/2605.15465)]
 
 - (*arXiv'26*) **Agentifying Patient Dynamics within LLMs through Interacting with Clinical World Model**
   [[📝 Paper](https://arxiv.org/abs/2605.14723)] [[💻 Code](https://github.com/FreedomIntelligence/SepsisAgent)]
@@ -345,6 +366,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
   [[📝 Paper](https://arxiv.org/abs/2510.24654)]
 
 ### Surgical Simulation and Embodied Healthcare
+
+- (*arXiv'26*) **SWoMo: Neuro-Symbolic World Model for Cataract Surgery Simulation**
+  [[📝 Paper](https://arxiv.org/abs/2605.16530)] [[🌐 Project](https://ssharvienkumar.github.io/SWoMo/)]
 
 - (*arXiv'26*) **Toward Safe Autonomous Robotic Endovascular Interventions using World Models**
   [[📝 Paper](https://arxiv.org/abs/2604.20151)]
