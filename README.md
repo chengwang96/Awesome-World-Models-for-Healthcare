@@ -65,6 +65,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 - (*arXiv'26*) **ECG-WM: A Physiology-Informed ECG World Model for Clinical Intervention Simulation**
   [[📝 Paper](https://arxiv.org/abs/2605.17580)] [[🌐 Project](https://chenzk202212.github.io/ECG_World_Model/)]
 
+- (*arXiv'26*) **GazeWorld: A World Model of Radiologist Reading for Medical Image Representation Learning**
+  [[📝 Paper](https://arxiv.org/abs/2605.23992)]
+
 - (*arXiv'26*) **SWoMo: Neuro-Symbolic World Model for Cataract Surgery Simulation**
   [[📝 Paper](https://arxiv.org/abs/2605.16530)] [[🌐 Project](https://ssharvienkumar.github.io/SWoMo/)]
 
@@ -235,6 +238,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 > A complementary topic-wise view.
 
 ### Medical Imaging and Radiology
+
+- (*arXiv'26*) **GazeWorld: A World Model of Radiologist Reading for Medical Image Representation Learning**
+  [[📝 Paper](https://arxiv.org/abs/2605.23992)]
 
 - (*arXiv'26*) **Beyond Patient Invariance: Learning Cardiac Dynamics via Action-Conditioned JEPAs**
   [[📝 Paper](https://arxiv.org/abs/2604.22618)] [[💻 Code](https://github.com/cljosegfer/lesaude-dynamics)]
