@@ -45,6 +45,12 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ## 📚 Survey Papers
 
+- (*arXiv'26*) **Towards World Models in Biomedical Research**
+  [[📝 Paper](https://arxiv.org/abs/2606.05925)]
+
+- (*arXiv'26*) **From Static Risk to Dynamic Trajectories: Toward World-Model-Inspired Clinical Prediction**
+  [[📝 Paper](https://arxiv.org/abs/2605.16927)]
+
 - (*arXiv'26*) **Grounding Clinical AI Competency in Human Cognition Through the Clinical World Model and Skill-Mix Framework**
   [[📝 Paper](https://arxiv.org/abs/2604.08226)]
 
@@ -58,6 +64,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 > Entries are sorted by year in descending order. See [Scope](#-scope) for inclusion criteria.
 
 ### 2026
+
+- (*arXiv'26*) **Chreode: A Cell World Model for One-Step Temporal Dynamics and Perturbation Prediction**
+  [[📝 Paper](https://arxiv.org/abs/2605.28111)] [[💻 Code](https://github.com/mufanq/Chreode)] [[🌐 Weights](https://huggingface.co/MufanQiu/chreode-pretrained)]
 
 - (*arXiv'26*) **ChronoMedicalWorld: A Medical World Model for Learning Patient Trajectories from Longitudinal Care Data**
   [[📝 Paper](https://arxiv.org/abs/2605.21963)]
@@ -276,6 +285,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
   [[📝 Paper](https://arxiv.org/abs/2406.13165)]
 
 ### Computational Biology and Cellular Dynamics
+
+- (*arXiv'26*) **Chreode: A Cell World Model for One-Step Temporal Dynamics and Perturbation Prediction**
+  [[📝 Paper](https://arxiv.org/abs/2605.28111)] [[💻 Code](https://github.com/mufanq/Chreode)] [[🌐 Weights](https://huggingface.co/MufanQiu/chreode-pretrained)]
 
 - (*arXiv'26*) **MolWorld: Molecule World Models for Actionable Molecular Optimization**
   [[📝 Paper](https://arxiv.org/abs/2605.08954)]
