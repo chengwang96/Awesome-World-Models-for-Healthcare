@@ -65,6 +65,12 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ### 2026
 
+- (*Comput Biol Med'26*) **Causal Counterfactual Simulation for Treatment Decisions in Multimodal Lung Disease Data**
+  [[📝 Paper](https://doi.org/10.1016/j.compbiomed.2026.111807)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42275812/)]
+
+- (*arXiv'26*) **Transition-Based Digital Twin Modelling for Alzheimer's Disease under Sparse Longitudinal Data**
+  [[📝 Paper](https://arxiv.org/abs/2606.09671)]
+
 - (*arXiv'26*) **Chreode: A Cell World Model for One-Step Temporal Dynamics and Perturbation Prediction**
   [[📝 Paper](https://arxiv.org/abs/2605.28111)] [[💻 Code](https://github.com/mufanq/Chreode)] [[🌐 Weights](https://huggingface.co/MufanQiu/chreode-pretrained)]
 
@@ -321,6 +327,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ### Longitudinal EHR and Clinical Trajectories
 
+- (*arXiv'26*) **Transition-Based Digital Twin Modelling for Alzheimer's Disease under Sparse Longitudinal Data**
+  [[📝 Paper](https://arxiv.org/abs/2606.09671)]
+
 - (*arXiv'26*) **ChronoMedicalWorld: A Medical World Model for Learning Patient Trajectories from Longitudinal Care Data**
   [[📝 Paper](https://arxiv.org/abs/2605.21963)]
 
@@ -361,6 +370,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
 
 ### Treatment Planning and Clinical Decision Support
+
+- (*Comput Biol Med'26*) **Causal Counterfactual Simulation for Treatment Decisions in Multimodal Lung Disease Data**
+  [[📝 Paper](https://doi.org/10.1016/j.compbiomed.2026.111807)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42275812/)]
 
 - (*IEEE JBHI'26*) **TwinRL-Onco: A World Model-Empowered Digital Twin Framework with Hierarchical Reinforcement Learning for Venetoclax Resistance Trajectory Prediction and Adaptive Therapy Optimization in Chronic Lymphocytic Leukemia**
   [[📝 Paper](https://doi.org/10.1109/JBHI.2026.3696685)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42184194/)]
