@@ -45,6 +45,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ## 📚 Survey Papers
 
+- (*arXiv'26*) **Medical World Models: Representing Medical States, Modelling Clinical Dynamics and Guiding Intervention Policies**
+  [[📝 Paper](https://arxiv.org/abs/2606.16721)]
+
 - (*arXiv'26*) **Towards World Models in Biomedical Research**
   [[📝 Paper](https://arxiv.org/abs/2606.05925)]
 
@@ -64,6 +67,30 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 > Entries are sorted by year in descending order. See [Scope](#-scope) for inclusion criteria.
 
 ### 2026
+
+- (*Phys Med Biol'26*) **A Digital Twin Framework for Adaptive Treatment Planning in Radiotherapy**
+  [[📝 Paper](https://doi.org/10.1088/1361-6560/ae835a)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42361838/)]
+
+- (*arXiv'26*) **Neural Operator-Based Digital Twins for Modeling Amyloid-Beta and Tau Propagation and Treatment Optimization in Alzheimer's Disease**
+  [[📝 Paper](https://arxiv.org/abs/2606.25185)]
+
+- (*arXiv'26*) **OphthaDT: Generative Digital Twins for Forecasting Visual Acuity Trajectories in Ophthalmology**
+  [[📝 Paper](https://arxiv.org/abs/2606.22101)]
+
+- (*arXiv'26*) **SurgVista: Long-Horizon Surgical World Modeling with Plausible Instrument-Tissue Dynamics**
+  [[📝 Paper](https://arxiv.org/abs/2606.19889)]
+
+- (*arXiv'26*) **DreamReg: Belief-Driven World Model for 2D-3D Ultrasound Registration**
+  [[📝 Paper](https://arxiv.org/abs/2606.18825)]
+
+- (*Biomed Phys Eng Express'26*) **Physics-Informed Koopman-Constrained ImplicitQ-Learning for Safe Offline Reinforcement Learning in Mechanical Ventilation**
+  [[📝 Paper](https://doi.org/10.1088/2057-1976/ae7d30)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42296990/)]
+
+- (*arXiv'26*) **Learning Cardiac Electrophysiology Digital Twins Through Agentic Discovery of Hybrid Structure**
+  [[📝 Paper](https://arxiv.org/abs/2606.18154)]
+
+- (*arXiv'26*) **Treatment Response Optimized Clinical Decision Support AI System via Digital Twin Simulation**
+  [[📝 Paper](https://arxiv.org/abs/2606.17405)]
 
 - (*Comput Biol Med'26*) **Causal Counterfactual Simulation for Treatment Decisions in Multimodal Lung Disease Data**
   [[📝 Paper](https://doi.org/10.1016/j.compbiomed.2026.111807)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42275812/)]
@@ -257,6 +284,15 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ### Medical Imaging and Radiology
 
+- (*arXiv'26*) **OphthaDT: Generative Digital Twins for Forecasting Visual Acuity Trajectories in Ophthalmology**
+  [[📝 Paper](https://arxiv.org/abs/2606.22101)]
+
+- (*arXiv'26*) **DreamReg: Belief-Driven World Model for 2D-3D Ultrasound Registration**
+  [[📝 Paper](https://arxiv.org/abs/2606.18825)]
+
+- (*arXiv'26*) **Learning Cardiac Electrophysiology Digital Twins Through Agentic Discovery of Hybrid Structure**
+  [[📝 Paper](https://arxiv.org/abs/2606.18154)]
+
 - (*arXiv'26*) **GazeWorld: A World Model of Radiologist Reading for Medical Image Representation Learning**
   [[📝 Paper](https://arxiv.org/abs/2605.23992)]
 
@@ -327,6 +363,12 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ### Longitudinal EHR and Clinical Trajectories
 
+- (*arXiv'26*) **OphthaDT: Generative Digital Twins for Forecasting Visual Acuity Trajectories in Ophthalmology**
+  [[📝 Paper](https://arxiv.org/abs/2606.22101)]
+
+- (*arXiv'26*) **Neural Operator-Based Digital Twins for Modeling Amyloid-Beta and Tau Propagation and Treatment Optimization in Alzheimer's Disease**
+  [[📝 Paper](https://arxiv.org/abs/2606.25185)]
+
 - (*arXiv'26*) **Transition-Based Digital Twin Modelling for Alzheimer's Disease under Sparse Longitudinal Data**
   [[📝 Paper](https://arxiv.org/abs/2606.09671)]
 
@@ -371,6 +413,18 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ### Treatment Planning and Clinical Decision Support
 
+- (*Phys Med Biol'26*) **A Digital Twin Framework for Adaptive Treatment Planning in Radiotherapy**
+  [[📝 Paper](https://doi.org/10.1088/1361-6560/ae835a)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42361838/)]
+
+- (*arXiv'26*) **Neural Operator-Based Digital Twins for Modeling Amyloid-Beta and Tau Propagation and Treatment Optimization in Alzheimer's Disease**
+  [[📝 Paper](https://arxiv.org/abs/2606.25185)]
+
+- (*Biomed Phys Eng Express'26*) **Physics-Informed Koopman-Constrained ImplicitQ-Learning for Safe Offline Reinforcement Learning in Mechanical Ventilation**
+  [[📝 Paper](https://doi.org/10.1088/2057-1976/ae7d30)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42296990/)]
+
+- (*arXiv'26*) **Treatment Response Optimized Clinical Decision Support AI System via Digital Twin Simulation**
+  [[📝 Paper](https://arxiv.org/abs/2606.17405)]
+
 - (*Comput Biol Med'26*) **Causal Counterfactual Simulation for Treatment Decisions in Multimodal Lung Disease Data**
   [[📝 Paper](https://doi.org/10.1016/j.compbiomed.2026.111807)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42275812/)]
 
@@ -402,6 +456,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
   [[📝 Paper](https://arxiv.org/abs/2510.24654)]
 
 ### Surgical Simulation and Embodied Healthcare
+
+- (*arXiv'26*) **SurgVista: Long-Horizon Surgical World Modeling with Plausible Instrument-Tissue Dynamics**
+  [[📝 Paper](https://arxiv.org/abs/2606.19889)]
 
 - (*arXiv'26*) **SWoMo: Neuro-Symbolic World Model for Cataract Surgery Simulation**
   [[📝 Paper](https://arxiv.org/abs/2605.16530)] [[🌐 Project](https://ssharvienkumar.github.io/SWoMo/)]
