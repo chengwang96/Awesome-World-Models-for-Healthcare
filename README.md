@@ -74,6 +74,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 - (*arXiv'26*) **Neural Operator-Based Digital Twins for Modeling Amyloid-Beta and Tau Propagation and Treatment Optimization in Alzheimer's Disease**
   [[📝 Paper](https://arxiv.org/abs/2606.25185)]
 
+- (*Oper Neurosurg'26*) **Iterative Virtual and Physical Simulation for Staged Separation of Total Vertical Craniopagus: The Avatar Patient Approach to Conjoined Twins**
+  [[📝 Paper](https://doi.org/10.1227/ons.0000000000002116)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42318872/)]
+
 - (*arXiv'26*) **OphthaDT: Generative Digital Twins for Forecasting Visual Acuity Trajectories in Ophthalmology**
   [[📝 Paper](https://arxiv.org/abs/2606.22101)]
 
@@ -456,6 +459,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
   [[📝 Paper](https://arxiv.org/abs/2510.24654)]
 
 ### Surgical Simulation and Embodied Healthcare
+
+- (*Oper Neurosurg'26*) **Iterative Virtual and Physical Simulation for Staged Separation of Total Vertical Craniopagus: The Avatar Patient Approach to Conjoined Twins**
+  [[📝 Paper](https://doi.org/10.1227/ons.0000000000002116)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42318872/)]
 
 - (*arXiv'26*) **SurgVista: Long-Horizon Surgical World Modeling with Plausible Instrument-Tissue Dynamics**
   [[📝 Paper](https://arxiv.org/abs/2606.19889)]
