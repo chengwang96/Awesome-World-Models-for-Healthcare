@@ -71,6 +71,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 - (*Phys Med Biol'26*) **A Digital Twin Framework for Adaptive Treatment Planning in Radiotherapy**
   [[📝 Paper](https://doi.org/10.1088/1361-6560/ae835a)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42361838/)]
 
+- (*Cardiometab Syndr J'26*) **TyG Trajectory and Digital Twin Simulation to Predict Metabolic Syndrome Risk**
+  [[📝 Paper](https://doi.org/10.51789/cmsj.2026.6.e7)]
+
 - (*arXiv'26*) **Neural Operator-Based Digital Twins for Modeling Amyloid-Beta and Tau Propagation and Treatment Optimization in Alzheimer's Disease**
   [[📝 Paper](https://arxiv.org/abs/2606.25185)]
 
@@ -232,8 +235,17 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 - (*bioRxiv'25*) **GeneJepa: A Predictive World Model of the Transcriptome**
   [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.10.14.682378v1)] [[💻 Code](https://github.com/BiostateAI/GeneJEPA)] [[🌐 Weights](https://huggingface.co/elonlit/GeneJEPA)]
 
+- (*bioRxiv'25*) **Virtual Clinical Trials of BMP4 Differentiation Therapy: Digital Twins to Aid Successful Glioblastoma Trial Design**
+  [[📝 Paper](https://doi.org/10.1101/2024.08.22.609156)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41279885/)] [[💻 Code](https://github.com/Harbour-N/Virtual-Clinical-Trials-of-BMP4-Differentiation-Therapy)]
+
+- (*NPJ Digit Med'25*) **Large Language Models Forecast Patient Health Trajectories Enabling Digital Twins**
+  [[📝 Paper](https://doi.org/10.1038/s41746-025-02004-3)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41034564/)] [[💻 Code](https://github.com/MendenLab/DT-GPT)]
+
 - (*MICCAI'25*) **World Model for AI Autonomous Navigation in Mechanical Thrombectomy**
   [[📝 Paper](https://arxiv.org/abs/2509.25518)]
+
+- (*J Diabetes Sci Technol'25*) **Including Aerobic Exercise Into Data-Based Virtual Twins for Glycemic Simulation**
+  [[📝 Paper](https://doi.org/10.1177/19322968251364291)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/40947716/)]
 
 - (*arXiv'25*) **medDreamer: Model-Based Reinforcement Learning with Latent Imagination on Complex EHRs for Clinical Decision Support**
   [[📝 Paper](https://arxiv.org/abs/2505.19785)]
@@ -264,6 +276,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 - (*MICCAI Workshop'25*) **Surgical Vision World Model**
   [[📝 Paper](https://arxiv.org/abs/2503.02904)] [[💻 Code](https://github.com/bhattarailab/Surgical-Vision-World-Model)]
+
+- (*arXiv'25*) **MM-DADM: Multimodal Drug-Aware Diffusion Model for Virtual Clinical Trials**
+  [[📝 Paper](https://arxiv.org/abs/2502.07297)]
 
 - (*MIDL'25*) **4D-VQ-GAN: A World Model for Synthesizing Medical Scans at Any Time Point for Personalized Disease Progression Modeling of Idiopathic Pulmonary Fibrosis**
   [[📝 Paper](https://openreview.net/forum?id=tU3IpPQCEc)] [[💻 Code](https://github.com/anzhao920/4DVQGAN)] [[📝 arXiv](https://arxiv.org/abs/2502.05713)]
@@ -322,6 +337,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 - (*CVPR'25*) **EchoWorld: Learning Motion-Aware World Models for Echocardiography Probe Guidance**
   [[📝 Paper](https://arxiv.org/abs/2504.13065)]
+
+- (*arXiv'25*) **MM-DADM: Multimodal Drug-Aware Diffusion Model for Virtual Clinical Trials**
+  [[📝 Paper](https://arxiv.org/abs/2502.07297)]
 
 - (*MIDL'25*) **4D-VQ-GAN: A World Model for Synthesizing Medical Scans at Any Time Point for Personalized Disease Progression Modeling of Idiopathic Pulmonary Fibrosis**
   [[📝 Paper](https://openreview.net/forum?id=tU3IpPQCEc)] [[💻 Code](https://github.com/anzhao920/4DVQGAN)] [[📝 arXiv](https://arxiv.org/abs/2502.05713)]
@@ -408,6 +426,12 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 - (*arXiv'26*) **Validated Synthetic Patient Generation for Small Longitudinal Cohorts: Coagulation Dynamics Across Pregnancy**
   [[📝 Paper](https://arxiv.org/abs/2604.07557)] [[💻 Code](https://github.com/varnerlab/SA-generation-legacy-dataset-paper)]
 
+- (*Cardiometab Syndr J'26*) **TyG Trajectory and Digital Twin Simulation to Predict Metabolic Syndrome Risk**
+  [[📝 Paper](https://doi.org/10.51789/cmsj.2026.6.e7)]
+
+- (*NPJ Digit Med'25*) **Large Language Models Forecast Patient Health Trajectories Enabling Digital Twins**
+  [[📝 Paper](https://doi.org/10.1038/s41746-025-02004-3)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41034564/)] [[💻 Code](https://github.com/MendenLab/DT-GPT)]
+
 - (*arXiv'25*) **medDreamer: Model-Based Reinforcement Learning with Latent Imagination on Complex EHRs for Clinical Decision Support**
   [[📝 Paper](https://arxiv.org/abs/2505.19785)]
 
@@ -446,8 +470,20 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 - (*arXiv'26*) **Brain-WM: Brain Glioblastoma World Model**
   [[📝 Paper](https://arxiv.org/abs/2603.07562)] [[💻 Code](https://github.com/thibault-wch/Brain-GBM-world-model)]
 
+- (*Cardiometab Syndr J'26*) **TyG Trajectory and Digital Twin Simulation to Predict Metabolic Syndrome Risk**
+  [[📝 Paper](https://doi.org/10.51789/cmsj.2026.6.e7)]
+
 - (*arXiv'25*) **CLARITY: Medical World Model for Guiding Treatment Decisions by Modeling Context-Aware Disease Trajectories in Latent Space**
   [[📝 Paper](https://arxiv.org/abs/2512.08029)]
+
+- (*bioRxiv'25*) **Virtual Clinical Trials of BMP4 Differentiation Therapy: Digital Twins to Aid Successful Glioblastoma Trial Design**
+  [[📝 Paper](https://doi.org/10.1101/2024.08.22.609156)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41279885/)] [[💻 Code](https://github.com/Harbour-N/Virtual-Clinical-Trials-of-BMP4-Differentiation-Therapy)]
+
+- (*J Diabetes Sci Technol'25*) **Including Aerobic Exercise Into Data-Based Virtual Twins for Glycemic Simulation**
+  [[📝 Paper](https://doi.org/10.1177/19322968251364291)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/40947716/)]
+
+- (*arXiv'25*) **MM-DADM: Multimodal Drug-Aware Diffusion Model for Virtual Clinical Trials**
+  [[📝 Paper](https://arxiv.org/abs/2502.07297)]
 
 - (*ICCV'25*) **Medical World Model: Generative Simulation of Tumor Evolution for Treatment Planning**
   [[📝 Paper](https://arxiv.org/abs/2506.02327)] [[💻 Code](https://github.com/scott-yjyang/MeWM)] [[🌐 Project](https://yijun-yang.github.io/MeWM/)]
