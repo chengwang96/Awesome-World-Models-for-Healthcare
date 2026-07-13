@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contribution guide
+    url: https://github.com/chengwang96/Awesome-World-Models-for-Healthcare/blob/main/CONTRIBUTING.md
+    about: Review the strict scope, metadata vocabulary, and paper-entry format before contributing.

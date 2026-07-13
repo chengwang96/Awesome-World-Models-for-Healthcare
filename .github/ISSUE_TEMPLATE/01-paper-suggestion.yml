@@ -1,0 +1,164 @@
+name: Suggest a medical world-model paper
+description: Propose an implemented medical or biomedical world model for the curated main list.
+title: "[Paper]: "
+labels: []
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a paper. Inclusion requires a medical state, implemented state-transition dynamics, and an evaluated forecasting, simulation, counterfactual, planning, or control capability. Please use evidence from the primary paper rather than its title alone.
+
+  - type: input
+    id: paper_title
+    attributes:
+      label: Paper title
+      placeholder: Full title as published
+    validations:
+      required: true
+
+  - type: input
+    id: paper_url
+    attributes:
+      label: Primary paper URL
+      description: Use the publisher, arXiv, OpenReview, PubMed, bioRxiv, or medRxiv page.
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: input
+    id: venue_year
+    attributes:
+      label: Venue and year
+      placeholder: "Example: MICCAI 2026 or arXiv 2026"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: publication_status
+    attributes:
+      label: Publication status
+      options:
+        - Peer-reviewed and published
+        - Accepted or in press
+        - Public conference or workshop submission
+        - Preprint
+        - Rejected or withdrawn public submission
+    validations:
+      required: true
+
+  - type: textarea
+    id: medical_task
+    attributes:
+      label: Medical or biomedical task
+      description: Identify the healthcare problem, modeled system, and evaluation setting.
+      placeholder: The method is evaluated on...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: state
+    attributes:
+      label: Primary modeled state
+      description: Select the state that the model advances through its learned or computed dynamics.
+      options:
+        - Patient
+        - Physiology
+        - Anatomy
+        - Medical image
+        - Procedure/Robot
+        - Clinical workflow
+        - Cell
+        - Molecule
+        - Population
+    validations:
+      required: true
+
+  - type: dropdown
+    id: dynamics
+    attributes:
+      label: Implemented dynamics
+      description: Select every transition structure directly implemented by the method.
+      multiple: true
+      options:
+        - Temporal
+        - Action-conditioned
+        - Mechanistic
+        - Spatial/view
+        - Event sequence
+    validations:
+      required: true
+
+  - type: dropdown
+    id: capability
+    attributes:
+      label: Evaluated rollout capabilities
+      description: Select demonstrated capabilities, not proposed future applications.
+      multiple: true
+      options:
+        - Forecast
+        - Simulate
+        - Counterfactual
+        - Plan
+        - Control
+    validations:
+      required: true
+
+  - type: textarea
+    id: transition_evidence
+    attributes:
+      label: State-transition evidence
+      description: Explain what changes between states, what conditions the transition, and whether rollouts are one-step or multi-step.
+      placeholder: Given state ... and action/context ..., the model predicts or computes state ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation_evidence
+    attributes:
+      label: Implementation and evaluation evidence
+      description: Point to the experiment, benchmark, or simulation result showing that the dynamics are implemented and evaluated.
+      placeholder: Section, table, figure, or concise description from the paper
+    validations:
+      required: true
+
+  - type: textarea
+    id: qualification
+    attributes:
+      label: Why it qualifies as a medical world model
+      description: Summarize the modeled state, dynamics, and operational rollout in one or two factual sentences.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: topics
+    attributes:
+      label: Applicable topic sections
+      multiple: true
+      options:
+        - Medical Imaging and Radiology
+        - Computational Biology and Cellular Dynamics
+        - Longitudinal EHR and Clinical Trajectories
+        - Treatment Planning and Clinical Decision Support
+        - Surgical Simulation and Embodied Healthcare
+    validations:
+      required: true
+
+  - type: textarea
+    id: resources
+    attributes:
+      label: Official code, weights, or project links
+      description: Provide only resources published by the authors. Leave blank when none are public.
+      placeholder: |
+        Code: https://...
+        Weights: https://...
+        Project: https://...
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Submission confirmation
+      options:
+        - label: I searched the README for duplicate titles and identifiers, read the contribution guide, and classified the method from the paper rather than its title alone.
+          required: true
