@@ -68,6 +68,15 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ### 2026
 
+- (*MICCAI'26*) **HemoPIC: A Physics-Informed Cerebral Hemodynamics Digital Twin for Brain Perfusion**
+  [[📝 Paper](https://arxiv.org/abs/2607.08799)] [[💻 Code](https://github.com/jhuldr/HemoPIC)]
+
+- (*arXiv'26*) **EHR-MPC: Inference-Time Control for Sepsis Treatment with Generative Patient Digital Twins**
+  [[📝 Paper](https://arxiv.org/abs/2607.08793)]
+
+- (*Stem Cell Reports'26*) **In Silico Optimization of Regenerative Cell Therapy in the Infarcted Human Ventricles to Mitigate Arrhythmic Burden**
+  [[📝 Paper](https://doi.org/10.1016/j.stemcr.2026.103007)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42425090/)]
+
 - (*arXiv'26*) **Personalized 4D Whole-Heart Mesh Reconstruction from Cine MRI via Multi-Scale Temporal Modeling and Differentiable Contour Rendering**
   [[📝 Paper](https://arxiv.org/abs/2607.01952)]
 
@@ -314,6 +323,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ### Medical Imaging and Radiology
 
+- (*MICCAI'26*) **HemoPIC: A Physics-Informed Cerebral Hemodynamics Digital Twin for Brain Perfusion**
+  [[📝 Paper](https://arxiv.org/abs/2607.08799)] [[💻 Code](https://github.com/jhuldr/HemoPIC)]
+
 - (*arXiv'26*) **Personalized 4D Whole-Heart Mesh Reconstruction from Cine MRI via Multi-Scale Temporal Modeling and Differentiable Contour Rendering**
   [[📝 Paper](https://arxiv.org/abs/2607.01952)]
 
@@ -405,6 +417,9 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
 
 ### Longitudinal EHR and Clinical Trajectories
 
+- (*arXiv'26*) **EHR-MPC: Inference-Time Control for Sepsis Treatment with Generative Patient Digital Twins**
+  [[📝 Paper](https://arxiv.org/abs/2607.08793)]
+
 - (*arXiv'26*) **OphthaDT: Generative Digital Twins for Forecasting Visual Acuity Trajectories in Ophthalmology**
   [[📝 Paper](https://arxiv.org/abs/2606.22101)]
 
@@ -460,6 +475,12 @@ We collect papers that apply world models (or equivalent learned dynamics/simula
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
 
 ### Treatment Planning and Clinical Decision Support
+
+- (*arXiv'26*) **EHR-MPC: Inference-Time Control for Sepsis Treatment with Generative Patient Digital Twins**
+  [[📝 Paper](https://arxiv.org/abs/2607.08793)]
+
+- (*Stem Cell Reports'26*) **In Silico Optimization of Regenerative Cell Therapy in the Infarcted Human Ventricles to Mitigate Arrhythmic Burden**
+  [[📝 Paper](https://doi.org/10.1016/j.stemcr.2026.103007)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42425090/)]
 
 - (*Med Image Anal'26*) **Electrophysiologically-Informed Digital Twins for Atrial Fibrillation**
   [[📝 Paper](https://doi.org/10.1016/j.media.2026.104131)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42172939/)]
