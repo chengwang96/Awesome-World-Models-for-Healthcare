@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this catalog in your research, please cite it using these metadata."
+title: "Awesome World Models for Healthcare"
+type: dataset
+authors:
+  - family-names: "Peng"
+    given-names: "Zhihao"
+  - family-names: "Wang"
+    given-names: "Cheng"
+abstract: >-
+  A rigorously curated catalog of medical world models, patient digital twins,
+  counterfactual simulators, and intervention planning systems.
+keywords:
+  - "medical world models"
+  - "healthcare artificial intelligence"
+  - "patient digital twins"
+  - "counterfactual simulation"
+  - "clinical decision support"
+license: CC-BY-4.0
+repository-code: "https://github.com/chengwang96/Awesome-World-Models-for-Healthcare"

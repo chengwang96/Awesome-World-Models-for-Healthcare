@@ -8,6 +8,9 @@
 [![GitHub stars](https://img.shields.io/github/stars/chengwang96/Awesome-World-Models-for-Healthcare?style=social)](https://github.com/chengwang96/Awesome-World-Models-for-Healthcare)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#-contributing)
 [![Catalog validation](https://github.com/chengwang96/Awesome-World-Models-for-Healthcare/actions/workflows/validate-catalog.yml/badge.svg)](https://github.com/chengwang96/Awesome-World-Models-for-Healthcare/actions/workflows/validate-catalog.yml)
+[![Link health](https://github.com/chengwang96/Awesome-World-Models-for-Healthcare/actions/workflows/check-links.yml/badge.svg)](https://github.com/chengwang96/Awesome-World-Models-for-Healthcare/actions/workflows/check-links.yml)
+[![Content license: CC BY 4.0](https://img.shields.io/badge/content-CC%20BY%204.0-lightgrey.svg)](LICENSE-CONTENT)
+[![Code license: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 
 A curated list of papers and open-source resources on **world models for healthcare**, including **medical imaging**, **longitudinal EHR modeling**, **clinical prediction**, **counterfactual reasoning**, **treatment planning**, and **surgical simulation**.
 
@@ -52,6 +55,8 @@ We exclude static representation learning, ordinary conditional generation witho
 | [TyG Trajectory and Digital Twin Simulation](https://doi.org/10.51789/cmsj.2026.6.e7) | Static logistic-risk counterfactual over an altered covariate slope; no patient-state dynamics. |
 | [Apollo](https://arxiv.org/abs/2604.18570) | Temporal patient representation and downstream prediction, but no executable state rollout. |
 | [Validated Synthetic Patient Generation](https://arxiv.org/abs/2604.07557) | Generates complete cohort profiles rather than transitions between patient states. |
+| [MedGenesis](https://doi.org/10.64898/2026.06.14.26355612) | Updates hypotheses, evidence, and research actions in an agentic discovery workflow, but does not roll out medical or biological system-state dynamics. |
+| [CellOS](https://doi.org/10.64898/2026.06.18.733163) | Aligns expression and perception views for cellular representation learning; perturbation response is a downstream prediction benchmark rather than an operational state-transition rollout. |
 | [Toward World Models for Epidemiology](https://arxiv.org/abs/2604.09519) | Conceptual framework; retained under Survey Papers. |
 | [Contextual Invertible World Models](https://arxiv.org/abs/2603.02274) | Static perturbation-response emulator without temporal or sequential state dynamics. |
 | [How Far Are Surgeons from Surgical World Models?](https://arxiv.org/abs/2511.01775) | Evaluation benchmark for an existing video generator, not a proposed world model. |
@@ -69,10 +74,13 @@ We exclude static representation learning, ordinary conditional generation witho
 - [Survey Papers](#-survey-papers)
 - [World Model Papers](#-world-model-papers)
 - [By Topic](#-by-topic)
+- [Datasets, Benchmarks and Simulators](#-datasets-benchmarks-and-simulators)
 - [Related Repositories](#-related-repositories)
 - [Cross-References](#-cross-references)
 - [Industry Models / Platforms](#industry-models-platforms)
 - [Special Issues / Calls](#-special-issues--calls)
+- [License](#-license)
+- [Citation](#-citation)
 - [Contributing](#-contributing)
 - [Contact Us](#-contact-us)
 
@@ -121,6 +129,16 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
+- (*arXiv'26*) **Differentiable Cardiac Electrophysiology Simulations for Dynamical State and Parameter Estimation**
+  [[📝 Paper](https://arxiv.org/abs/2607.15492)]
+  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  > **Why it qualifies:** Fits a differentiable electrophysiology PDE simulator to partial cardiac measurements and rolls the recovered action-potential dynamics forward.
+
+- (*arXiv'26*) **AI-Augmented Adaptive Digital Twin Modeling for Brain Tumor Evolution Prediction and Treatment Scheduling**
+  [[📝 Paper](https://arxiv.org/abs/2607.13877)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Forecast + Simulate + Plan + Control` · `Assets: Paper only`
+  > **Why it qualifies:** Combines treatment-conditioned tumor dynamics, patient-specific online updating, 120-step recursive rollouts, and MPC scheduling; evaluation is limited to patient-data-informed synthetic trajectories.
+
 - (*MICCAI'26*) **HemoPIC: A Physics-Informed Cerebral Hemodynamics Digital Twin for Brain Perfusion**
   [[📝 Paper](https://arxiv.org/abs/2607.08799)] [[💻 Code](https://github.com/jhuldr/HemoPIC)]
   **Metadata:** `State: Physiology` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Code`
@@ -130,6 +148,11 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2607.08793)]
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Plan + Control` · `Assets: Paper only`
   > **Why it qualifies:** Models intervention-conditioned patient dynamics and uses simulated treatment rollouts for model-predictive control.
+
+- (*arXiv'26*) **Sectorial Customized Corneal Crosslinking for Keratoconus: An Inverse Biomechanical Design Study with an Anisotropic Reduced Shell Finite-Element Surrogate**
+  [[📝 Paper](https://arxiv.org/abs/2607.06385)]
+  **Metadata:** `State: Anatomy` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Paper only`
+  > **Why it qualifies:** Simulates post-treatment corneal deformation under alternative spatial crosslinking actions and optimizes the intervention mask against biomechanical and optical objectives.
 
 - (*Stem Cell Reports'26*) **In Silico Optimization of Regenerative Cell Therapy in the Infarcted Human Ventricles to Mitigate Arrhythmic Burden**
   [[📝 Paper](https://doi.org/10.1016/j.stemcr.2026.103007)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42425090/)]
@@ -493,6 +516,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Medical Imaging and Radiology
 
+- (*arXiv'26*) **Differentiable Cardiac Electrophysiology Simulations for Dynamical State and Parameter Estimation**
+  [[📝 Paper](https://arxiv.org/abs/2607.15492)]
+
 - (*MICCAI'26*) **HemoPIC: A Physics-Informed Cerebral Hemodynamics Digital Twin for Brain Perfusion**
   [[📝 Paper](https://arxiv.org/abs/2607.08799)] [[💻 Code](https://github.com/jhuldr/HemoPIC)]
 
@@ -625,8 +651,14 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Treatment Planning and Clinical Decision Support
 
+- (*arXiv'26*) **AI-Augmented Adaptive Digital Twin Modeling for Brain Tumor Evolution Prediction and Treatment Scheduling**
+  [[📝 Paper](https://arxiv.org/abs/2607.13877)]
+
 - (*arXiv'26*) **EHR-MPC: Inference-Time Control for Sepsis Treatment with Generative Patient Digital Twins**
   [[📝 Paper](https://arxiv.org/abs/2607.08793)]
+
+- (*arXiv'26*) **Sectorial Customized Corneal Crosslinking for Keratoconus: An Inverse Biomechanical Design Study with an Anisotropic Reduced Shell Finite-Element Surrogate**
+  [[📝 Paper](https://arxiv.org/abs/2607.06385)]
 
 - (*Stem Cell Reports'26*) **In Silico Optimization of Regenerative Cell Therapy in the Infarcted Human Ventricles to Mitigate Arrhythmic Burden**
   [[📝 Paper](https://doi.org/10.1016/j.stemcr.2026.103007)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42425090/)]
@@ -740,6 +772,39 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ---
 
+## 🧰 Datasets, Benchmarks and Simulators
+
+> This resource index is narrower than a general medical AI directory. Datasets must support at least one qualifying medical world model, benchmarks must evaluate dynamics or rollouts, and simulators must expose an implementation that advances a medical state. Inclusion here does not place a dataset-only or benchmark-only paper in the main paper list.
+
+### Datasets
+
+| Resource | Domain | World-model use | Access |
+|---|---|---|---|
+| **Open-H-Embodiment** | Surgical robotics | Synchronized video and robot kinematics across multiple clinical platforms for training action-conditioned surgical rollouts. | [[📦 Dataset](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-Open-H-Embodiment)] [[🌐 Project](https://open-h.github.io/open-h-embodiment/)] [[📝 Paper](https://arxiv.org/abs/2604.21017)] |
+| **MIMIC-IV** | Longitudinal EHR | Timestamped hospital and ICU trajectories used for treatment-conditioned patient simulation, including the SepsisAgent clinical world model. | [[📦 Dataset](https://physionet.org/content/mimiciv/3.0/)] [[📝 Example](https://arxiv.org/abs/2605.14723)] |
+| **MIMIC-IV-ECG** | Cardiac electrophysiology | ECGs linked to clinical records for learning event-conditioned cardiac state transitions. | [[📦 Dataset](https://physionet.org/content/mimic-iv-ecg/1.0/)] [[📝 Example](https://arxiv.org/abs/2604.22618)] |
+| **ISLES 2017** | Cerebral perfusion MRI | Perfusion-weighted time series and reference maps used by the HemoPIC cerebral hemodynamics digital twin. | [[📦 Dataset](https://zenodo.org/records/17736412)] [[💻 HemoPIC](https://github.com/jhuldr/HemoPIC)] |
+
+### Benchmarks
+
+| Benchmark | Domain | What it evaluates | Availability |
+|---|---|---|---|
+| **Open-H Multi-Embodiment Surgical Benchmark** | Surgical robotics | Action-conditioned future-video fidelity across nine robot embodiments using frame decay, tool consistency, and tool displacement metrics. | [[📦 Data](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-Open-H-Embodiment)] [[💻 Evaluation](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator)] |
+| **UniSWM-Bench** | Surgical workflow and video | Five understanding tasks, two long-horizon prediction tasks, and three action- or movement-conditioned generation tasks. | [[📝 Paper specification](https://openreview.net/forum?id=Kk9t5empEf)] `Paper only` |
+| **SurgVeo and Surgical Plausibility Pyramid** | Surgical video | Expert assessment of generated rollouts at 1, 3, and 8 seconds across visual, instrument-operation, environment-feedback, and surgical-intent plausibility. | [[📝 Paper and protocol](https://arxiv.org/abs/2511.01775)] `Paper only` |
+
+### Simulators
+
+| Simulator | Medical state | Rollout interface | Access |
+|---|---|---|---|
+| **Cosmos-H-Surgical-Simulator** | Surgical scene and robot state | Generates future surgical video from an initial frame and robot-kinematic action sequence across multiple embodiments. | [[💻 Code](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator)] [[🌐 Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical-Simulator)] |
+| **HemoPIC** | Cerebral hemodynamics | Fits patient-specific tracer transport and rolls perfusion dynamics through a physics-informed digital twin; includes a runnable demo. | [[💻 Code and demo](https://github.com/jhuldr/HemoPIC)] [[📝 Paper](https://arxiv.org/abs/2607.08799)] |
+| **MeWM** | Liver tumor state | Synthesizes treatment-conditioned post-intervention tumor states for TACE planning and survival analysis. | [[💻 Code](https://github.com/scott-yjyang/MeWM)] [[🌐 Project](https://yijun-yang.github.io/MeWM/)] |
+| **SepsisAgent Clinical World Model** | ICU patient state | Simulates counterfactual patient trajectories under candidate fluid and vasopressor interventions. | [[💻 Code](https://github.com/FreedomIntelligence/SepsisAgent)] [[📝 Paper](https://arxiv.org/abs/2605.14723)] |
+| **Brain-WM** | Glioblastoma and longitudinal MRI | Couples treatment planning with treatment-conditioned future MRI generation for disease-progression simulation. | [[💻 Code](https://github.com/thibault-wch/Brain-GBM-world-model)] [[📝 Paper](https://arxiv.org/abs/2603.07562)] |
+
+---
+
 ## 🔗 Related Repositories
 
 - **Awesome-Self-Evolving-AI-for-Agentic-Healthcare**
@@ -768,11 +833,11 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 ## 🏭 Industry Models / Platforms
 
 - (*NVIDIA'25*) **Cosmos World Foundation Model**
-  [[🌐 Platform](https://developer.nvidia.com/cosmos)] [[📝 Blog](https://developer.nvidia.com/blog/nvidia-cosmos-world-foundation-model-for-physical-ai/)]
+  [[🌐 Platform](https://developer.nvidia.com/cosmos)] [[📝 Research](https://research.nvidia.com/labs/dir/cosmos1/)]
   > General-purpose world foundation model platform; extended to surgical simulation via **Cosmos-H-Surgical** and **Cosmos-H-Surgical-Simulator** (see [papers above](#surgical-simulation-and-embodied-healthcare)).
 
 - (*NVIDIA'25*) **Holoscan AI Platform**
-  [[🌐 Platform](https://developer.nvidia.com/holoscan)]
+  [[🌐 Platform](https://docs.nvidia.com/holoscan/sdk-user-guide/index.html)]
   > Real-time AI inference platform for surgical robotics and medical device integration, enabling world-model-based decision support in the operating room.
 
 - (*Siemens Healthineers'25*) **Digital Twin for Healthcare**
@@ -795,13 +860,26 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ## ⭐ Star History
 
-<a href="https://www.star-history.com/?repos=chengwang96%2FAwesome-World-Models-for-Healthcare&type=date&logscale=&legend=bottom-right">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=chengwang96/Awesome-World-Models-for-Healthcare&type=date&theme=dark&legend=bottom-right" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=chengwang96/Awesome-World-Models-for-Healthcare&type=date&legend=bottom-right" />
-   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=chengwang96/Awesome-World-Models-for-Healthcare&type=date&legend=bottom-right" />
- </picture>
-</a>
+[View this repository's star history on Star History](https://www.star-history.com/?repos=chengwang96%2FAwesome-World-Models-for-Healthcare&type=date&logscale=&legend=bottom-right).
+
+---
+
+## ⚖️ License
+
+This repository uses separate licenses for content and code:
+
+- **Catalog content ([CC BY 4.0](LICENSE-CONTENT)):** `README.md`, `CONTRIBUTING.md`, `CITATION.cff`, the pull request and issue templates, and original material in `assets/`, including the taxonomy, metadata, annotations, and qualification notes.
+- **Code ([MIT](LICENSE)):** source code in `scripts/` and `tests/`, automation in `.github/workflows/`, and repository configuration such as `.lychee.toml`.
+
+Linked or quoted papers, code repositories, datasets, trademarks, and other third-party materials retain their original rights and licenses; their inclusion here does not relicense them.
+
+This content/code split applies to this revision and subsequent contributions. Earlier repository revisions remain available under the license notices included with those revisions.
+
+---
+
+## 📖 Citation
+
+If this catalog supports your research, please cite the repository using the metadata in [CITATION.cff](CITATION.cff). GitHub also provides ready-to-use APA and BibTeX formats through **Cite this repository**.
 
 ---
 

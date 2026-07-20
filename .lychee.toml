@@ -1,0 +1,33 @@
+verbose = "info"
+no_progress = true
+
+max_retries = 3
+retry_wait_time = 2
+timeout = 30
+max_redirects = 10
+max_concurrency = 16
+host_concurrency = 2
+host_request_interval = "250ms"
+
+user_agent = "Mozilla/5.0 (compatible; Awesome-World-Models-for-Healthcare link checker; +https://github.com/chengwang96/Awesome-World-Models-for-Healthcare)"
+method = "get"
+accept = ["200..=299", "429"]
+scheme = ["https"]
+require_https = true
+
+# These canonical pages are live, but their publishers reject or loop automated
+# requests. Each DOI also has a working PubMed link beside it in the catalog.
+exclude = [
+  '^https://doi\.org/10\.1113/JP287124$',
+  '^https://doi\.org/10\.1088/1361-6560/ae835a$',
+  '^https://doi\.org/10\.1088/2057-1976/ae7d30$',
+  '^https://doi\.org/10\.1177/19322968251364291$',
+  '^https://doi\.org/10\.1227/ons\.0000000000002116$',
+  '^https://openai\.com/index/introducing-gpt-rosalind/$',
+  '^https://openai\.com/solutions/industries/life-sciences/$',
+  '^https://openai\.com/form/life-sciences-access/$',
+]
+
+exclude_all_private = true
+include_mail = false
+include_verbatim = false

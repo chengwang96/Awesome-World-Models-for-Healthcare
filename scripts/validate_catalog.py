@@ -48,6 +48,9 @@ METADATA_RE = re.compile(
     re.MULTILINE,
 )
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+RESOURCES_HEADING = "## 🧰 Datasets, Benchmarks and Simulators"
+RELATED_REPOSITORIES_HEADING = "## 🔗 Related Repositories"
+RESOURCE_CATEGORIES = ("Datasets", "Benchmarks", "Simulators")
 
 
 @dataclass(frozen=True)
@@ -91,7 +94,8 @@ class CatalogValidator:
 
     def validate(self) -> list[str]:
         main = self.section_between("## 📝 World Model Papers", "## 🧭 By Topic")
-        topics = self.section_between("## 🧭 By Topic", "## 🔗 Related Repositories")
+        topics = self.section_between("## 🧭 By Topic", RESOURCES_HEADING)
+        resources = self.section_between(RESOURCES_HEADING, RELATED_REPOSITORIES_HEADING)
         taxonomy = self.section_between("## 🧬 Taxonomy", "## 📚 Survey Papers")
 
         main_entries = self.entries(main)
@@ -101,6 +105,7 @@ class CatalogValidator:
         self.validate_years(main)
         self.validate_main_entries(main_entries)
         self.validate_topics(main_entries, topic_entries)
+        self.validate_resources(resources)
         self.validate_duplicate_identifiers(main_entries)
         self.validate_links(main_entries + topic_entries)
         return self.errors
@@ -246,6 +251,31 @@ class CatalogValidator:
                 if link in {"https://example.org/paper", "https://github.com/org/repo"}:
                     self.error(f"{entry.title}: placeholder link found: {link}")
 
+    def validate_resources(self, resources: str) -> None:
+        headings = set(re.findall(r"^### (.+)$", resources, re.MULTILINE))
+        if headings != set(RESOURCE_CATEGORIES):
+            self.error(
+                "Resource categories differ from the required set: "
+                f"README={sorted(headings)}, required={sorted(RESOURCE_CATEGORIES)}"
+            )
+
+        for category in RESOURCE_CATEGORIES:
+            match = re.search(
+                rf"^### {re.escape(category)}\n(.*?)(?=^### |\Z)",
+                resources,
+                re.MULTILINE | re.DOTALL,
+            )
+            if not match or not re.search(
+                r"^\| \*\*.+\*\* \|", match.group(1), re.MULTILINE
+            ):
+                self.error(f"Resource category '{category}' has no entries")
+
+        for link in LINK_RE.findall(resources):
+            if not link.startswith("https://"):
+                self.error(f"Resource link must use HTTPS: {link}")
+            if link in {"https://example.org/paper", "https://github.com/org/repo"}:
+                self.error(f"Resource placeholder link found: {link}")
+
 
 class IssueFormValidator:
     REQUIRED_FIELDS = {
@@ -330,7 +360,7 @@ class IssueFormValidator:
     def readme_topics(self) -> set[str]:
         try:
             topic_section = self.readme.split("## 🧭 By Topic", 1)[1].split(
-                "## 🔗 Related Repositories", 1
+                RESOURCES_HEADING, 1
             )[0]
         except IndexError:
             self.error("cannot read topic headings from README")
@@ -361,7 +391,7 @@ def main() -> int:
         text.split("## 📝 World Model Papers", 1)[1].split("## 🧭 By Topic", 1)[0]
     )
     topics = CatalogValidator.entries(
-        text.split("## 🧭 By Topic", 1)[1].split("## 🔗 Related Repositories", 1)[0]
+        text.split("## 🧭 By Topic", 1)[1].split(RESOURCES_HEADING, 1)[0]
     )
     print(
         f"Catalog validation passed: {len(main)} main-list papers, "

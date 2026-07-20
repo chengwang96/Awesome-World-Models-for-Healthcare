@@ -88,3 +88,22 @@ python scripts/validate_catalog.py
 ```
 
 The validator checks controlled metadata, qualification notes, annual placement, duplicate titles and identifiers, asset labels, links, synchronization between the main list and **By Topic**, and taxonomy consistency in the paper-suggestion form.
+
+## Resource Contributions
+
+Datasets, benchmarks, and simulators are reviewed separately from main-list papers:
+
+- A **dataset** must have a public access page and be used to train or evaluate at least one qualifying medical world model.
+- A **benchmark** must evaluate state transitions, rollout quality, action fidelity, intervention response, planning, or control. Static diagnosis and representation benchmarks are out of scope.
+- A **simulator** must provide public code, weights, or an interactive implementation that advances a medical state through time, actions, or interventions.
+
+Use official project, repository, data-hosting, and primary-paper links. State access restrictions or paper-only availability explicitly.
+
+## Licensing Contributions
+
+By submitting a contribution, you agree that it may be distributed under the license that applies to its destination:
+
+- catalog text, metadata, documentation, templates, and original assets under [CC BY 4.0](LICENSE-CONTENT)
+- scripts, tests, workflow automation, and repository configuration under the [MIT License](LICENSE)
+
+Only submit material that you have the right to contribute. Linking to third-party resources does not transfer or change their licenses.

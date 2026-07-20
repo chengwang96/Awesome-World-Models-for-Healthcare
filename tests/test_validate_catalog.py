@@ -52,6 +52,14 @@ class CatalogValidatorTests(unittest.TestCase):
         errors = self.validate(mutated)
         self.assertTrue(any("Duplicate identifier arXiv:2607.08799" in error for error in errors))
 
+    def test_missing_resource_category_is_reported(self) -> None:
+        mutated = README_TEXT.replace("### Simulators", "### Tools", 1)
+        errors = self.validate(mutated)
+        self.assertTrue(any("Resource categories differ" in error for error in errors))
+        self.assertTrue(
+            any("Resource category 'Simulators' has no entries" in error for error in errors)
+        )
+
 
 class IssueFormValidatorTests(unittest.TestCase):
     def validate(self, form: str) -> list[str]:
