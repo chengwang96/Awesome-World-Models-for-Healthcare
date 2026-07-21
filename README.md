@@ -55,7 +55,7 @@ We exclude static representation learning, ordinary conditional generation witho
 | [TyG Trajectory and Digital Twin Simulation](https://doi.org/10.51789/cmsj.2026.6.e7) | Static logistic-risk counterfactual over an altered covariate slope; no patient-state dynamics. |
 | [Apollo](https://arxiv.org/abs/2604.18570) | Temporal patient representation and downstream prediction, but no executable state rollout. |
 | [Validated Synthetic Patient Generation](https://arxiv.org/abs/2604.07557) | Generates complete cohort profiles rather than transitions between patient states. |
-| [MedGenesis](https://doi.org/10.64898/2026.06.14.26355612) | Updates hypotheses, evidence, and research actions in an agentic discovery workflow, but does not roll out medical or biological system-state dynamics. |
+| [MedGenesis](https://www.medrxiv.org/content/10.64898/2026.06.14.26355612v1) | Updates hypotheses, evidence, and research actions in an agentic discovery workflow, but does not roll out medical or biological system-state dynamics. |
 | [CellOS](https://doi.org/10.64898/2026.06.18.733163) | Aligns expression and perception views for cellular representation learning; perturbation response is a downstream prediction benchmark rather than an operational state-transition rollout. |
 | [Toward World Models for Epidemiology](https://arxiv.org/abs/2604.09519) | Conceptual framework; retained under Survey Papers. |
 | [Contextual Invertible World Models](https://arxiv.org/abs/2603.02274) | Static perturbation-response emulator without temporal or sequential state dynamics. |
