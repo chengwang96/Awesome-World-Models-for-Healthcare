@@ -52,6 +52,10 @@ We exclude static representation learning, ordinary conditional generation witho
 
 | Paper | Decision |
 |---|---|
+| [An AI-Driven Digital Twin Framework for Personalized COPD Treatment Optimization](https://doi.org/10.5220/0015171200004088) | Perturbs static patient covariates to create replicas and aggregates LightGBM treatment classifications; no learned patient-state transition or longitudinal rollout. |
+| [DynImmune-BERT](https://arxiv.org/abs/2607.17244) | Uses Neural ODEs to encode irregular immune-repertoire trajectories for patient classification, but does not evaluate future-state rollout, intervention simulation, or planning. |
+| [An Intelligent Digital Twin Framework with AI-Driven Optimization for Patient Flow and Clinical Scheduling](https://doi.org/10.3389/fdgth.2026.1835028) | Forecasts arrivals and analyzes operational datasets, but does not implement the proposed scheduling optimizer or an operational scenario simulator. |
+| [A Vascularized ODE Model for Patient-Specific Prediction of Treatment Resistance in Gastrointestinal Stromal Tumors](https://doi.org/10.23939/mmc2026.02.696) | Mechanistic oncology curve fitting and parameter sensitivity analysis; early-data resistance prediction fails, with no validated patient rollout or intervention-selection policy. |
 | [TyG Trajectory and Digital Twin Simulation](https://doi.org/10.51789/cmsj.2026.6.e7) | Static logistic-risk counterfactual over an altered covariate slope; no patient-state dynamics. |
 | [Apollo](https://arxiv.org/abs/2604.18570) | Temporal patient representation and downstream prediction, but no executable state rollout. |
 | [Validated Synthetic Patient Generation](https://arxiv.org/abs/2604.07557) | Generates complete cohort profiles rather than transitions between patient states. |
@@ -129,6 +133,16 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
+- (*arXiv'26*) **PIONEER: Bayesian Joint Modelling of Mechanistic Tumour Growth and Time-to-Event Endpoints for Dynamic Prediction of Ongoing Oncology Trials**
+  [[📝 Paper](https://arxiv.org/abs/2607.17908)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  > **Why it qualifies:** Jointly infers latent tumor-growth and clinical-event dynamics, then forward-simulates patient trajectories and mature trial endpoints from interim data.
+
+- (*arXiv'26*) **Enhancing Personalized Bladder Cancer Treatment Through Reinforcement Learning: A Recurrent Patient State Transition Decision Support Framework**
+  [[📝 Paper](https://arxiv.org/abs/2607.16916)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Plan + Control` · `Assets: Paper only`
+  > **Why it qualifies:** Learns treatment-conditioned recurrent bladder-cancer state transitions from historical observations and uses recursive simulated trajectories for DQN planning; validation is confined to the learned simulator.
+
 - (*arXiv'26*) **Differentiable Cardiac Electrophysiology Simulations for Dynamical State and Parameter Estimation**
   [[📝 Paper](https://arxiv.org/abs/2607.15492)]
   **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast + Simulate` · `Assets: Paper only`
@@ -153,6 +167,11 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2607.06385)]
   **Metadata:** `State: Anatomy` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Paper only`
   > **Why it qualifies:** Simulates post-treatment corneal deformation under alternative spatial crosslinking actions and optimizes the intervention mask against biomechanical and optical objectives.
+
+- (*medRxiv'26*) **Personalized Planning of Cardiac Resynchronization Therapy Through Integration of Coronary Sinus Geometry, Clinical Data, Digital Twins, and Machine Learning: Visualization, Stratification, and Optimization**
+  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.07.01.26356827v1)]
+  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Paper only`
+  > **Why it qualifies:** Builds patient-specific ventricular and coronary-sinus twins, simulates activation under alternative pacing sites, and maps predicted response for pre-procedural planning; prospective validation remains outstanding.
 
 - (*Stem Cell Reports'26*) **In Silico Optimization of Regenerative Cell Therapy in the Infarcted Human Ventricles to Mitigate Arrhythmic Burden**
   [[📝 Paper](https://doi.org/10.1016/j.stemcr.2026.103007)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42425090/)]
@@ -601,6 +620,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Longitudinal EHR and Clinical Trajectories
 
+- (*arXiv'26*) **PIONEER: Bayesian Joint Modelling of Mechanistic Tumour Growth and Time-to-Event Endpoints for Dynamic Prediction of Ongoing Oncology Trials**
+  [[📝 Paper](https://arxiv.org/abs/2607.17908)]
+
 - (*arXiv'26*) **EHR-MPC: Inference-Time Control for Sepsis Treatment with Generative Patient Digital Twins**
   [[📝 Paper](https://arxiv.org/abs/2607.08793)]
 
@@ -651,6 +673,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Treatment Planning and Clinical Decision Support
 
+- (*arXiv'26*) **Enhancing Personalized Bladder Cancer Treatment Through Reinforcement Learning: A Recurrent Patient State Transition Decision Support Framework**
+  [[📝 Paper](https://arxiv.org/abs/2607.16916)]
+
 - (*arXiv'26*) **AI-Augmented Adaptive Digital Twin Modeling for Brain Tumor Evolution Prediction and Treatment Scheduling**
   [[📝 Paper](https://arxiv.org/abs/2607.13877)]
 
@@ -659,6 +684,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*arXiv'26*) **Sectorial Customized Corneal Crosslinking for Keratoconus: An Inverse Biomechanical Design Study with an Anisotropic Reduced Shell Finite-Element Surrogate**
   [[📝 Paper](https://arxiv.org/abs/2607.06385)]
+
+- (*medRxiv'26*) **Personalized Planning of Cardiac Resynchronization Therapy Through Integration of Coronary Sinus Geometry, Clinical Data, Digital Twins, and Machine Learning: Visualization, Stratification, and Optimization**
+  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.07.01.26356827v1)]
 
 - (*Stem Cell Reports'26*) **In Silico Optimization of Regenerative Cell Therapy in the Infarcted Human Ventricles to Mitigate Arrhythmic Burden**
   [[📝 Paper](https://doi.org/10.1016/j.stemcr.2026.103007)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42425090/)]
