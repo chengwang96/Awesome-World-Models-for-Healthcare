@@ -52,6 +52,9 @@ We exclude static representation learning, ordinary conditional generation witho
 
 | Paper | Decision |
 |---|---|
+| [When Measurement Conventions Masquerade as Calibration Gains in Cardiac Digital Twins](https://arxiv.org/abs/2608.01602) | Audits ejection-fraction observation operators and reference conventions; it does not implement cardiac-state transitions or future rollouts. |
+| [AuricularWorld](https://arxiv.org/abs/2607.28487) | Its three-step latent loop iteratively refines a static CT segmentation; the rolled state is an internal label representation rather than evolving anatomy or another medical environment state. |
+| [CalTwin](https://arxiv.org/abs/2607.26752) | Implements an ICU latent next-state predictor, but evaluates only teacher-forced one-step transitions; closed-loop rollout and intervention-conditioned use are explicitly left for future work. |
 | [An AI-Driven Digital Twin Framework for Personalized COPD Treatment Optimization](https://doi.org/10.5220/0015171200004088) | Perturbs static patient covariates to create replicas and aggregates LightGBM treatment classifications; no learned patient-state transition or longitudinal rollout. |
 | [DynImmune-BERT](https://arxiv.org/abs/2607.17244) | Uses Neural ODEs to encode irregular immune-repertoire trajectories for patient classification, but does not evaluate future-state rollout, intervention simulation, or planning. |
 | [An Intelligent Digital Twin Framework with AI-Driven Optimization for Patient Flow and Clinical Scheduling](https://doi.org/10.3389/fdgth.2026.1835028) | Forecasts arrivals and analyzes operational datasets, but does not implement the proposed scheduling optimizer or an operational scenario simulator. |
@@ -107,6 +110,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ## 📚 Survey Papers
 
+- (*arXiv'26*) **Cardiovascular Digital Twins from Physics Based to Data Driven Approaches**
+  [[📝 Paper](https://arxiv.org/abs/2608.02135)]
+
+- (*arXiv'26*) **Medical World Models in Healthcare: Foundations, Applications, and Challenges for Trustworthy Clinical Translation**
+  [[📝 Paper](https://arxiv.org/abs/2607.25242)]
+
 - (*arXiv'26*) **Medical World Models: Representing Medical States, Modelling Clinical Dynamics and Guiding Intervention Policies**
   [[📝 Paper](https://arxiv.org/abs/2606.16721)]
 
@@ -132,6 +141,51 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 > Entries are sorted by year in descending order. See [Scope](#-scope) for inclusion criteria.
 
 ### 2026
+
+- (*arXiv'26*) **CrossScope: A Role-Asymmetric World Model for Joint Dual-Scope Surgical Video Prediction**
+  [[📝 Paper](https://arxiv.org/abs/2608.03211)]
+  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Spatial/view` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  > **Why it qualifies:** Jointly predicts eight future Mother- and Child-scope frames from synchronized ERCP observations and causal history, with evaluation on phantom and patient-held-out real procedures.
+
+- (*MICCAI'26 Workshop*) **Automatic Patient-Specific Microwave Ablation Planning Accelerated by a Physics-Guided Deep Learning Model**
+  [[📝 Paper](https://arxiv.org/abs/2608.03086)]
+  **Metadata:** `State: Anatomy` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Paper only`
+  > **Why it qualifies:** Uses patient anatomy and treatment actions to predict post-ablation regions, then repeatedly queries this forward simulator while optimizing antenna trajectory, power, and duration.
+
+- (*MICCAI'26 Workshop*) **tFUSOperator: Operator Learning for Transcranial Focused Ultrasound Digital Twins**
+  [[📝 Paper](https://arxiv.org/abs/2608.01839)] [[💻 Code](https://github.com/CMME-Lab/tFUSOperator)]
+  **Metadata:** `State: Anatomy` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate` · `Assets: Code`
+  > **Why it qualifies:** Learns patient-skull-conditioned acoustic propagation and simulates intracranial pressure fields under alternative transducer positions, orientations, frequencies, and treatment conditions.
+
+- (*arXiv'26*) **NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics**
+  [[📝 Paper](https://arxiv.org/abs/2608.01773)]
+  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  > **Why it qualifies:** Learns causal stimulus-conditioned latent brain transitions and autoregressively rolls them out into subject-specific whole-brain fMRI trajectories over multiple future time points.
+
+- (*arXiv'26*) **EndoWAM: A Grounded World-Action Model for Generalizable Endoscopic Navigation**
+  [[📝 Paper](https://arxiv.org/abs/2608.01221)]
+  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal` · `Capability: Forecast` · `Assets: Paper only`
+  > **Why it qualifies:** Trains a video dynamics prior and future-target generator over endoscopic states, with the predictive representation evaluated in closed-loop physical-phantom navigation across three procedures.
+
+- (*MICCAI'26 Workshop*) **Anticipatory Digital Twins for Online Head-and-Neck Adaptive Proton Therapy via Foundation-Model Registration**
+  [[📝 Paper](https://arxiv.org/abs/2608.00831)]
+  **Metadata:** `State: Anatomy` · `Dynamics: Temporal + Spatial/view` · `Capability: Forecast` · `Assets: Paper only`
+  > **Why it qualifies:** Transfers longitudinal anatomical change through a learned registration model to forecast patient-specific treatment-day CT states and contours before image acquisition.
+
+- (*arXiv'26*) **Failure Detection for Surgical Robot Imitation Policies via Flow-Matching World Modeling**
+  [[📝 Paper](https://arxiv.org/abs/2607.27511)]
+  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast` · `Assets: Paper only`
+  > **Why it qualifies:** Learns nominal multi-step visual transitions conditioned on surgical-robot actions and detects failures from inconsistencies between predicted and realized endpoint states in simulated and real dVRK tasks.
+
+- (*arXiv'26*) **Action-Conditioned World Model for Goal Plane Probe Guidance in Robotic Ultrasound**
+  [[📝 Paper](https://arxiv.org/abs/2607.21918)]
+  **Metadata:** `State: Medical image` · `Dynamics: Spatial/view + Action-conditioned` · `Capability: Forecast + Simulate + Control` · `Assets: Paper only`
+  > **Why it qualifies:** Predicts future ultrasound states under candidate 6-DoF probe motions, uses the frozen model as an internal simulator for policy learning, and validates closed-loop carotid and thyroid guidance.
+
+- (*arXiv'26*) **A Diffusion-Model Subpopulation Digital Twin for Mobile Health Deployment: A Case Study on the HeartSteps Intervention**
+  [[📝 Paper](https://arxiv.org/abs/2607.21403)]
+  **Metadata:** `State: Population` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate` · `Assets: Paper only`
+  > **Why it qualifies:** Generates temporally causal participant trajectories, accepts sequential mobile-health intervention actions, and rolls subpopulation behavior forward to rehearse target deployments.
 
 - (*arXiv'26*) **PIONEER: Bayesian Joint Modelling of Mechanistic Tumour Growth and Time-to-Event Endpoints for Dynamic Prediction of Ongoing Oncology Trials**
   [[📝 Paper](https://arxiv.org/abs/2607.17908)]
@@ -535,6 +589,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Medical Imaging and Radiology
 
+- (*arXiv'26*) **NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics**
+  [[📝 Paper](https://arxiv.org/abs/2608.01773)]
+
+- (*arXiv'26*) **Action-Conditioned World Model for Goal Plane Probe Guidance in Robotic Ultrasound**
+  [[📝 Paper](https://arxiv.org/abs/2607.21918)]
+
 - (*arXiv'26*) **Differentiable Cardiac Electrophysiology Simulations for Dynamical State and Parameter Estimation**
   [[📝 Paper](https://arxiv.org/abs/2607.15492)]
 
@@ -673,6 +733,18 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Treatment Planning and Clinical Decision Support
 
+- (*MICCAI'26 Workshop*) **Automatic Patient-Specific Microwave Ablation Planning Accelerated by a Physics-Guided Deep Learning Model**
+  [[📝 Paper](https://arxiv.org/abs/2608.03086)]
+
+- (*MICCAI'26 Workshop*) **tFUSOperator: Operator Learning for Transcranial Focused Ultrasound Digital Twins**
+  [[📝 Paper](https://arxiv.org/abs/2608.01839)] [[💻 Code](https://github.com/CMME-Lab/tFUSOperator)]
+
+- (*MICCAI'26 Workshop*) **Anticipatory Digital Twins for Online Head-and-Neck Adaptive Proton Therapy via Foundation-Model Registration**
+  [[📝 Paper](https://arxiv.org/abs/2608.00831)]
+
+- (*arXiv'26*) **A Diffusion-Model Subpopulation Digital Twin for Mobile Health Deployment: A Case Study on the HeartSteps Intervention**
+  [[📝 Paper](https://arxiv.org/abs/2607.21403)]
+
 - (*arXiv'26*) **Enhancing Personalized Bladder Cancer Treatment Through Reinforcement Learning: A Recurrent Patient State Transition Decision Support Framework**
   [[📝 Paper](https://arxiv.org/abs/2607.16916)]
 
@@ -749,6 +821,15 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2510.24654)]
 
 ### Surgical Simulation and Embodied Healthcare
+
+- (*arXiv'26*) **CrossScope: A Role-Asymmetric World Model for Joint Dual-Scope Surgical Video Prediction**
+  [[📝 Paper](https://arxiv.org/abs/2608.03211)]
+
+- (*arXiv'26*) **EndoWAM: A Grounded World-Action Model for Generalizable Endoscopic Navigation**
+  [[📝 Paper](https://arxiv.org/abs/2608.01221)]
+
+- (*arXiv'26*) **Failure Detection for Surgical Robot Imitation Policies via Flow-Matching World Modeling**
+  [[📝 Paper](https://arxiv.org/abs/2607.27511)]
 
 - (*Oper Neurosurg'26*) **Iterative Virtual and Physical Simulation for Staged Separation of Total Vertical Craniopagus: The Avatar Patient Approach to Conjoined Twins**
   [[📝 Paper](https://doi.org/10.1227/ons.0000000000002116)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42318872/)]
