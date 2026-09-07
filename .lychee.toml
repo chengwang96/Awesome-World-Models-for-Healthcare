@@ -18,7 +18,10 @@ require_https = true
 # These canonical pages are live, but their publishers reject or loop automated
 # requests. Each DOI also has a working PubMed link beside it in the catalog.
 exclude = [
+  '^https://doi\.org/10\.1063/5\.0336480$',
+  '^https://doi\.org/10\.1073/pnas\.2612370123$',
   '^https://doi\.org/10\.1113/JP287124$',
+  '^https://doi\.org/10\.1113/JP287281$',
   '^https://doi\.org/10\.1088/1361-6560/ae835a$',
   '^https://doi\.org/10\.1088/2057-1976/ae7d30$',
   '^https://doi\.org/10\.1177/19322968251364291$',
