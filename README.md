@@ -49,11 +49,17 @@ We exclude static representation learning, ordinary conditional generation witho
 
 The [2026-09-07 scope audit](docs/scope-audit-2026-09-07.md) distinguishes learned/hybrid dynamics from mechanistic simulators and records candidates awaiting full-text verification; pending candidates are not counted in the main list.
 
+The [2026-09-08 search update and recheck](docs/search-update-2026-09-08.md) records why two proposed main-list additions were withdrawn under a stricter medical-world-model interpretation; one perspective remains in Survey Papers.
+
 <details>
 <summary><strong>Audited boundary cases not counted as world-model papers</strong></summary>
 
 | Paper | Decision |
 |---|---|
+| [Cortical GNN-pHNN](https://arxiv.org/abs/2607.10439) | Held outside the core list: genuine learned EEG dynamics and autonomous rollout, but evaluation is signal-dynamics fidelity rather than a demonstrated disease, treatment, or medical-BCI task. This is a medical-scope boundary decision, not a claim that dynamics are absent. |
+| [Multiphase PDE Tumor Therapy Scheduling](https://arxiv.org/abs/2607.20782) | Related mechanistic oncology simulation: COMSOL advances tissue states; the Gaussian process learns a schedule-to-objective mapping, not state transitions. Not counted as a learned medical world model in this stricter recheck. |
+| [A Proof-of-Concept Simulation-Driven Digital Twin Framework for Decision-Aware Diabetes Modeling](https://arxiv.org/abs/2605.11247) | Evaluates static regression/classification on the scikit-learn diabetes dataset; intervention curves use illustrative parametric functions rather than an evaluated patient-state transition model. |
+| [Physics-Informed Digital Twin of Maternal-Fetal Hemodynamics for Predictive Risk Simulation in Preeclampsia](https://doi.org/10.3233/SHTI260193) | Reports fitted resistance/perfusion indices and illustrative flow maps; despite a time-dependent governing equation, it does not demonstrate time-resolved state rollout or intervention-conditioned evolution. |
 | [Neurosymbolic Alignment for Physiologically-Safe Clinical Language Models](https://arxiv.org/abs/2608.24534) | Its "Physiological World Model" scores the feasibility of candidate responses using a medical knowledge graph; it does not advance physiological states or generate patient trajectories. |
 | [ORION: A Hierarchical Surgical World Model for Real-Time, Multi-Agent Operating-Room Intelligence](https://irojournals.com/jucct/article/view/2380) | Proposes an integrated architecture and reports results from constituent methods; the combined world model is not implemented and evaluated. |
 | [Generative Diffusion Model Surrogates for Mechanistic Agent-Based Biological Models](https://pubmed.ncbi.nlm.nih.gov/41170496/) | Conditions diffusion on classes of mechanistic parameters to generate terminal cell configurations; it does not propagate a supplied cellular state through learned transitions. |
@@ -127,6 +133,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 ---
 
 ## 📚 Survey Papers
+
+- (*npj Health Syst'26 Perspective*) **Structural Requirements for Intelligent Clinical Digital Twins in Feedback-Driven Care**
+  [[📝 Paper](https://doi.org/10.1038/s44401-026-00143-7)]
 
 - (*arXiv'26*) **Surgical Video Generation From Diffusion to World Models: A Survey**
   [[📝 Paper](https://arxiv.org/abs/2608.26214)]
