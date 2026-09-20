@@ -51,11 +51,19 @@ The [2026-09-07 scope audit](docs/scope-audit-2026-09-07.md) distinguishes learn
 
 The [2026-09-08 search update and recheck](docs/search-update-2026-09-08.md) records why two proposed main-list additions were withdrawn under a stricter medical-world-model interpretation; one perspective remains in Survey Papers.
 
+The [2026-09-20 search update](docs/search-update-2026-09-20.md) adds two learned medical/biomedical dynamics models, separates two new reviews from the core catalog, and records methods-level decisions on recent near-scope candidates.
+
 <details>
 <summary><strong>Audited boundary cases not counted as world-model papers</strong></summary>
 
 | Paper | Decision |
 |---|---|
+| [MedDream: A Radiographic World Model for Clinical Reasoning and Evidence Generation](https://arxiv.org/abs/2609.07719) | Learns examination-level radiographic representations for diagnosis and report-conditioned image generation; the paper explicitly leaves longitudinal patient-state dynamics for future work. |
+| [JEPA-Anything](https://arxiv.org/abs/2609.20800) | Medical/cellular experiments terminate at a one-step readout or intervention nomination. Recursive rollouts in control, physics and generic molecular benchmarks do not establish a medical rollout task; held outside the core list. |
+| [An Immune World Model for Multiscale Forecasting and Therapeutic Hypothesis Generation](https://arxiv.org/abs/2609.14709) | Implements action-conditioned one-step immune-state prediction, but cross-scale readout propagation and perturbation-pair endpoints do not validate recursive biological rollout; cohort-level recursive evaluation remains future work. Held pending that evidence. |
+| [Arti-JEPA](https://arxiv.org/abs/2609.09757) | Clinical results use frozen-encoder probes. Appendix E does implement MRI latent rollouts, but reports negligible audio-conditioning effects and no demonstrated clinical use of those rollouts; held outside the core list, not dismissed as having no dynamics. |
+| [Causal Multi-Modal AI for Personalized Chemosensitivity Prediction](https://arxiv.org/abs/2609.13567) | CTX estimates treatment-specific survival risks with counterfactual regression; it does not advance a patient state through a treatment sequence. Treatment-effect estimation alone is not a world model. |
+| [PPIM](https://arxiv.org/abs/2609.06869) | Approximates a controlled bioheat solution from coordinates and a prescribed heat source, evaluating the final temperature field. Internal Mamba recurrence does not demonstrate reusable medical-state rollout or ablation planning. |
 | [Cortical GNN-pHNN](https://arxiv.org/abs/2607.10439) | Held outside the core list: genuine learned EEG dynamics and autonomous rollout, but evaluation is signal-dynamics fidelity rather than a demonstrated disease, treatment, or medical-BCI task. This is a medical-scope boundary decision, not a claim that dynamics are absent. |
 | [Multiphase PDE Tumor Therapy Scheduling](https://arxiv.org/abs/2607.20782) | Related mechanistic oncology simulation: COMSOL advances tissue states; the Gaussian process learns a schedule-to-objective mapping, not state transitions. Not counted as a learned medical world model in this stricter recheck. |
 | [A Proof-of-Concept Simulation-Driven Digital Twin Framework for Decision-Aware Diabetes Modeling](https://arxiv.org/abs/2605.11247) | Evaluates static regression/classification on the scikit-learn diabetes dataset; intervention curves use illustrative parametric functions rather than an evaluated patient-state transition model. |
@@ -134,6 +142,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ## 📚 Survey Papers
 
+- (*Cell'26 Review*) **World Models for Biomedicine**
+  [[📝 Paper](https://doi.org/10.1016/j.cell.2026.08.032)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42753693/)]
+
+- (*Cell'26 Review*) **A World Model of the Virtual Cell**
+  [[📝 Paper](https://doi.org/10.1016/j.cell.2026.08.042)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42753692/)]
+
 - (*npj Health Syst'26 Perspective*) **Structural Requirements for Intelligent Clinical Digital Twins in Feedback-Driven Care**
   [[📝 Paper](https://doi.org/10.1038/s44401-026-00143-7)]
 
@@ -186,6 +200,21 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 > Entries are sorted by year in descending order. See [Scope](#-scope) for inclusion criteria.
 
 ### 2026
+
+- (*Front Med'26*) **Beyond Static Risk Scores: Dynamic World Models Simulating Patient-Specific Trajectories to Inform Preoperative Risk Mitigation Strategies**
+  [[📝 Paper](https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2026.1913206/full)] [[💻 Code](https://github.com/ustive/Beyond-Static-Risk-Scores-Dynamic-World-Models)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Plan` · `Assets: Code`
+  > **Why it qualifies:** DPWM learns action-conditioned latent patient dynamics and samples prior-driven multi-step trajectories to rank short-window preoperative strategies; evaluation on MIMIC-IV, eICU-CRD and VitalDB is retrospective and does not establish causal intervention benefit.
+
+- (*Nature'26*) **An Operational Perturbation Proteomics-Based Virtual Cell Model**
+  [[📝 Paper](https://doi.org/10.1038/s41586-026-11001-9)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42717098/)] [[💻 Code](https://github.com/guomics-lab/PTV-1)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Code`
+  > **Why it qualifies:** ProteinTalks learns proteomic dynamics from baseline under a specified drug perturbation, integrates a neural ODE to predict 6/24/48-hour states, and uses those trajectories for cancer drug-efficacy and combination-synergy prediction; it does not demonstrate changing-treatment rollouts, sequential planning, or clinical benefit.
+
+- (*ECCV'26*) **CLARITY: Medical World Model for Guiding Treatment Decisions by Modeling Context-Aware Disease Trajectories in Latent Space**
+  [[📝 Paper](https://arxiv.org/abs/2512.08029)] [[💻 Code](https://github.com/DingTianxingjian/CLARITY)] [[🌐 Project](https://dingtianxingjian.github.io/clarity-project-page/)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Counterfactual + Plan` · `Assets: Code + Project`
+  > **Why it qualifies:** Rolls latent disease states forward under alternative treatments to support clinical decisions.
 
 - (*arXiv'26*) **NVIDIA Cosmos-H-Dreams: Real-Time Generative Physics Simulation for Surgical Robotics**
   [[📝 Paper](https://arxiv.org/abs/2608.24199)] [[💻 Code](https://github.com/isaac-for-healthcare/Cosmos-H-Dreams)] [[🌐 Weights](https://huggingface.co/nvidia/Cosmos-H-Dreams)]
@@ -714,11 +743,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Control` · `Assets: Code`
   > **Why it qualifies:** Generates action-conditioned surgical video rollouts and uses them to learn robot policies.
 
-- (*arXiv'25*) **CLARITY: Medical World Model for Guiding Treatment Decisions by Modeling Context-Aware Disease Trajectories in Latent Space**
-  [[📝 Paper](https://arxiv.org/abs/2512.08029)]
-  **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Counterfactual + Plan` · `Assets: Paper only`
-  > **Why it qualifies:** Rolls latent disease states forward under alternative treatments to support clinical decisions.
-
 - (*arXiv'25*) **VCWorld: A Biological World Model for Virtual Cell Simulation**
   [[📝 Paper](https://arxiv.org/abs/2512.00306)]
   **Metadata:** `State: Cell` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
@@ -911,6 +935,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Computational Biology and Cellular Dynamics
 
+- (*Nature'26*) **An Operational Perturbation Proteomics-Based Virtual Cell Model**
+  [[📝 Paper](https://doi.org/10.1038/s41586-026-11001-9)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42717098/)] [[💻 Code](https://github.com/guomics-lab/PTV-1)]
+
 - (*bioRxiv'26*) **OPTIMIS: Optimizing Personalized Therapies through Integrated Multiscale Intelligent Simulation**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.03.24.713941v1)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41929084/)] [[💻 Code](https://github.com/wujah/OPTIMIS)]
 
@@ -954,6 +981,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.03.26.645554v1)]
 
 ### Longitudinal EHR and Clinical Trajectories
+
+- (*Front Med'26*) **Beyond Static Risk Scores: Dynamic World Models Simulating Patient-Specific Trajectories to Inform Preoperative Risk Mitigation Strategies**
+  [[📝 Paper](https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2026.1913206/full)] [[💻 Code](https://github.com/ustive/Beyond-Static-Risk-Scores-Dynamic-World-Models)]
 
 - (*medRxiv'26*) **The Coupled Stochastic Dynamical System: A Generative Model for Simulating and Forecasting Youth Mental Health Trajectories**
   [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.07.26.26358943v1)]
@@ -1022,6 +1052,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
 
 ### Treatment Planning and Clinical Decision Support
+
+- (*Front Med'26*) **Beyond Static Risk Scores: Dynamic World Models Simulating Patient-Specific Trajectories to Inform Preoperative Risk Mitigation Strategies**
+  [[📝 Paper](https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2026.1913206/full)] [[💻 Code](https://github.com/ustive/Beyond-Static-Risk-Scores-Dynamic-World-Models)]
+
+- (*ECCV'26*) **CLARITY: Medical World Model for Guiding Treatment Decisions by Modeling Context-Aware Disease Trajectories in Latent Space**
+  [[📝 Paper](https://arxiv.org/abs/2512.08029)] [[💻 Code](https://github.com/DingTianxingjian/CLARITY)] [[🌐 Project](https://dingtianxingjian.github.io/clarity-project-page/)]
 
 - (*Life AI'26*) **Diffusion-Pref: Diffusion World Model Guided Zero-Shot Preference Learning for Safe Glucose Control in Type 1 Diabetes**
   [[📝 Paper](https://www.sciltp.com/journals/lifeai/articles/2604003779)] [[💻 Code](https://github.com/aussie-bzhang/Diffusion-Pref)]
@@ -1163,9 +1199,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*arXiv'26*) **Brain-WM: Brain Glioblastoma World Model**
   [[📝 Paper](https://arxiv.org/abs/2603.07562)] [[💻 Code](https://github.com/thibault-wch/Brain-GBM-world-model)]
-
-- (*arXiv'25*) **CLARITY: Medical World Model for Guiding Treatment Decisions by Modeling Context-Aware Disease Trajectories in Latent Space**
-  [[📝 Paper](https://arxiv.org/abs/2512.08029)]
 
 - (*bioRxiv'25*) **Virtual Clinical Trials of BMP4 Differentiation Therapy: Digital Twins to Aid Successful Glioblastoma Trial Design**
   [[📝 Paper](https://doi.org/10.1101/2024.08.22.609156)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41279885/)] [[💻 Code](https://github.com/Harbour-N/Virtual-Clinical-Trials-of-BMP4-Differentiation-Therapy)]
