@@ -53,6 +53,12 @@ The [2026-09-08 search update and recheck](docs/search-update-2026-09-08.md) rec
 
 The [2026-09-20 search update](docs/search-update-2026-09-20.md) adds two learned medical/biomedical dynamics models, separates two new reviews from the core catalog, and records methods-level decisions on recent near-scope candidates.
 
+The [2026-09-26 search update](docs/search-update-2026-09-26.md) adds four evaluated dynamics papers, including one extension of an already listed radiotherapy method, and records recent boundary decisions.
+
+The [2026-09-27 search update](docs/search-update-2026-09-27.md) backfills three evaluated cellular dynamics models and records the current search coverage and held candidates.
+
+The [2026-10-05 search update](docs/search-update-2026-10-05.md) adds four recently released dynamics papers and one surgical-model backfill, with methods-level scope decisions and capability limits.
+
 <details>
 <summary><strong>Audited boundary cases not counted as world-model papers</strong></summary>
 
@@ -200,6 +206,61 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 > Entries are sorted by year in descending order. See [Scope](#-scope) for inclusion criteria.
 
 ### 2026
+
+- (*npj Metab Health Dis'26*) **A Digital Twin for Tracking and Forecasting Glycemia with Septic Patients in ICUs**
+  [[📝 Paper](https://doi.org/10.1038/s44324-026-00132-2)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42823439/)]
+  **Metadata:** `State: Physiology` · `Dynamics: Temporal` · `Capability: Forecast` · `Assets: Paper only`
+  > **Why it qualifies:** A time-series transformer pretrained on one patient's continuous glucose data forecasts the next 15–30 minutes from a 30-minute history; adaptation and rolling forecasts were evaluated retrospectively in ten other septic ICU patients, without insulin-conditioned simulation or treatment planning.
+
+- (*arXiv'26*) **An Uncertainty-Guided Digital Twin Framework for Online Adaptive Proton Therapy in Head and Neck Cancer: A Feasibility Study**
+  [[📝 Paper](https://arxiv.org/abs/2609.39010)]
+  **Metadata:** `State: Anatomy` · `Dynamics: Temporal + Spatial/view` · `Capability: Forecast` · `Assets: Paper only`
+  > **Why it qualifies:** Reuses an already listed longitudinal deformation-transfer model to forecast treatment-day CT/contour ensembles and derive patient-specific margins; ten retrospective cases tested downstream proton-plan adaptation, which required treatment-day CT reoptimization.
+
+- (*arXiv'26*) **Graph World Models for Constrained Epidemic Policy Planning**
+  [[📝 Paper](https://arxiv.org/abs/2609.35545)] [[💻 Code](https://anonymous.4open.science/r/epimind-9706/README.md)]
+  **Metadata:** `State: Population` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate + Plan` · `Assets: Code`
+  > **Why it qualifies:** EpiMind recursively advances graph-coupled regional epidemic states under joint intervention sequences and plans resource-feasible allocations; evaluation combines simulated counterfactuals with retrospective U.S. surveillance forecasts, where unexecuted policy effects remain model-relative.
+
+- (*arXiv'26*) **SurgGMF: Fully Causal Gaussian Motion Forecasting for Anticipatory Surgical Scene Rendering**
+  [[📝 Paper](https://arxiv.org/abs/2609.34733)]
+  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal` · `Capability: Forecast` · `Assets: Paper only`
+  > **Why it qualifies:** Predicts five future teacher-derived Gaussian geometry states from past surgical-scene motion and renders them without target-frame Gaussian attributes; evaluation spans 12 EndoNeRF/StereoMIS slices, with no action conditioning or end-to-end prospective deployment test.
+
+- (*arXiv'26*) **Towards Surgical World-Action Modeling: A Preliminary Joint Visual-Trajectory Forecasting for Surgical Motion Planning**
+  [[📝 Paper](https://arxiv.org/abs/2608.20284)]
+  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal` · `Capability: Forecast` · `Assets: Paper only`
+  > **Why it qualifies:** Recursively predicts 15 future surgical visual states and instrument positions in three-step chunks on SurgWMBench; evaluated forecasts degrade with horizon, and the paper does not implement action-conditioned control.
+
+- (*bioRxiv'26*) **AnnFlux: Object-Conditioned Neural Stochastic Differential Equations for Single-Cell Perturbation Dynamics**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.09.01.748703v1)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  > **Why it qualifies:** Integrates an object-conditioned latent stochastic drift from control-cell states to later perturbed populations, recovering a held-out one-day EMT time point and testing unseen perturbation combinations; it does not evaluate sequential drug treatment.
+
+- (*bioRxiv'26*) **MEGA-ODE: Learning Biologically Structured and Navigable Continuous Perturbation Dynamics from Sparse Omics**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.08.05.742921v1)] [[💻 Code](https://github.com/Candlelight-XYJ/MEGA-ODE)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Code`
+  > **Why it qualifies:** Evolves transcriptomic and proteomic states through graph-constrained neural-ODE experts and evaluates held-out future-time profiles; virtual transcription-factor screens are in silico hypotheses rather than validated treatment effects.
+
+- (*Cell'26*) **RegVelo: Gene-Regulatory-Informed Dynamics of Single Cells**
+  [[📝 Paper](https://doi.org/10.1016/j.cell.2026.04.022)] [[💻 Code](https://github.com/theislab/regvelo)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Code`
+  > **Why it qualifies:** Learns gene-regulatory splicing dynamics and propagates CellRank transitions to terminal cell-fate probabilities after simulated transcription-factor knockouts; selected predictions were tested with CRISPR and Perturb-seq in developmental biology, without a disease or treatment endpoint.
+
+- (*medRxiv'26*) **A World Model Simulates the Latent Dynamics of Human Health**
+  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.09.19.26363460v1)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  > **Why it qualifies:** HealthFlux evolves a patient-health latent state by neural ODE between observations and revises it when measurements arrive; event-free state simulations forecast disease and mortality after one-to-five-year observation blackouts, without evaluating treatment counterfactuals.
+
+- (*bioRxiv'26*) **PHAROS: Turning Single-Cell Perturbation Models into Target-Directed Drug-Combination Screens**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.09.08.749477v1)] [[💻 Code](https://github.com/jbezney61/PHAROS)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Plan` · `Assets: Code`
+  > **Why it qualifies:** PHAROS chains a pretrained drug-conditioned cell-state transition model across ordered two-drug paths and searches for paths approaching a target state; combination responses are evaluated in cell-line datasets, while patient-tumor rankings remain exploratory.
+
+- (*bioRxiv'26*) **Forecasting Cell State Futures from Static Snapshots**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.02.08.704720v2)] [[💻 Code](https://github.com/EperLuo/CellTempo)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Code`
+  > **Why it qualifies:** CellTempo autoregressively generates multi-step transcriptomic cell states from an initial snapshot and evaluates lineage and perturbation-initiated fate trajectories; training trajectories are inferred from snapshot data, and drug effects are hypotheses rather than validated therapies.
 
 - (*Front Med'26*) **Beyond Static Risk Scores: Dynamic World Models Simulating Patient-Specific Trajectories to Inform Preoperative Risk Mitigation Strategies**
   [[📝 Paper](https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2026.1913206/full)] [[💻 Code](https://github.com/ustive/Beyond-Static-Risk-Scores-Dynamic-World-Models)]
@@ -425,6 +486,11 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2608.00831)]
   **Metadata:** `State: Anatomy` · `Dynamics: Temporal + Spatial/view` · `Capability: Forecast` · `Assets: Paper only`
   > **Why it qualifies:** Transfers longitudinal anatomical change through a learned registration model to forecast patient-specific treatment-day CT states and contours before image acquisition.
+
+- (*arXiv'26*) **A Digital-Twin Framework for Forecasting Treatment-Day Imaging with Contour Uncertainty in Adaptive Proton Radiotherapy**
+  [[📝 Paper](https://arxiv.org/abs/2609.24725)]
+  **Metadata:** `State: Anatomy` · `Dynamics: Temporal + Spatial/view` · `Capability: Forecast` · `Assets: Paper only`
+  > **Why it qualifies:** Extends the preceding cross-patient deformation-transfer method to an ensemble of future CT and contour states with directional forecast uncertainty, evaluated against later treatment CTs; its library-only contour center did not improve on the planning contour.
 
 - (*arXiv'26*) **Failure Detection for Surgical Robot Imitation Policies via Flow-Matching World Modeling**
   [[📝 Paper](https://arxiv.org/abs/2607.27511)]
@@ -858,6 +924,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Medical Imaging and Radiology
 
+- (*arXiv'26*) **An Uncertainty-Guided Digital Twin Framework for Online Adaptive Proton Therapy in Head and Neck Cancer: A Feasibility Study**
+  [[📝 Paper](https://arxiv.org/abs/2609.39010)]
+
+- (*arXiv'26*) **A Digital-Twin Framework for Forecasting Treatment-Day Imaging with Contour Uncertainty in Adaptive Proton Radiotherapy**
+  [[📝 Paper](https://arxiv.org/abs/2609.24725)]
+
 - (*npj Syst Biol Appl'26*) **Learning Patient-Specific Spatial Biomarker Dynamics via Operator Learning for Alzheimer's Disease Progression**
   [[📝 Paper](https://doi.org/10.1038/s41540-026-00719-x)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42082519/)]
 
@@ -935,6 +1007,21 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Computational Biology and Cellular Dynamics
 
+- (*bioRxiv'26*) **AnnFlux: Object-Conditioned Neural Stochastic Differential Equations for Single-Cell Perturbation Dynamics**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.09.01.748703v1)]
+
+- (*bioRxiv'26*) **MEGA-ODE: Learning Biologically Structured and Navigable Continuous Perturbation Dynamics from Sparse Omics**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.08.05.742921v1)] [[💻 Code](https://github.com/Candlelight-XYJ/MEGA-ODE)]
+
+- (*Cell'26*) **RegVelo: Gene-Regulatory-Informed Dynamics of Single Cells**
+  [[📝 Paper](https://doi.org/10.1016/j.cell.2026.04.022)] [[💻 Code](https://github.com/theislab/regvelo)]
+
+- (*bioRxiv'26*) **PHAROS: Turning Single-Cell Perturbation Models into Target-Directed Drug-Combination Screens**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.09.08.749477v1)] [[💻 Code](https://github.com/jbezney61/PHAROS)]
+
+- (*bioRxiv'26*) **Forecasting Cell State Futures from Static Snapshots**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.02.08.704720v2)] [[💻 Code](https://github.com/EperLuo/CellTempo)]
+
 - (*Nature'26*) **An Operational Perturbation Proteomics-Based Virtual Cell Model**
   [[📝 Paper](https://doi.org/10.1038/s41586-026-11001-9)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42717098/)] [[💻 Code](https://github.com/guomics-lab/PTV-1)]
 
@@ -981,6 +1068,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://www.biorxiv.org/content/10.1101/2025.03.26.645554v1)]
 
 ### Longitudinal EHR and Clinical Trajectories
+
+- (*npj Metab Health Dis'26*) **A Digital Twin for Tracking and Forecasting Glycemia with Septic Patients in ICUs**
+  [[📝 Paper](https://doi.org/10.1038/s44324-026-00132-2)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42823439/)]
+
+- (*medRxiv'26*) **A World Model Simulates the Latent Dynamics of Human Health**
+  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.09.19.26363460v1)]
 
 - (*Front Med'26*) **Beyond Static Risk Scores: Dynamic World Models Simulating Patient-Specific Trajectories to Inform Preoperative Risk Mitigation Strategies**
   [[📝 Paper](https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2026.1913206/full)] [[💻 Code](https://github.com/ustive/Beyond-Static-Risk-Scores-Dynamic-World-Models)]
@@ -1052,6 +1145,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
 
 ### Treatment Planning and Clinical Decision Support
+
+- (*arXiv'26*) **Graph World Models for Constrained Epidemic Policy Planning**
+  [[📝 Paper](https://arxiv.org/abs/2609.35545)] [[💻 Code](https://anonymous.4open.science/r/epimind-9706/README.md)]
+
+- (*arXiv'26*) **An Uncertainty-Guided Digital Twin Framework for Online Adaptive Proton Therapy in Head and Neck Cancer: A Feasibility Study**
+  [[📝 Paper](https://arxiv.org/abs/2609.39010)]
 
 - (*Front Med'26*) **Beyond Static Risk Scores: Dynamic World Models Simulating Patient-Specific Trajectories to Inform Preoperative Risk Mitigation Strategies**
   [[📝 Paper](https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2026.1913206/full)] [[💻 Code](https://github.com/ustive/Beyond-Static-Risk-Scores-Dynamic-World-Models)]
@@ -1143,6 +1242,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*MICCAI'26 Workshop*) **Anticipatory Digital Twins for Online Head-and-Neck Adaptive Proton Therapy via Foundation-Model Registration**
   [[📝 Paper](https://arxiv.org/abs/2608.00831)]
 
+- (*arXiv'26*) **A Digital-Twin Framework for Forecasting Treatment-Day Imaging with Contour Uncertainty in Adaptive Proton Radiotherapy**
+  [[📝 Paper](https://arxiv.org/abs/2609.24725)]
+
 - (*arXiv'26*) **A Diffusion-Model Subpopulation Digital Twin for Mobile Health Deployment: A Case Study on the HeartSteps Intervention**
   [[📝 Paper](https://arxiv.org/abs/2607.21403)]
 
@@ -1219,6 +1321,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2510.24654)]
 
 ### Surgical Simulation and Embodied Healthcare
+
+- (*arXiv'26*) **SurgGMF: Fully Causal Gaussian Motion Forecasting for Anticipatory Surgical Scene Rendering**
+  [[📝 Paper](https://arxiv.org/abs/2609.34733)]
+
+- (*arXiv'26*) **Towards Surgical World-Action Modeling: A Preliminary Joint Visual-Trajectory Forecasting for Surgical Motion Planning**
+  [[📝 Paper](https://arxiv.org/abs/2608.20284)]
 
 - (*arXiv'26*) **NVIDIA Cosmos-H-Dreams: Real-Time Generative Physics Simulation for Surgical Robotics**
   [[📝 Paper](https://arxiv.org/abs/2608.24199)] [[💻 Code](https://github.com/isaac-for-healthcare/Cosmos-H-Dreams)] [[🌐 Weights](https://huggingface.co/nvidia/Cosmos-H-Dreams)]
