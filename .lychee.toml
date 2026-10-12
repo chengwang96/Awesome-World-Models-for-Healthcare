@@ -12,7 +12,7 @@ host_request_interval = "250ms"
 user_agent = "Mozilla/5.0 (compatible; Awesome-World-Models-for-Healthcare link checker; +https://github.com/chengwang96/Awesome-World-Models-for-Healthcare)"
 method = "get"
 accept = ["200..=299", "429"]
-scheme = ["https"]
+scheme = ["https", "file"]
 require_https = true
 
 # These canonical pages are live, but their publishers reject or loop automated
@@ -29,6 +29,10 @@ exclude = [
   '^https://openai\.com/index/introducing-gpt-rosalind/$',
   '^https://openai\.com/solutions/industries/life-sciences/$',
   '^https://openai\.com/form/life-sciences-access/$',
+  # Preprints.org currently returns 403 to automated checks; these exact
+  # primary-source URLs remain in the scope-audit notes for human readers.
+  '^https://www\.preprints\.org/manuscript/202605\.0736$',
+  '^https://www\.preprints\.org/manuscript/202605\.1578$',
 ]
 
 exclude_all_private = true

@@ -825,7 +825,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   > **Why it qualifies:** Simulates action-conditioned surgical robot trajectories for online policy evaluation.
 
 - (*bioRxiv'25*) **Virtual Clinical Trials of BMP4 Differentiation Therapy: Digital Twins to Aid Successful Glioblastoma Trial Design**
-  [[📝 Paper](https://doi.org/10.1101/2024.08.22.609156)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41279885/)] [[💻 Code](https://github.com/Harbour-N/Virtual-Clinical-Trials-of-BMP4-Differentiation-Therapy)]
+  [[📝 Paper](https://www.biorxiv.org/content/10.1101/2024.08.22.609156v2)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41279885/)] [[💻 Code](https://github.com/Harbour-N/Virtual-Clinical-Trials-of-BMP4-Differentiation-Therapy)]
   **Metadata:** `State: Cell` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Code`
   > **Why it qualifies:** Uses mechanistic tumor-growth twins to run treatment-schedule trials over evolving glioblastoma states.
 
@@ -1472,7 +1472,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 ## 🏭 Industry Models / Platforms
 
 - (*NVIDIA'25*) **Cosmos World Foundation Model**
-  [[🌐 Platform](https://developer.nvidia.com/cosmos)] [[📝 Research](https://research.nvidia.com/labs/dir/cosmos1/)]
+  [[🌐 Platform](https://docs.nvidia.com/cosmos/index.html)] [[📝 Research](https://research.nvidia.com/labs/dir/cosmos1/)]
   > General-purpose world foundation model platform; extended to surgical simulation via **Cosmos-H-Surgical** and **Cosmos-H-Surgical-Simulator** (see [papers above](#surgical-simulation-and-embodied-healthcare)).
 
 - (*NVIDIA'25*) **Holoscan AI Platform**
