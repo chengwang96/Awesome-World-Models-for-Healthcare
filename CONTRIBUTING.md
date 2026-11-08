@@ -44,10 +44,13 @@ Add a full entry to the appropriate year under **World Model Papers**:
 - (*Venue'YY*) **Paper Title**
   [[📝 Paper](https://example.org/paper)] [[💻 Code](https://github.com/org/repo)]
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Plan` · `Assets: Code`
-  > **Why it qualifies:** Learns intervention-conditioned patient-state transitions and uses rollouts to compare treatment plans.
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>Learns intervention-conditioned patient-state transitions and uses rollouts to compare treatment plans.</p>
+  </details>
 ```
 
-Add the same title and links, without metadata or the qualification note, to every applicable subsection under **By Topic**.
+Keep the qualification note in the default-collapsed details block shown above. Add the same title and links, without metadata or the qualification note, to every applicable subsection under **By Topic**.
 
 ## Controlled Metadata
 

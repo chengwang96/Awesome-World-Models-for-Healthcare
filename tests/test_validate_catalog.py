@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import unittest
 from pathlib import Path
 
@@ -19,6 +20,30 @@ class CatalogValidatorTests(unittest.TestCase):
 
     def test_current_catalog_is_valid(self) -> None:
         self.assertEqual(self.validate(README_TEXT), [])
+
+    def test_missing_qualification_is_reported(self) -> None:
+        mutated = README_TEXT.replace(
+            "<summary>Why it qualifies</summary>", "<summary>Notes</summary>", 1
+        )
+        errors = self.validate(mutated)
+        self.assertTrue(any("expected one Why it qualifies note" in error for error in errors))
+
+    def test_empty_qualification_is_reported(self) -> None:
+        mutated = re.sub(r"<p>[^<]+</p>", "<p></p>", README_TEXT, count=1)
+        errors = self.validate(mutated)
+        self.assertTrue(any("expected one Why it qualifies note" in error for error in errors))
+
+    def test_unclosed_qualification_is_reported(self) -> None:
+        mutated = README_TEXT.replace("  </details>", "", 1)
+        errors = self.validate(mutated)
+        self.assertTrue(any("expected one Why it qualifies note" in error for error in errors))
+
+    def test_legacy_qualification_is_valid(self) -> None:
+        prefix, note = README_TEXT.split("  <details>\n", 1)
+        block, suffix = note.split("  </details>", 1)
+        explanation = block.split("<p>", 1)[1].split("</p>", 1)[0]
+        mutated = prefix + "  > **Why it qualifies:** " + explanation + suffix
+        self.assertEqual(self.validate(mutated), [])
 
     def test_missing_metadata_is_reported(self) -> None:
         mutated = README_TEXT.replace("  **Metadata:**", "  **Removed metadata:**", 1)

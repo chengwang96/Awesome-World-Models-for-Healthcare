@@ -47,9 +47,17 @@ METADATA_RE = re.compile(
     r"`Assets: ([^`]+)`$",
     re.MULTILINE,
 )
+QUALIFICATION_RE = re.compile(
+    r"^  > \*\*Why it qualifies:\*\* \S[^\n]*$"
+    r"|^  <details>\n"
+    r"  <summary>Why it qualifies</summary>\n"
+    r"  <p>\S[^\n]*</p>\n"
+    r"  </details>$",
+    re.MULTILINE,
+)
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
-RESOURCES_HEADING = "## 🧰 Datasets, Benchmarks and Simulators"
-RELATED_REPOSITORIES_HEADING = "## 🔗 Related Repositories"
+RESOURCES_HEADING = "## 🧰 Resources"
+RELATED_REPOSITORIES_HEADING = "### 🔗 Related Repositories"
 RESOURCE_CATEGORIES = ("Datasets", "Benchmarks", "Simulators")
 
 
@@ -96,7 +104,7 @@ class CatalogValidator:
         main = self.section_between("## 📝 World Model Papers", "## 🧭 By Topic")
         topics = self.section_between("## 🧭 By Topic", RESOURCES_HEADING)
         resources = self.section_between(RESOURCES_HEADING, RELATED_REPOSITORIES_HEADING)
-        taxonomy = self.section_between("## 🧬 Taxonomy", "## 📚 Survey Papers")
+        taxonomy = self.section_between("### 🧬 Taxonomy", "## 📌 Contents")
 
         main_entries = self.entries(main)
         topic_entries = self.entries(topics)
@@ -151,7 +159,7 @@ class CatalogValidator:
         for entry in entries:
             self.validate_entry_year(entry)
             self.validate_metadata(entry)
-            qualification_count = entry.block.count("> **Why it qualifies:**")
+            qualification_count = len(QUALIFICATION_RE.findall(entry.block))
             if qualification_count != 1:
                 self.error(
                     f"{entry.title}: expected one Why it qualifies note, found {qualification_count}"
