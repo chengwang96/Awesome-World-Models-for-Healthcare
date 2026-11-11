@@ -29,8 +29,8 @@ exclude = [
   '^https://openai\.com/index/introducing-gpt-rosalind/$',
   '^https://openai\.com/solutions/industries/life-sciences/$',
   '^https://openai\.com/form/life-sciences-access/$',
-  # Preprints.org currently returns 403 to automated checks; these exact
-  # primary-source URLs remain in the scope-audit notes for human readers.
+  # Preprints.org returns 403 to automated checks; keep these defensive
+  # exclusions for any future primary-source links.
   '^https://www\.preprints\.org/manuscript/202605\.0736$',
   '^https://www\.preprints\.org/manuscript/202605\.1578$',
 ]

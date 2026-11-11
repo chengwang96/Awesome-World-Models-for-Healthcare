@@ -25,7 +25,7 @@ The following do not belong in the main list by themselves:
 - benchmark-only or dataset-only contributions without an implemented simulator
 - surveys, perspectives, and conceptual frameworks
 
-Surveys and position papers may be proposed for **Survey Papers**. Useful near-scope work may be documented as a boundary case instead of being counted as a world-model paper.
+Surveys and position papers may be proposed for **Survey Papers**. Near-scope work that does not satisfy all five criteria is not added to the main list.
 
 ## Before Opening a Pull Request
 
@@ -82,7 +82,7 @@ Avoid circular explanations such as "it qualifies because it is a medical world 
 
 ## Pull Request Review
 
-The pull request template asks for source-grounded scope evidence. Maintainers may request clarification, revise metadata, move a conceptual paper to Survey Papers, or record a rejected submission as a boundary case. These decisions keep the list useful and do not assess the general quality of the paper.
+The pull request template asks for source-grounded scope evidence. Maintainers may request clarification, revise metadata, move a conceptual paper to Survey Papers, or decline submissions that do not meet the inclusion criteria. These decisions keep the list useful and do not assess the general quality of the paper.
 
 Before opening a pull request, run the same catalog check used by CI:
 

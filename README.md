@@ -76,6 +76,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ## 📚 Survey Papers
 
+- (*arXiv'26 Perspective*) **Digital Twins for Clinical Development: A Five-Level Framework from Prognostic Adjustment to In-Silico Trials**
+  [[📝 Paper](https://arxiv.org/abs/2611.10888)]
+
+- (*Ann Biomed Eng'26 Perspective*) **World Foundation Models and Agentic AI in Medicine: Physiological Simulation, Digital Twins, and Clinical Decision-Making**
+  [[📝 Paper](https://doi.org/10.1007/s10439-026-04445-7)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42993397/)]
+
 - (*J Imaging Inform Med'26 Perspective*) **Toward Verifiable Medical Imaging World Models: An Engineering Framework for Evaluating Simulation Fidelity, Roll-Out Stability, and Clinical Plausibility**
   [[📝 Paper](https://doi.org/10.1007/s10278-026-02413-0)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42907729/)]
 
@@ -144,6 +150,54 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
+- (*J Sleep Res'26*) **Development of a Digital Twin to Analyse Waiting Lists in a Sleep-Disordered Breathing Unit**
+  [[📝 Paper](https://doi.org/10.1111/jsr.70489)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/43000229/)]
+  **Metadata:** `State: Clinical workflow` · `Dynamics: Temporal + Event sequence` · `Capability: Simulate` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A stochastic discrete-event model advances patients through six sleep-medicine care stages with service times and priority rules, calibrated on 2024 operational data and checked against 2025 waiting-time and queue-length records; capacity what-ifs are simulated, but prospective deployment and clinical outcomes are not evaluated.</p>
+  </details>
+
+- (*arXiv'26*) **ICare-DT: a digital twin for continuous forecasting of intensive care patients**
+  [[📝 Paper](https://arxiv.org/abs/2611.09712)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal` · `Capability: Forecast` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A Transformer keeps a 64-dimensional latent patient state, re-reads each new ICU hour without retraining, and issues 1–48 h competing-risk forecasts for vital-sign threshold crossings, discharge, or death; eICU-CRD evaluation includes a registered MIMIC-IV transfer read, while treatment-response prediction remains a semi-synthetic benchmark and no tested action-conditioned policy is claimed.</p>
+  </details>
+
+- (*bioRxiv'26*) **Virtual dynamics of spatiotemporal single-cell interactions**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.11.04.764438v1)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal` · `Capability: Simulate` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>An unbalanced mean-field Schrödinger bridge learns continuous cell-state, position, and population-size trajectories from sparse spatial transcriptomic snapshots, with ligand–receptor interaction and growth terms; five datasets test unmeasured-stage generation and in silico perturbation responses. The perturbations are hypothesis-generating, not experimentally validated interventions.</p>
+  </details>
+
+- (*arXiv'26*) **Learning a patient world model for health system simulation in intensive care**
+  [[📝 Paper](https://arxiv.org/abs/2611.08392)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Event sequence` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A frozen autoregressive model advances sparse ICU state–event histories to simulator-requested times, generating admission demand, organ-support events, and discharge proposals inside a discrete-event ICU; 14-day virtual cohorts reproduce occupancy and policy responses on MIMIC-IV, but service capacities and times are calibrated assumptions and policy effects remain observational.</p>
+  </details>
+
+- (*arXiv'26*) **Personalized health coaching via coachable health age and counterfactual wearable trajectories**
+  [[📝 Paper](https://arxiv.org/abs/2611.08568)]
+  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate + Counterfactual + Plan` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A latent second-order transition operator conditioned on steps, sleep, and exercise rolls weekly wearable physiology forward for 12 weeks, and alternative action sequences feed a constrained coaching planner; 2.2 million person-weeks support pretraining and expert review supports plan quality, but alternative trajectories are model projections, not identified behavioral effects.</p>
+  </details>
+
+- (*medRxiv'26*) **Risk-benefit assessment of oral anticoagulation in atrial fibrillation using virtual clinical trials**
+  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.11.04.26367324v1)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned + Mechanistic` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A lifetime state-transition model moves virtual atrial-fibrillation populations through stroke, major bleeding, and death under screening-triggered, continuous, or pill-in-pocket anticoagulation, reproducing event rates across scenarios; strategy comparisons are model-based projections assembled from multiple clinical sources, not a randomized trial.</p>
+  </details>
+
 - (*arXiv'26*) **SurgTransfer: Multi-Step Latent Action Modeling for Action Transfer in Surgical World Model**
   [[📝 Paper](https://arxiv.org/abs/2611.05443)] [[💻 Code](https://github.com/bhattarailab/Surgical-Vision-World-Model)]
   **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate` · `Assets: Code`
@@ -182,6 +236,14 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <details>
   <summary>Why it qualifies</summary>
   <p>Couples regional blood flow to time-evolving tracer transport with a learned closure, evaluating masked temporal blocks and patient-held-out dynamics alongside stroke lesion maps; refitting on remaining frames is not a prospective clinical forecast or validated reperfusion-treatment simulation.</p>
+  </details>
+
+- (*arXiv'26*) **Forecasting Patient Trajectories from the Electronic Health Records with Action-Conditioned World Models**
+  [[📝 Paper](https://arxiv.org/abs/2610.23862)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A state-dependent linearization propagates latent patient-state increments under recorded ICU actions, supports free-running multi-step rollouts decoded to vital signs and laboratory values, and responds to perturbed action sequences; MIMIC-IV forecasting and downstream risk tests are observational, so action sensitivity is not a causal treatment effect.</p>
   </details>
 
 - (*arXiv'26*) **Saga: an in silico ontology for a multimodal patient world model**
@@ -1575,6 +1637,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Computational Biology and Cellular Dynamics
 
+- (*bioRxiv'26*) **Virtual dynamics of spatiotemporal single-cell interactions**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.11.04.764438v1)]
+
 - (*Cell Rep Med'26*) **Tumor digital twins uncover therapeutic strategies in triple-negative breast cancer**
   [[📝 Paper](https://doi.org/10.1016/j.xcrm.2026.103119)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42933397/)] [[💻 Code](https://github.com/jfisher-lab/TNBC_Victori2026)]
 
@@ -1660,6 +1725,15 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2512.00306)]
 
 ### Longitudinal EHR and Clinical Trajectories
+
+- (*arXiv'26*) **ICare-DT: a digital twin for continuous forecasting of intensive care patients**
+  [[📝 Paper](https://arxiv.org/abs/2611.09712)]
+
+- (*arXiv'26*) **Learning a patient world model for health system simulation in intensive care**
+  [[📝 Paper](https://arxiv.org/abs/2611.08392)]
+
+- (*arXiv'26*) **Forecasting Patient Trajectories from the Electronic Health Records with Action-Conditioned World Models**
+  [[📝 Paper](https://arxiv.org/abs/2610.23862)]
 
 - (*arXiv'26*) **PulmoWorld: An Asynchronous Multimodal Medical World Model for Longitudinal Pneumonia Dynamics**
   [[📝 Paper](https://arxiv.org/abs/2610.38289)]
@@ -1761,6 +1835,15 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
 
 ### Treatment Planning and Clinical Decision Support
+
+- (*arXiv'26*) **Personalized health coaching via coachable health age and counterfactual wearable trajectories**
+  [[📝 Paper](https://arxiv.org/abs/2611.08568)]
+
+- (*medRxiv'26*) **Risk-benefit assessment of oral anticoagulation in atrial fibrillation using virtual clinical trials**
+  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.11.04.26367324v1)]
+
+- (*J Sleep Res'26*) **Development of a Digital Twin to Analyse Waiting Lists in a Sleep-Disordered Breathing Unit**
+  [[📝 Paper](https://doi.org/10.1111/jsr.70489)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/43000229/)]
 
 - (*arXiv'26*) **PulmoWorld: An Asynchronous Multimodal Medical World Model for Longitudinal Pneumonia Dynamics**
   [[📝 Paper](https://arxiv.org/abs/2610.38289)]
@@ -2054,6 +2137,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 | Benchmark | Domain | What it evaluates | Availability |
 |---|---|---|---|
+| **ivbench** | Clinical trial simulation | Scores patient world models on 9,996 audited within-trial contrasts from 7,207 registered trials using an intervention-blind reference, measuring how much accuracy depends on knowing the tested intervention. | [[📝 Paper](https://arxiv.org/abs/2611.05907)] [[💻 Code and data](https://github.com/alicemkyn/ivbench)] |
 | **T1D Digital Twin Decision-Quality Benchmark** | Glucose-insulin dynamics | Fits each twin under one basal-bolus regimen and evaluates glucose-trajectory fidelity, treatment-ranking correlation and decision regret under 20 alternative regimens in 30 UVA/Padova virtual patients; entirely in silico. | [[📝 Paper](https://arxiv.org/abs/2610.30577)] [[💻 Code and protocol](https://github.com/Veeeeeee7/T1D-Digital-Twin-Benchmark)] |
 | **SurgWMBench** | Surgical instrument motion | Short-horizon trajectory prediction, recursive rollout stability, and perturbation robustness on SAR-RARP50 suturing clips; distinguishes image-conditioned from fully predictive rollout settings. | [[📝 Paper specification](https://arxiv.org/abs/2608.08070)] `Paper only` |
 | **Open-H Multi-Embodiment Surgical Benchmark** | Surgical robotics | Action-conditioned future-video fidelity across nine robot embodiments using frame decay, tool consistency, and tool displacement metrics. | [[📦 Data](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-Open-H-Embodiment)] [[💻 Evaluation](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator)] |
@@ -2149,7 +2233,7 @@ Entry format:
   </details>
 ```
 
-The pull request template includes the required scope evidence and review checklist. Conceptual work belongs under Survey Papers; static representation learning, ordinary conditional generation, benchmark-only work, and other audited boundary cases are not counted in the main list.
+The pull request template includes the required scope evidence and review checklist. Conceptual work belongs under Survey Papers; static representation learning, ordinary conditional generation, benchmark-only work, and other work that does not meet the inclusion criteria are not counted in the main list.
 
 ### ✉️ Contact Us
 
