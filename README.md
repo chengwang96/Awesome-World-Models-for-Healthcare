@@ -150,6 +150,38 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
+- (*medRxiv'26*) **An agent-based model of Epstein-Barr virus transmission and vaccination**
+  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.11.10.26367734v1)]
+  **Metadata:** `State: Population` · `Dynamics: Temporal + Action-conditioned + Mechanistic` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A 10,000-agent age-structured model advances EBV infection and infectious-mononucleosis states under vaccination scenarios, calibrated to U.S. seroprevalence and used to project 100-year vaccine profiles; the scenario comparisons are model projections, and no public code or prospective validation is reported.</p>
+  </details>
+
+- (*medRxiv'26*) **Prediction of Subsolid Pulmonary Nodule Evolution from Baseline CT Using Temporal Imaging Models**
+  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.08.12.26360292v2)]
+  **Metadata:** `State: Medical image` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>An interval-aware model predicts future subsolid-nodule growth and a temporally conditioned generative model synthesizes future lesion morphology from baseline CT, evaluated on 24,946 longitudinal scan pairings from 426 patients; the study is retrospective and single-center, and no treatment action is modeled.</p>
+  </details>
+
+- (*arXiv'26*) **ProTEUS: A mutation-resolved world model for closed-loop protein evolution**
+  [[📝 Paper](https://arxiv.org/abs/2611.13348)] [[💻 Code](https://github.com/yikunpku/ProTEUS)]
+  **Metadata:** `State: Molecule` · `Dynamics: Event sequence + Action-conditioned` · `Capability: Forecast + Plan` · `Assets: Code`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>Represents protein variants as latent states and mutations as actions, predicts activity across higher-order variants, and uses the model in five-round active-learning simulations and two closed-loop wet-lab engineering campaigns; the transition is mutation-induced variant state, not a physical folding trajectory.</p>
+  </details>
+
+- (*arXiv'26*) **stMIND: Learning multiscale interaction dynamics from spatial-temporal transcriptomics**
+  [[📝 Paper](https://arxiv.org/abs/2611.12228)] [[💻 Code](https://github.com/LongquanLi135/stMIND)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Code`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>An interacting neural SDE infers coupled expression, spatial-migration, and proliferation dynamics from unmatched spatial transcriptomic snapshots, and evaluates held-out forecasts in axolotl regeneration and zebrafish embryogenesis; the model is observational and does not test treatment or perturbation interventions.</p>
+  </details>
+
 - (*J Sleep Res'26*) **Development of a Digital Twin to Analyse Waiting Lists in a Sleep-Disordered Breathing Unit**
   [[📝 Paper](https://doi.org/10.1111/jsr.70489)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/43000229/)]
   **Metadata:** `State: Clinical workflow` · `Dynamics: Temporal + Event sequence` · `Capability: Simulate` · `Assets: Paper only`
@@ -1530,6 +1562,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Medical Imaging and Radiology
 
+- (*medRxiv'26*) **Prediction of Subsolid Pulmonary Nodule Evolution from Baseline CT Using Temporal Imaging Models**
+  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.08.12.26360292v2)]
+
 - (*arXiv'26*) **DuoPIC: Uncertainty-Aware Voxel-Level Digital Twins of Cerebral Perfusion with Transport PDEs in Acute Stroke**
   [[📝 Paper](https://arxiv.org/abs/2610.33071)] [[💻 Code](https://github.com/detinatran/duopic)]
 
@@ -1636,6 +1671,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2406.13165)]
 
 ### Computational Biology and Cellular Dynamics
+
+- (*arXiv'26*) **ProTEUS: A mutation-resolved world model for closed-loop protein evolution**
+  [[📝 Paper](https://arxiv.org/abs/2611.13348)] [[💻 Code](https://github.com/yikunpku/ProTEUS)]
+
+- (*arXiv'26*) **stMIND: Learning multiscale interaction dynamics from spatial-temporal transcriptomics**
+  [[📝 Paper](https://arxiv.org/abs/2611.12228)] [[💻 Code](https://github.com/LongquanLi135/stMIND)]
 
 - (*bioRxiv'26*) **Virtual dynamics of spatiotemporal single-cell interactions**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.11.04.764438v1)]
@@ -1835,6 +1876,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
 
 ### Treatment Planning and Clinical Decision Support
+
+- (*medRxiv'26*) **An agent-based model of Epstein-Barr virus transmission and vaccination**
+  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.11.10.26367734v1)]
 
 - (*arXiv'26*) **Personalized health coaching via coachable health age and counterfactual wearable trajectories**
   [[📝 Paper](https://arxiv.org/abs/2611.08568)]
