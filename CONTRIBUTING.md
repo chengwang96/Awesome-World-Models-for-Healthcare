@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for helping improve Awesome World Models for Healthcare. This list is intentionally strict: relevance to healthcare and use of the phrase "world model" are necessary context, but neither is sufficient for inclusion in the main paper list.
+Thank you for helping improve Awesome World Models for Healthcare. This list is intentionally strict: medical or biomedical grounding is required but is not sufficient for inclusion in the main paper list. Use of the phrase "world model" is neither necessary nor sufficient.
 
 You can contribute with a pull request or use the [structured paper-suggestion form](https://github.com/chengwang96/Awesome-World-Models-for-Healthcare/issues/new?template=01-paper-suggestion.yml) if you prefer not to edit the catalog directly.
 
@@ -10,11 +10,13 @@ A paper must satisfy all five [strict inclusion criteria](README.md#strict-inclu
 
 1. **Medical grounding:** the modeled system and evaluated task are biomedical, clinical, or healthcare-related.
 2. **State:** the method represents a patient, organ, physiological process, medical image, procedure, cell, molecule, or population state.
-3. **Dynamics:** it learns or computes transitions between states across time, space, procedure steps, views, or interventions.
-4. **Operational rollout:** it supports forecasting, simulation, counterfactual intervention, planning, or control.
-5. **Implemented evidence:** the paper implements and evaluates the dynamics or simulator.
+3. **Dynamics:** it learns an executable model of state evolution across time, space, procedure steps, views, or interventions. Learned transitions, data-driven discovery of dynamical structure, and learned surrogate, residual, or closure components can qualify when they generate evolving states or state distributions.
+4. **Operational rollout:** the learned model is used for future-state prediction, simulation, counterfactual intervention, planning, or control, not merely pretraining or static feature extraction.
+5. **Implemented evidence:** the paper implements and evaluates the learned state-evolution model or its operational use. A separate classifier or representation probe alone is insufficient.
 
-Action conditioning is optional for autonomous physiological processes. It is required when a paper claims that the model can evaluate treatments, interventions, or control actions.
+Learning-based surrogates may be trained on mechanistic simulation data. Direct prediction of a future trajectory or post-intervention state is eligible; autoregressive or multi-step rollout is not mandatory. Identify exactly what is learned and how it produces the evaluated state evolution.
+
+Action conditioning is optional for autonomous physiological processes. It is required when a paper claims that the model can evaluate treatments, interventions, or control actions. Distinguish action-conditioned prediction and in-model planning from causally identified treatment effects or clinical benefit.
 
 The following do not belong in the main list by themselves:
 
@@ -22,10 +24,13 @@ The following do not belong in the main list by themselves:
 - ordinary conditional generation without state transitions
 - synthetic-cohort generation without longitudinal dynamics
 - static risk prediction with manually altered covariates
+- fixed mechanistic ODE/PDE, agent-based, or discrete-event simulation with only parameter calibration or state inversion
+- differentiable solvers or neural parameter-inference networks without learned state evolution
+- policy learning, downstream classification, or scalar plan-score optimization around a fixed simulator
 - benchmark-only or dataset-only contributions without an implemented simulator
 - surveys, perspectives, and conceptual frameworks
 
-Surveys and position papers may be proposed for **Survey Papers**. Near-scope work that does not satisfy all five criteria is not added to the main list.
+Surveys and position papers may be proposed for **Survey Papers**. Near-scope work or new submissions with unresolved evidence are not added to the main list. A small set of legacy entries marked **Scope review pending** remains visible during the current audit; these are not precedents for inclusion and are not confirmed to meet the revised criteria.
 
 ## Before Opening a Pull Request
 
@@ -66,7 +71,7 @@ Use only the labels below. Choose the smallest set directly demonstrated by the 
 Metadata definitions:
 
 - **State** is the primary medical or biological state advanced by the model.
-- **Dynamics** describes the implemented transition structure, not the input modality.
+- **Dynamics** describes the implemented transition structure, not the input modality. `Mechanistic` denotes physical or biological structure within a qualifying learned model, including physics-informed surrogates and hybrid dynamics; the label alone does not establish eligibility.
 - **Capability** records what evaluated rollouts accomplish, not suggested future applications.
 - **Assets** must match the public links in the entry.
 
@@ -75,8 +80,8 @@ Metadata definitions:
 The `Why it qualifies` sentence should name three things concretely:
 
 1. the state being modeled
-2. the transition or dynamics mechanism
-3. the rollout capability or downstream use
+2. what state-evolution component is learned or discovered, and how it advances the state
+3. the evaluated prediction, simulation, or operational rollout, with its main evidence limitation
 
 Avoid circular explanations such as "it qualifies because it is a medical world model." Keep the note factual and short enough to verify against the abstract or methods.
 

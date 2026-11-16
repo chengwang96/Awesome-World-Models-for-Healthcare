@@ -41,11 +41,17 @@ Papers in the main list must satisfy **all** of the following criteria. Calling 
 |---|---|
 | **Medical grounding** | The modeled system and evaluated task are directly biomedical, clinical, or healthcare-related. |
 | **State** | The method represents a patient, organ, cell, molecule, procedure, population, or medical environment state. |
-| **Dynamics** | It learns or computes transitions between states across time, space, procedure steps, views, or interventions. |
-| **Operational rollout** | It supports future prediction, multi-step simulation, counterfactual intervention, planning, or control. |
-| **Implemented evidence** | The paper implements and evaluates the dynamics or simulator rather than only proposing a concept or benchmark. |
+| **Dynamics** | It learns an executable model of state evolution across time, space, procedure steps, views, or interventions. This includes learned transitions, data-driven discovery of dynamical structure, and learned surrogate, residual, or closure components that generate evolving states or state distributions. |
+| **Operational rollout** | The learned model is used for future-state prediction, simulation, counterfactual intervention, planning, or control, rather than only as a pretraining objective or a source of static features. |
+| **Implemented evidence** | The paper implements and evaluates the learned state-evolution model or its use in an operational rollout, rather than only proposing a concept or benchmark. |
 
-Action conditioning is not mandatory for autonomous physiological processes such as disease progression or cardiac motion. However, a paper claiming intervention, treatment, or control capability must model how actions change subsequent states.
+Learning-based surrogates trained on mechanistic simulations can qualify. Direct prediction of a future trajectory or post-intervention state can also qualify; autoregressive or multi-step rollout is not mandatory. In either case, evaluation must concern the modeled state evolution or its operational use, not merely a separate classifier or representation probe.
+
+Fixed mechanistic ODE/PDE, agent-based, or discrete-event simulation does not qualify by itself. Parameter calibration, initial-state or hidden-state inversion, differentiable numerical solvers, downstream classification, policy learning, and optimization of a scalar plan score are insufficient unless a learned state-evolution component also meets the criteria above.
+
+Action conditioning is not mandatory for autonomous physiological processes such as disease progression or cardiac motion. However, a paper claiming intervention, treatment, or control capability must model how actions change subsequent states. Action-conditioned predictions and in-model planning do not by themselves establish causal treatment effects or clinical benefit.
+
+**Scope review in progress:** six legacy entries are explicitly marked **Scope review pending** in their qualification notes. They remain visible while the learned-dynamics or evaluation evidence is resolved; their presence is not confirmation that they meet the revised criteria. New submissions with unresolved evidence are not added to the main list.
 
 ### 🧬 Taxonomy
 
@@ -58,7 +64,7 @@ Each main-list paper carries compact, controlled metadata so that methods with c
 | **Capability** | `Forecast`, `Simulate`, `Counterfactual`, `Plan`, `Control` | What the model's rollouts are used to accomplish. |
 | **Assets** | `Code`, `Weights`, `Project`, `Paper only` | Public implementation or project resources linked by the paper entry. |
 
-The labels describe demonstrated method capabilities, not claims inferred from a paper title.
+The labels describe demonstrated method capabilities, not claims inferred from a paper title. `Mechanistic` denotes physical or biological structure within an otherwise qualifying learned model, including physics-informed surrogates and hybrid dynamics; it does not independently establish eligibility.
 
 ---
 
@@ -150,12 +156,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
-- (*medRxiv'26*) **An agent-based model of Epstein-Barr virus transmission and vaccination**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.11.10.26367734v1)]
-  **Metadata:** `State: Population` · `Dynamics: Temporal + Action-conditioned + Mechanistic` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
+- (*arXiv'26*) **Curiosity-0826-4B: Generative Medical Event Sequence Modeling Across Pediatric and Adult Populations**
+  [[📝 Paper](https://arxiv.org/abs/2611.15710)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Event sequence` · `Capability: Forecast + Simulate` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>A 10,000-agent age-structured model advances EBV infection and infectious-mononucleosis states under vaccination scenarios, calibrated to U.S. seroprevalence and used to project 100-year vaccine profiles; the scenario comparisons are model projections, and no public code or prospective validation is reported.</p>
+  <p>An autoregressive medical-event Transformer advances tokenized patient histories through sampled future events and time intervals, evaluating simulation-derived mortality, pediatric disease, laboratory, and encounter predictions; mortality tasks use 20–60 trajectories per patient. Evaluation is retrospective, incomplete rollouts are discarded after retries, no public code or weights are linked, and treatment effects are not causally identified.</p>
   </details>
 
 - (*medRxiv'26*) **Prediction of Subsolid Pulmonary Nodule Evolution from Baseline CT Using Temporal Imaging Models**
@@ -180,14 +186,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <details>
   <summary>Why it qualifies</summary>
   <p>An interacting neural SDE infers coupled expression, spatial-migration, and proliferation dynamics from unmatched spatial transcriptomic snapshots, and evaluates held-out forecasts in axolotl regeneration and zebrafish embryogenesis; the model is observational and does not test treatment or perturbation interventions.</p>
-  </details>
-
-- (*J Sleep Res'26*) **Development of a Digital Twin to Analyse Waiting Lists in a Sleep-Disordered Breathing Unit**
-  [[📝 Paper](https://doi.org/10.1111/jsr.70489)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/43000229/)]
-  **Metadata:** `State: Clinical workflow` · `Dynamics: Temporal + Event sequence` · `Capability: Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>A stochastic discrete-event model advances patients through six sleep-medicine care stages with service times and priority rules, calibrated on 2024 operational data and checked against 2025 waiting-time and queue-length records; capacity what-ifs are simulated, but prospective deployment and clinical outcomes are not evaluated.</p>
   </details>
 
 - (*arXiv'26*) **ICare-DT: a digital twin for continuous forecasting of intensive care patients**
@@ -222,14 +220,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>A latent second-order transition operator conditioned on steps, sleep, and exercise rolls weekly wearable physiology forward for 12 weeks, and alternative action sequences feed a constrained coaching planner; 2.2 million person-weeks support pretraining and expert review supports plan quality, but alternative trajectories are model projections, not identified behavioral effects.</p>
   </details>
 
-- (*medRxiv'26*) **Risk-benefit assessment of oral anticoagulation in atrial fibrillation using virtual clinical trials**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.11.04.26367324v1)]
-  **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned + Mechanistic` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>A lifetime state-transition model moves virtual atrial-fibrillation populations through stroke, major bleeding, and death under screening-triggered, continuous, or pill-in-pocket anticoagulation, reproducing event rates across scenarios; strategy comparisons are model-based projections assembled from multiple clinical sources, not a randomized trial.</p>
-  </details>
-
 - (*arXiv'26*) **SurgTransfer: Multi-Step Latent Action Modeling for Action Transfer in Surgical World Model**
   [[📝 Paper](https://arxiv.org/abs/2611.05443)] [[💻 Code](https://github.com/bhattarailab/Surgical-Vision-World-Model)]
   **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate` · `Assets: Code`
@@ -244,14 +234,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <details>
   <summary>Why it qualifies</summary>
   <p>Propagates and observation-corrects a multimodal patient belief, evaluates four-step clinical and representation forecasts on separately fitted pneumonia cohorts, and selects actions through imagined continuations; planning is tested only in known-mechanism MASS-Syn, not as a validated clinical treatment policy.</p>
-  </details>
-
-- (*Cell Rep Med'26*) **Tumor digital twins uncover therapeutic strategies in triple-negative breast cancer**
-  [[📝 Paper](https://doi.org/10.1016/j.xcrm.2026.103119)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42933397/)] [[💻 Code](https://github.com/jfisher-lab/TNBC_Victori2026)]
-  **Metadata:** `State: Cell` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Plan` · `Assets: Code`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Computes synchronous signaling-network transitions under patient-genomic and drug perturbations, using attractor phenotypes to reproduce treatment responses and screen resensitizing targets; update steps have no calibrated clinical time, and nominated regimens are not prospectively validated.</p>
   </details>
 
 - (*medRxiv'26*) **Digital Twin Workflow for Continuous Glucose Forecasting: Real-Time Data Assimilation Using Reinforcement Learning**
@@ -310,14 +292,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Generates future ultrasound views conditioned on probe motion and tests held-out tracked thyroid-scan rollouts and candidate direction ranking; the action-grounded set is small and no physical robot closed-loop navigation is shown.</p>
   </details>
 
-- (*medRxiv'26*) **Informing risk stratification and vaccine policy via a predictive mathematical model of SARS-COV-2 infection**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.10.12.26365315v1)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast + Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>A within-host ODE advances viral and immune states through infection, with kinetics fitted to a human challenge cohort and an antibody-effect prediction checked against a separate challenge cohort; vaccine-policy scenarios remain model projections.</p>
-  </details>
-
 - (*bioRxiv'26*) **scMTG reconstructs single-cell temporal dynamics with Markov transition generators**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.06.04.730241v2)] [[💻 Code](https://github.com/liuq-lab/scMTG)]
   **Metadata:** `State: Cell` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Code`
@@ -342,20 +316,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Recursively advances latent patient states under recorded clinical actions and evaluates factual multistep forecasts across EHR cohorts; candidate-action ranking uses a narrow retrospective choice set and does not validate counterfactual effects or treatment benefit.</p>
   </details>
 
-- (*bioRxiv'26*) **Mechanistic prediction of fecal microbiota transplant engraftment and Clostridioides difficile colonization resistance with μODE**
-  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.10.09.758137v1)] [[💻 Code](https://github.com/cumbof/muODE)]
-  **Metadata:** `State: Population` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate` · `Assets: Code`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Couples microbial metabolic fluxes to extracellular-metabolite and community-state updates under antibiotics or donor transfer, comparing simulated shifts with longitudinal FMT data; it captures the direction of pathobiont suppression but has composition bias and no clinical efficacy validation.</p>
-  </details>
-
 - (*bioRxiv'26*) **A tissue time machine to forward-predict single-timepoint data applied to tuberculosis granulomas**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.10.09.758083v1)]
   **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast + Simulate` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Matches observed nonhuman-primate granulomas to agent-based infection trajectories and propagates immune and bacterial states toward later outcomes; historical aggregate data support the simulator, but 22/28 is agreement among simulated partners, not accuracy against later observations of the same tissue.</p>
+  <p><strong>Scope review pending:</strong> matches observed granulomas to simulated digital partners and predicts later outcomes. The available abstract does not establish a learned state-evolution component; full methods are needed to distinguish fixed agent-based simulation and state matching from learned dynamics, and to interpret the reported 22/28 outcome result.</p>
   </details>
 
 - (*arXiv'26*) **Finsler Flow Matching: Dynamics-Aware Geodesic Interpolation for Single-Snapshot Trajectory Inference**
@@ -420,14 +386,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <details>
   <summary>Why it qualifies</summary>
   <p>Learns cell-state transport and a continuous-time generator whose transition matrices propagate clone and population composition into future observations, including an independent CellTag experiment; treatment-response associations are not validated intervention rollouts.</p>
-  </details>
-
-- (*arXiv'26*) **ProCut: Probabilistic Cutting Topology for Autonomous Electrosurgical Tissue Dissection**
-  [[📝 Paper](https://arxiv.org/abs/2610.07515)]
-  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Control` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Advances a deforming tissue mesh under cutting actions with a differentiable mechanics simulator, updates cut-topology beliefs from observations, and uses them for closed-loop robot dissection; validation is in simulation and ex-vivo chicken skin, not patients, and the transition law is computed rather than learned.</p>
   </details>
 
 - (*arXiv'26*) **HyperNSDE: Personalized Neural SDEs for Joint Static-Longitudinal Clinical Data Generation**
@@ -595,7 +553,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Mechanistic` · `Capability: Simulate` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>CSDS advances coupled psychiatric burden, affect, digital behavior, and wearable-physiology states to generate individualized trajectories evaluated on GLOBEM; downstream forecasting is retrospective, and twin calibration uses full-series summaries rather than a strictly prospective initialization window.</p>
+  <p><strong>Scope review pending:</strong> the core CSDS simulator uses prior causal rules and calibrated parameters, while a native autoregressive HMM is trained on virtual-twin trajectories. Whether its learned transitions drive recursive forecasts still needs verification; twin inversion uses full-series summaries, limiting prospective interpretation.</p>
   </details>
 
 - (*Life AI'26*) **Diffusion-Pref: Diffusion World Model Guided Zero-Shot Preference Learning for Safe Glucose Control in Type 1 Diabetes**
@@ -611,7 +569,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Forecast + Simulate + Plan` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>LENO advances patient-specific amyloid, tau, and neurodegeneration dynamics and evaluates longitudinal PET forecasts in ADNI; additional anti-amyloid and anti-tau control terms support hypothetical treatment optimization, not clinically validated treatment effects.</p>
+  <p>Learns nonlinear biomarker reaction operators and advances patient-specific amyloid, tau, and neurodegeneration states through numerical time stepping, evaluating subsequent ADNI PET visits; added anti-amyloid and anti-tau control terms support hypothetical treatment optimization, not clinically validated treatment effects.</p>
   </details>
 
 - (*AISTATS'26*) **Bayesian Inverse Transition Learning: Learning Dynamics from Near-Optimal Trajectories**
@@ -646,14 +604,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Couples stochastic receptor signaling to neural-ODE tumor, CAR-T, and cytokine dynamics, then trains a dosing policy through treatment-conditioned rollouts; held-out evaluation uses synthetic patient cohorts and does not demonstrate clinical CAR-T treatment efficacy.</p>
   </details>
 
-- (*bioRxiv'26*) **Digital Twin Brain Simulation and Manipulation of a Functional Brain Network Underlying Mental Illness**
-  [[📝 Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC13015335/)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41890017/)] [[💻 Code](https://github.com/Shmily94/Digital_twin_brain-psychiatry-)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Code`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Personalizes a spiking whole-brain simulator, freezes calibration, and propagates neural and hemodynamic states under circuit-parameter perturbations; compares simulated network responses with independent pharmacological fMRI data, without establishing a clinical drug-dose response model.</p>
-  </details>
-
 - (*AAAI'26*) **Bootstrapping Personalized Insulin Therapy via Model-Based Reinforcement Learning: An In Silico Study**
   [[📝 Paper](https://ojs.aaai.org/index.php/AAAI/article/view/41160)]
   **Metadata:** `State: Physiology` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Plan + Control` · `Assets: Paper only`
@@ -668,22 +618,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <details>
   <summary>Why it qualifies</summary>
   <p>Combines autoregressive latent dynamics with diffusion-based spatial refinement; its medical experiment rolls patient-specific aortic-coarctation surface-pressure fields across multiple cardiac cycles and compares them with high-fidelity hemodynamic simulations.</p>
-  </details>
-
-- (*BMC Med'26*) **Digital Twin Brain Reveals State-Specific Stimulation Targets for Abnormal Brain Dynamics in Tinnitus**
-  [[📝 Paper](https://doi.org/10.1186/s12916-026-04687-1)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41664110/)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Fits connectome-coupled oscillator dynamics to tinnitus brain states and reruns them under regional stimulation perturbations; compares simulated state changes with a small independent rTMS dataset, without prospectively validating personalized target selection or symptom improvement.</p>
-  </details>
-
-- (*Smart Health'26*) **Patient-Specific Deep Offline Artificial Pancreas for Blood Glucose Regulation in Type 1 Diabetes**
-  [[📝 Paper](https://doi.org/10.1016/j.smhl.2026.100633)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41766716/)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Control` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Uses systems-biology-informed neural networks to infer patient-specific glucose-insulin ODE parameters and runs those dynamics under offline-RL insulin policies; treatment comparisons are in silico, and the paper reports inconsistent policy-experiment sample counts.</p>
   </details>
 
 - (*arXiv'26*) **High-Fidelity Longitudinal Patient Simulation Using Real-World Data**
@@ -702,36 +636,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>LFLDNets evolve compact recurrent physiological states and reconstruct three-dimensional electrophysiology or flow fields, evaluating complete cardiac-cycle trajectories under held-out parameters and boundary conditions against numerical solvers; the journal article appeared online in December 2025.</p>
   </details>
 
-- (*J Physiol'26*) **An Eikonal Model with Re-Excitability for Fast Simulations in Cardiac Electrophysiology**
-  [[📝 Paper](https://doi.org/10.1113/JP287281)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42678922/)] [[📝 Preprint](https://arxiv.org/abs/2410.22583)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Advances cardiac activation, recovery, and re-excitation under repeated stimuli, reproducing atrial and ventricular macro-reentry against monodomain simulations rather than only calculating a single activation map.</p>
-  </details>
-
-- (*Med Image Anal'26 Online*) **Towards Patient-Specific Optimization for Mandibular Reconstruction Planning Based on Predicted Bone-Union Propensity**
-  [[📝 Paper](https://doi.org/10.1016/j.media.2026.104281)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42700676/)] [[📝 Preprint](https://arxiv.org/abs/2605.01084)] [[💻 Code](https://github.com/hamidreza-aftabi/OsteoOpt)]
-  **Metadata:** `State: Anatomy` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Plan` · `Assets: Code`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>OsteoOpt++ time-integrates jaw mechanics through chewing cycles for candidate reconstruction geometries and optimizes surgical cuts and donor positioning using simulated apposition and safety; its year-1 CT comparison is retrospective spatial validation, not a bone-healing trajectory forecast.</p>
-  </details>
-
 - (*arXiv'26*) **A Physiology-Informed Digital Twin Framework for Simulating Liver Health Progression**
   [[📝 Paper](https://arxiv.org/abs/2608.14969)]
   **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Simulate` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>hePaTwin advances coupled hepatic metabolic and bilirubin states with disease-stage transition calibration and compares simulated biomarkers with longitudinal measurements; stage-conditioned agreement is not an independently validated baseline-only forecast or treatment-effect estimate.</p>
-  </details>
-
-- (*Nat Cardiovasc Res'26*) **Accounting for Uncertainty in Computational Models of Ventricular Tachycardia Improves Ablation Guidance**
-  [[📝 Paper](https://doi.org/10.1038/s44161-026-00856-w)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42601469/)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Uses reaction-eikonal propagation and ionic dynamics to simulate ventricular-tachycardia circuits and ECGs across scar reconstructions, comparing them with clinical recordings and aggregating viable circuits into a SATHe Map; this is a mechanistic simulator, not learned latent dynamics.</p>
+  <p><strong>Scope review pending:</strong> hePaTwin combines mechanistic liver-state updates with a fitted disease-stage biomarker correction. Whether that correction feeds subsequent state evolution, how post-stage information is obtained, and how training is separated from evaluation remain unresolved; longitudinal agreement alone does not establish learned dynamics.</p>
   </details>
 
 - (*arXiv'26*) **Intervention-Aware Clinical World Model for Post-Op Outcome Forecasting in Cardiology**
@@ -750,36 +660,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Combines action-conditioned DreamerV3 dynamics with chained event-level state, duration, and reward predictions to train hierarchical policies in imagination, evaluating sequential surgical peg transfers and recovery from induced drops in SurRoL.</p>
   </details>
 
-- (*arXiv'26*) **An Open-Source Framework for Predicting Ultrasound Neuromodulation: Bridging Tissue Elastomechanics and Neuron Firing Dynamics**
-  [[📝 Paper](https://arxiv.org/abs/2608.06321)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Propagates prescribed tFUS exposures through acoustic, elastic, thermal, membrane, and neuron dynamics to simulate anatomy-registered firing histories under alternative mechanisms and parameters.</p>
-  </details>
-
 - (*bioRxiv'26*) **A Physics-Inspired Classical Digital Twin of the Cell: A Composite Multi-Clock Port-Hamiltonian Neural Network Learned from Multi-Omic Circadian Data**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.07.11.737972v3)] [[💻 Code](https://github.com/quantum-omics/Classical-Virtual-Omics)]
   **Metadata:** `State: Cell` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast + Simulate` · `Assets: Code`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Learns port-Hamiltonian graph transitions over mouse-liver multi-omic states and evaluates held-out circadian rollouts; the per-gene phase-lag relation is unresolved and withheld-edge recovery is at chance, without validated disease or intervention simulation.</p>
-  </details>
-
-- (*bioRxiv'26*) **Parameter-Dependent Effects of Spinal Cord Stimulation on Neural Activation and Evoked Compound Action Potentials**
-  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.08.03.742575v1)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Couples spinal finite-element fields to temporal multicompartment axon dynamics and reruns alternative stimulation and recording parameters to simulate neural recruitment and ECAP waveforms.</p>
-  </details>
-
-- (*bioRxiv'26*) **A Dynamical Digital Twin Unmasks Hidden Neuromotor Control Policies and Catastrophic Tipping Points in Parkinson's Disease**
-  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.03.09.710685v2)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Assimilates individual force-plate trajectories into a mechanistic intermittent-control state model, generates patient-level stochastic sway rollouts, and simulates Parkinson-related attractor bifurcations.</p>
+  <p><strong>Scope review pending:</strong> learns a port-Hamiltonian vector field and recursively advances multi-omic cell states. The official implementation raises unresolved questions about training on the claimed held-out time segment and prediction/target time alignment; the paper-matched version and evaluation protocol must be checked before accepting forecast metrics.</p>
   </details>
 
 - (*arXiv'26*) **Optimal Stimulation Sites Are Not the Most Affected: Personalised Models of Resting-State fMRI in Alzheimer's Disease**
@@ -788,70 +674,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <details>
   <summary>Why it qualifies</summary>
   <p>Fits subject-specific free-running fMRI dynamics, applies candidate focal drives to virtual patients, selects individual stimulation targets, and validates a causally informed real-time closed-loop controller.</p>
-  </details>
-
-- (*Phys Med Biol'26*) **Towards a Clinically Practical Computational Platform for Systematically Adapting Radiation Therapy for Glioma Patients**
-  [[📝 Paper](https://doi.org/10.1088/1361-6560/ae9687)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42562016/)]
-  **Metadata:** `State: Patient` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Calibrates a biology-based glioma-growth model to each patient's longitudinal MRI, virtually applies standard and proliferation-targeted dose maps, and projects post-therapy tumor burden for adaptive planning.</p>
-  </details>
-
-- (*Ann Biomed Eng'26*) **Developing a Digital Twin of the Cardiopulmonary System in a Mouse: Inferring Hemodynamics from Sparse Measurements**
-  [[📝 Paper](https://doi.org/10.1007/s10439-026-04107-8)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42550388/)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Fits an individualized 0D cardiopulmonary state model to mouse pressure-volume data and integrates its coupled hemodynamics to reproduce full waveforms and infer otherwise unmeasured physiology.</p>
-  </details>
-
-- (*Bull Math Biol'26*) **Assessing the Role of Model Complexity in Virtual Clinical Trial Outcomes**
-  [[📝 Paper](https://doi.org/10.1007/s11538-026-01715-2)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42530700/)] [[💻 Code](https://github.com/jgevertz/VCT)]
-  **Metadata:** `State: Patient` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Code`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Runs mechanistic tumor-virus treatment trajectories for virtual murine patients under multiple dosing protocols, testing how model complexity and cohort construction alter trial outcomes.</p>
-  </details>
-
-- (*eLife'26*) **Large-Scale Synthetic Data Enable Digital Twins of Human Excitable Cells**
-  [[📝 Paper](https://doi.org/10.7554/eLife.110013)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42489674/)] [[💻 Code](https://github.com/ClancyLabUCD/Digital-Twin-for-the-Win-Personalized-Cardiac-Electrophysiology)]
-  **Metadata:** `State: Cell` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Code`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Infers parameters of a fixed cardiac ionic ODE model from voltage-clamp traces using a neural network trained on synthetic data, then simulates cell-specific electrophysiology and IKr-blockade responses; the neural network learns parameter inference rather than the forward transition law.</p>
-  </details>
-
-- (*bioRxiv'26*) **Patient-Specific Heart Rate Modulates Developmental Electrophysiology in Transcriptomic-Guided In Silico Models of Pediatric Human Atrial Cardiomyocytes**
-  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.07.21.739866v1)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42538960/)]
-  **Metadata:** `State: Cell` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Scales atrial-cell models with each pediatric patient's transcriptome and rolls action potentials and calcium transients to steady state under intrinsic and counterfactual fixed pacing rates.</p>
-  </details>
-
-- (*Cell'26*) **Whole-Cell Particle-Based Digital Twin Simulations from 4D Lattice Light-Sheet Microscopy Data**
-  [[📝 Paper](https://doi.org/10.1016/j.cell.2026.06.010)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42379169/)] [[💻 Code](https://github.com/schoeneberglab/readdy-cell)]
-  **Metadata:** `State: Cell` · `Dynamics: Temporal + Mechanistic + Spatial/view + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Code`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Initializes particle states from microscopy and advances mitochondria through diffusion, fusion/fission, and motor transport, comparing control and microtubule-perturbed behavior and projecting stress conditions; these mechanistic simulations do not establish a separate prospective forecasting task.</p>
-  </details>
-
-- (*Comput Methods Programs Biomed'26*) **Integrating EMT Dynamics in Model-Based Metastasis Prediction**
-  [[📝 Paper](https://doi.org/10.1016/j.cmpb.2026.109390)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42061167/)]
-  **Metadata:** `State: Patient` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Couples TGF-beta and EMT signaling to temporal primary and metastatic tumor growth under chemotherapy and radiotherapy, then rolls virtual patients forward to survival outcomes.</p>
-  </details>
-
-- (*Heart Rhythm'26*) **High-Fidelity Postmyocardial Infarction Ventricular Tachycardia Simulation for Intraprocedure Ablation Guidance**
-  [[📝 Paper](https://doi.org/10.1016/j.hrthm.2026.03.1962)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41956268/)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Advances paced myocardial electrophysiology and ECG states through a GPU-accelerated monodomain solver, reproducing VT inducibility and morphology across ablation stages and exposing potential future VTs.</p>
   </details>
 
 - (*arXiv'26*) **CrossScope: A Role-Asymmetric World Model for Joint Dual-Scope Surgical Video Prediction**
@@ -863,11 +685,11 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   </details>
 
 - (*MICCAI'26 Workshop*) **Automatic Patient-Specific Microwave Ablation Planning Accelerated by a Physics-Guided Deep Learning Model**
-  [[📝 Paper](https://arxiv.org/abs/2608.03086)]
-  **Metadata:** `State: Anatomy` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Paper only`
+  [[📝 Paper](https://arxiv.org/abs/2608.03086)] [[💻 Code](https://github.com/SeonAengCho/MWA-Planning)]
+  **Metadata:** `State: Anatomy` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Code`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Uses patient anatomy and treatment actions to predict post-ablation regions, then repeatedly queries this forward simulator while optimizing antenna trajectory, power, and duration.</p>
+  <p>Learns an anatomy- and action-conditioned forward surrogate of post-ablation regions from multiphysics simulations, then repeatedly queries it to optimize antenna trajectory, power, and duration; evaluation includes 13 unseen planning cases. This predicts a single intervention outcome, not recursive temperature or tissue-damage dynamics, and does not establish prospective clinical benefit.</p>
   </details>
 
 - (*arXiv'26*) **NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics**
@@ -926,14 +748,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Uses causal temporal kernels and prefix-preserving diffusion updates to generate hourly behavior trajectories under sequential mobile-health actions; observed-action trajectory fidelity is evaluated, without establishing causal effects or clinical benefit of new policies.</p>
   </details>
 
-- (*arXiv'26*) **PIONEER: Bayesian Joint Modelling of Mechanistic Tumour Growth and Time-to-Event Endpoints for Dynamic Prediction of Ongoing Oncology Trials**
-  [[📝 Paper](https://arxiv.org/abs/2607.17908)]
-  **Metadata:** `State: Patient` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast + Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Jointly infers latent tumor-growth and clinical-event dynamics, then forward-simulates patient trajectories and mature trial endpoints from interim data.</p>
-  </details>
-
 - (*arXiv'26*) **Enhancing Personalized Bladder Cancer Treatment Through Reinforcement Learning: A Recurrent Patient State Transition Decision Support Framework**
   [[📝 Paper](https://arxiv.org/abs/2607.16916)]
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Plan + Control` · `Assets: Paper only`
@@ -942,28 +756,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Learns treatment-conditioned recurrent bladder-cancer state transitions from historical observations and uses recursive simulated trajectories for DQN planning; validation is confined to the learned simulator.</p>
   </details>
 
-- (*arXiv'26*) **Differentiable Cardiac Electrophysiology Simulations for Dynamical State and Parameter Estimation**
-  [[📝 Paper](https://arxiv.org/abs/2607.15492)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast + Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Fits a differentiable electrophysiology PDE simulator to partial cardiac measurements and rolls the recovered action-potential dynamics forward.</p>
-  </details>
-
 - (*arXiv'26*) **AI-Augmented Adaptive Digital Twin Modeling for Brain Tumor Evolution Prediction and Treatment Scheduling**
   [[📝 Paper](https://arxiv.org/abs/2607.13877)]
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Forecast + Simulate + Plan + Control` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Combines treatment-conditioned tumor dynamics, patient-specific online updating, 120-step recursive rollouts, and MPC scheduling; evaluation is limited to patient-data-informed synthetic trajectories.</p>
-  </details>
-
-- (*MICCAI'26*) **HemoPIC: A Physics-Informed Cerebral Hemodynamics Digital Twin for Brain Perfusion**
-  [[📝 Paper](https://arxiv.org/abs/2607.08799)] [[💻 Code](https://github.com/jhuldr/HemoPIC)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Simulate` · `Assets: Code`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Fits parameters of fixed Windkessel and tracer-compartment equations, then simulates time-resolved contrast passage and derives cerebral perfusion maps; the evaluated experiments do not establish learned transition laws or vascular-intervention counterfactuals.</p>
+  <p>Learns a 3D neural residual that corrects a mechanistic reaction-diffusion backbone during treatment-conditioned recursive tumor rollouts, with patient-specific online updates and MPC scheduling; evaluation uses patient-data-informed synthetic trajectories, not observed longitudinal treatment outcomes.</p>
   </details>
 
 - (*arXiv'26*) **EHR-MPC: Inference-Time Control for Sepsis Treatment with Generative Patient Digital Twins**
@@ -974,52 +772,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Recursively generates future clinical states under candidate treatment tokens and uses those rollouts for sepsis MPC; retrospective off-policy estimates and outcomes inside the learned simulator do not establish prospective treatment efficacy.</p>
   </details>
 
-- (*arXiv'26*) **Sectorial Customized Corneal Crosslinking for Keratoconus: An Inverse Biomechanical Design Study with an Anisotropic Reduced Shell Finite-Element Surrogate**
-  [[📝 Paper](https://arxiv.org/abs/2607.06385)]
-  **Metadata:** `State: Anatomy` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Simulates post-treatment corneal deformation under alternative spatial crosslinking actions and optimizes the intervention mask against biomechanical and optical objectives.</p>
-  </details>
-
-- (*medRxiv'26*) **Personalized Planning of Cardiac Resynchronization Therapy Through Integration of Coronary Sinus Geometry, Clinical Data, Digital Twins, and Machine Learning: Visualization, Stratification, and Optimization**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.07.01.26356827v1)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Simulates ventricular activation under alternative CRT pacing sites and uses a separate response classifier to support site planning; improved predicted response at a virtual site is not observed clinical benefit from implanting it.</p>
-  </details>
-
-- (*Stem Cell Reports'26*) **In Silico Optimization of Regenerative Cell Therapy in the Infarcted Human Ventricles to Mitigate Arrhythmic Burden**
-  [[📝 Paper](https://doi.org/10.1016/j.stemcr.2026.103007)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42425090/)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Simulates patient-specific ventricular electrophysiology before and after cell therapy to evaluate intervention outcomes over time.</p>
-  </details>
-
 - (*arXiv'26*) **Personalized 4D Whole-Heart Mesh Reconstruction from Cine MRI via Multi-Scale Temporal Modeling and Differentiable Contour Rendering**
   [[📝 Paper](https://arxiv.org/abs/2607.01952)]
   **Metadata:** `State: Anatomy` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
   <p>Reconstructs and predicts patient-specific 3D cardiac geometry as a continuous trajectory through the cardiac cycle.</p>
-  </details>
-
-- (*Med Image Anal'26*) **Electrophysiologically-Informed Digital Twins for Atrial Fibrillation**
-  [[📝 Paper](https://doi.org/10.1016/j.media.2026.104131)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42172939/)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Calibrates patient-specific atrial electrophysiology and simulates AF wave dynamics, comparing phase-singularity maps with retrospective ablation locations; an evaluated virtual-ablation strategy or treatment-plan optimizer is not demonstrated.</p>
-  </details>
-
-- (*J Physiol'26*) **Prospective In Silico Trials Identify Combined SK and K2P Channel Block as an Effective Strategy for Atrial Fibrillation Cardioversion**
-  [[📝 Paper](https://doi.org/10.1113/JP287124)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/39557619/)]
-  **Metadata:** `State: Physiology` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Rolls out multiscale atrial electrophysiology under alternative ion-channel interventions to predict cardioversion outcomes.</p>
   </details>
 
 - (*Phys Med Biol'26*) **A Digital Twin Framework for Adaptive Treatment Planning in Radiotherapy**
@@ -1067,7 +825,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   **Metadata:** `State: Physiology` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Control` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Learns Koopman respiratory-state dynamics and uses predicted ventilator-action consequences to shape offline policy learning.</p>
+  <p><strong>Scope review pending:</strong> the abstract describes a learned Koopman respiratory world model used for state representations and model-based rewards in offline ventilation policy learning. Full methods are needed to verify action-conditioned state propagation and its evaluated operational use; offline policy-value estimates alone do not verify learned respiratory simulation.</p>
   </details>
 
 - (*arXiv'26*) **Learning Cardiac Electrophysiology Digital Twins Through Agentic Discovery of Hybrid Structure**
@@ -1208,10 +966,10 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*arXiv'26*) **Sonata: A Hybrid World Model for Inertial Kinematics under Clinical Data Scarcity**
   [[📝 Paper](https://arxiv.org/abs/2604.18058)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast` · `Assets: Paper only`
+  **Metadata:** `State: Physiology` · `Dynamics: Temporal` · `Capability: Forecast` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Combines learned and biomechanical dynamics to predict future clinically measured inertial kinematic states.</p>
+  <p><strong>Scope review pending:</strong> trains a future-latent-state prediction objective for clinical IMU representations, with clinical probes and a separately fitted forecasting probe. Evaluation of the learned predictor itself as an executable state-evolution model remains unclear; biomechanical dynamics and free-running rollouts are not established.</p>
   </details>
 
 - (*arXiv'26*) **Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics**
@@ -1288,18 +1046,10 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*CVPR'26*) **MRI Contrast Enhancement Kinetics World Model**
   [[📝 Paper](https://arxiv.org/abs/2602.19285)] [[💻 Code](https://github.com/DD0922/MRI-Contrast-Enhancement-Kinetics-World-Model)]
-  **Metadata:** `State: Medical image` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast + Simulate` · `Assets: Code`
+  **Metadata:** `State: Medical image` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Code`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Models continuous contrast-agent kinetics and synthesizes MRI states at arbitrary enhancement times.</p>
-  </details>
-
-- (*medRxiv'26*) **MedOS: AI-XR-Cobot World Model for Clinical Perception and Action**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.02.18.26345936v1)]
-  **Metadata:** `State: Procedure/Robot` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Plan` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Uses a physics-aware procedural simulator to predict adverse events and action consequences in embodied clinical tasks.</p>
+  <p>Learns a time-conditioned mapping from a non-contrast MRI to later contrast-enhanced image states and evaluates temporal enhancement curves on two datasets; direct time-indexed generation is not a recursive pharmacokinetic model or discovery of mechanistic equations.</p>
   </details>
 
 - (*arXiv'26*) **EHRWorld: A Patient-Centric Medical World Model for Long-Horizon Clinical Trajectories**
@@ -1373,7 +1123,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   **Metadata:** `State: Cell` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Plan + Control` · `Assets: Code`
   <details>
   <summary>Why it qualifies</summary>
-  <p>M4RL couples an experimentally informed tumor-microenvironment agent model to a physics-informed dynamics surrogate, using simulated CSF1R/IGF1R treatment responses to optimize combination schedules; predicted regimen benefits are computational, not clinical-trial results.</p>
+  <p>Learns a physics-informed neural surrogate of tumor-cell density distribution evolution from agent-based simulations, uses it for treatment-scheduling RL, and compares an independent switch regimen with simulations and mouse survival observations. The Fokker-Planck structure is prescribed, and optimized regimen benefits are not clinical-trial results.</p>
   </details>
 
 - (*Nat Mach Intell'25*) **Model-Based Reinforcement Learning for Ultrasound-Driven Autonomous Microrobots**
@@ -1422,14 +1172,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <details>
   <summary>Why it qualifies</summary>
   <p>Simulates action-conditioned surgical robot trajectories for online policy evaluation.</p>
-  </details>
-
-- (*bioRxiv'25*) **Virtual Clinical Trials of BMP4 Differentiation Therapy: Digital Twins to Aid Successful Glioblastoma Trial Design**
-  [[📝 Paper](https://doi.org/10.1101/2024.08.22.609156)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41279885/)] [[💻 Code](https://github.com/Harbour-N/Virtual-Clinical-Trials-of-BMP4-Differentiation-Therapy)]
-  **Metadata:** `State: Cell` · `Dynamics: Temporal + Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Code`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Fits mechanistic glioblastoma cell-compartment and BMP4-exposure equations to cell-line data, then simulates treatment schedules and virtual-trial cohorts; projected efficacy and trial power are model outputs rather than clinical validation.</p>
   </details>
 
 - (*NPJ Digit Med'25*) **Large Language Models Forecast Patient Health Trajectories Enabling Digital Twins**
@@ -1613,17 +1355,8 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*arXiv'26*) **Action-Conditioned World Model for Goal Plane Probe Guidance in Robotic Ultrasound**
   [[📝 Paper](https://arxiv.org/abs/2607.21918)]
 
-- (*arXiv'26*) **Differentiable Cardiac Electrophysiology Simulations for Dynamical State and Parameter Estimation**
-  [[📝 Paper](https://arxiv.org/abs/2607.15492)]
-
-- (*MICCAI'26*) **HemoPIC: A Physics-Informed Cerebral Hemodynamics Digital Twin for Brain Perfusion**
-  [[📝 Paper](https://arxiv.org/abs/2607.08799)] [[💻 Code](https://github.com/jhuldr/HemoPIC)]
-
 - (*arXiv'26*) **Personalized 4D Whole-Heart Mesh Reconstruction from Cine MRI via Multi-Scale Temporal Modeling and Differentiable Contour Rendering**
   [[📝 Paper](https://arxiv.org/abs/2607.01952)]
-
-- (*Med Image Anal'26*) **Electrophysiologically-Informed Digital Twins for Atrial Fibrillation**
-  [[📝 Paper](https://doi.org/10.1016/j.media.2026.104131)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42172939/)]
 
 - (*arXiv'26*) **OphthaDT: Generative Digital Twins for Forecasting Visual Acuity Trajectories in Ophthalmology**
   [[📝 Paper](https://arxiv.org/abs/2606.22101)]
@@ -1681,20 +1414,11 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*bioRxiv'26*) **Virtual dynamics of spatiotemporal single-cell interactions**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.11.04.764438v1)]
 
-- (*Cell Rep Med'26*) **Tumor digital twins uncover therapeutic strategies in triple-negative breast cancer**
-  [[📝 Paper](https://doi.org/10.1016/j.xcrm.2026.103119)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42933397/)] [[💻 Code](https://github.com/jfisher-lab/TNBC_Victori2026)]
-
 - (*Protein Sci'26*) **DreamFold: A World Model to efficiently generate protein folding pathways in the latent space**
   [[📝 Paper](https://doi.org/10.1002/pro.70794)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42813590/)] [[📝 Preprint](https://www.biorxiv.org/content/10.1101/2025.03.26.645554v1)]
 
-- (*medRxiv'26*) **Informing risk stratification and vaccine policy via a predictive mathematical model of SARS-COV-2 infection**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.10.12.26365315v1)]
-
 - (*bioRxiv'26*) **scMTG reconstructs single-cell temporal dynamics with Markov transition generators**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.06.04.730241v2)] [[💻 Code](https://github.com/liuq-lab/scMTG)]
-
-- (*bioRxiv'26*) **Mechanistic prediction of fecal microbiota transplant engraftment and Clostridioides difficile colonization resistance with μODE**
-  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.10.09.758137v1)] [[💻 Code](https://github.com/cumbof/muODE)]
 
 - (*bioRxiv'26*) **A tissue time machine to forward-predict single-timepoint data applied to tuberculosis granulomas**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.10.09.758083v1)]
@@ -1732,15 +1456,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*Sci Adv'25*) **Multiscale Mathematical Model-Informed Reinforcement Learning Optimizes Combination Treatment Scheduling in Glioblastoma Evolution**
   [[📝 Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC13155510/)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/40779623/)] [[💻 Code](https://github.com/SunXQlab/M4RL)]
 
-- (*eLife'26*) **Large-Scale Synthetic Data Enable Digital Twins of Human Excitable Cells**
-  [[📝 Paper](https://doi.org/10.7554/eLife.110013)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42489674/)] [[💻 Code](https://github.com/ClancyLabUCD/Digital-Twin-for-the-Win-Personalized-Cardiac-Electrophysiology)]
-
-- (*bioRxiv'26*) **Patient-Specific Heart Rate Modulates Developmental Electrophysiology in Transcriptomic-Guided In Silico Models of Pediatric Human Atrial Cardiomyocytes**
-  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.07.21.739866v1)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42538960/)]
-
-- (*Cell'26*) **Whole-Cell Particle-Based Digital Twin Simulations from 4D Lattice Light-Sheet Microscopy Data**
-  [[📝 Paper](https://doi.org/10.1016/j.cell.2026.06.010)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42379169/)] [[💻 Code](https://github.com/schoeneberglab/readdy-cell)]
-
 - (*bioRxiv'26*) **A Physics-Inspired Classical Digital Twin of the Cell: A Composite Multi-Clock Port-Hamiltonian Neural Network Learned from Multi-Omic Circadian Data**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.07.11.737972v3)] [[💻 Code](https://github.com/quantum-omics/Classical-Virtual-Omics)]
 
@@ -1766,6 +1481,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2512.00306)]
 
 ### Longitudinal EHR and Clinical Trajectories
+
+- (*arXiv'26*) **Curiosity-0826-4B: Generative Medical Event Sequence Modeling Across Pediatric and Adult Populations**
+  [[📝 Paper](https://arxiv.org/abs/2611.15710)]
 
 - (*arXiv'26*) **ICare-DT: a digital twin for continuous forecasting of intensive care patients**
   [[📝 Paper](https://arxiv.org/abs/2611.09712)]
@@ -1824,9 +1542,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*arXiv'26*) **Intervention-Aware Clinical World Model for Post-Op Outcome Forecasting in Cardiology**
   [[📝 Paper](https://arxiv.org/abs/2608.13518)] [[💻 Code](https://github.com/cys1102/af-blanking-world-model)]
 
-- (*arXiv'26*) **PIONEER: Bayesian Joint Modelling of Mechanistic Tumour Growth and Time-to-Event Endpoints for Dynamic Prediction of Ongoing Oncology Trials**
-  [[📝 Paper](https://arxiv.org/abs/2607.17908)]
-
 - (*arXiv'26*) **EHR-MPC: Inference-Time Control for Sepsis Treatment with Generative Patient Digital Twins**
   [[📝 Paper](https://arxiv.org/abs/2607.08793)]
 
@@ -1877,23 +1592,11 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Treatment Planning and Clinical Decision Support
 
-- (*medRxiv'26*) **An agent-based model of Epstein-Barr virus transmission and vaccination**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.11.10.26367734v1)]
-
 - (*arXiv'26*) **Personalized health coaching via coachable health age and counterfactual wearable trajectories**
   [[📝 Paper](https://arxiv.org/abs/2611.08568)]
 
-- (*medRxiv'26*) **Risk-benefit assessment of oral anticoagulation in atrial fibrillation using virtual clinical trials**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.11.04.26367324v1)]
-
-- (*J Sleep Res'26*) **Development of a Digital Twin to Analyse Waiting Lists in a Sleep-Disordered Breathing Unit**
-  [[📝 Paper](https://doi.org/10.1111/jsr.70489)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/43000229/)]
-
 - (*arXiv'26*) **PulmoWorld: An Asynchronous Multimodal Medical World Model for Longitudinal Pneumonia Dynamics**
   [[📝 Paper](https://arxiv.org/abs/2610.38289)]
-
-- (*Cell Rep Med'26*) **Tumor digital twins uncover therapeutic strategies in triple-negative breast cancer**
-  [[📝 Paper](https://doi.org/10.1016/j.xcrm.2026.103119)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42933397/)] [[💻 Code](https://github.com/jfisher-lab/TNBC_Victori2026)]
 
 - (*arXiv'26*) **CaMeWM: A Causal Medical World Model for Generative Tumor Evolution and Treatment Planning**
   [[📝 Paper](https://arxiv.org/abs/2610.26923)]
@@ -1925,17 +1628,8 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*bioRxiv'26*) **OPTIMIS: Optimizing Personalized Therapies through Integrated Multiscale Intelligent Simulation**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.03.24.713941v1)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41929084/)] [[💻 Code](https://github.com/wujah/OPTIMIS)]
 
-- (*bioRxiv'26*) **Digital Twin Brain Simulation and Manipulation of a Functional Brain Network Underlying Mental Illness**
-  [[📝 Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC13015335/)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41890017/)] [[💻 Code](https://github.com/Shmily94/Digital_twin_brain-psychiatry-)]
-
 - (*AAAI'26*) **Bootstrapping Personalized Insulin Therapy via Model-Based Reinforcement Learning: An In Silico Study**
   [[📝 Paper](https://ojs.aaai.org/index.php/AAAI/article/view/41160)]
-
-- (*BMC Med'26*) **Digital Twin Brain Reveals State-Specific Stimulation Targets for Abnormal Brain Dynamics in Tinnitus**
-  [[📝 Paper](https://doi.org/10.1186/s12916-026-04687-1)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41664110/)]
-
-- (*Smart Health'26*) **Patient-Specific Deep Offline Artificial Pancreas for Blood Glucose Regulation in Type 1 Diabetes**
-  [[📝 Paper](https://doi.org/10.1016/j.smhl.2026.100633)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41766716/)]
 
 - (*J Neuroeng Rehabil'25*) **Towards AI-Based Precision Rehabilitation via Contextual Model-Based Reinforcement Learning**
   [[📝 Paper](https://doi.org/10.1186/s12984-025-01771-0)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41419889/)]
@@ -1946,50 +1640,17 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*npj Digit Med'25*) **Digital Twin Brain Simulator for Real-Time Consciousness Monitoring and Virtual Intervention Using Primate Electrocorticogram Data**
   [[📝 Paper](https://doi.org/10.1038/s41746-025-01444-1)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/39929926/)]
 
-- (*J Physiol'26*) **An Eikonal Model with Re-Excitability for Fast Simulations in Cardiac Electrophysiology**
-  [[📝 Paper](https://doi.org/10.1113/JP287281)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42678922/)] [[📝 Preprint](https://arxiv.org/abs/2410.22583)]
-
-- (*Med Image Anal'26 Online*) **Towards Patient-Specific Optimization for Mandibular Reconstruction Planning Based on Predicted Bone-Union Propensity**
-  [[📝 Paper](https://doi.org/10.1016/j.media.2026.104281)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42700676/)] [[📝 Preprint](https://arxiv.org/abs/2605.01084)] [[💻 Code](https://github.com/hamidreza-aftabi/OsteoOpt)]
-
 - (*arXiv'26*) **A Physiology-Informed Digital Twin Framework for Simulating Liver Health Progression**
   [[📝 Paper](https://arxiv.org/abs/2608.14969)]
 
-- (*Nat Cardiovasc Res'26*) **Accounting for Uncertainty in Computational Models of Ventricular Tachycardia Improves Ablation Guidance**
-  [[📝 Paper](https://doi.org/10.1038/s44161-026-00856-w)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42601469/)]
-
 - (*arXiv'26*) **Intervention-Aware Clinical World Model for Post-Op Outcome Forecasting in Cardiology**
   [[📝 Paper](https://arxiv.org/abs/2608.13518)] [[💻 Code](https://github.com/cys1102/af-blanking-world-model)]
-
-- (*Phys Med Biol'26*) **Towards a Clinically Practical Computational Platform for Systematically Adapting Radiation Therapy for Glioma Patients**
-  [[📝 Paper](https://doi.org/10.1088/1361-6560/ae9687)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42562016/)]
-
-- (*Ann Biomed Eng'26*) **Developing a Digital Twin of the Cardiopulmonary System in a Mouse: Inferring Hemodynamics from Sparse Measurements**
-  [[📝 Paper](https://doi.org/10.1007/s10439-026-04107-8)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42550388/)]
-
-- (*Bull Math Biol'26*) **Assessing the Role of Model Complexity in Virtual Clinical Trial Outcomes**
-  [[📝 Paper](https://doi.org/10.1007/s11538-026-01715-2)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42530700/)] [[💻 Code](https://github.com/jgevertz/VCT)]
-
-- (*Comput Methods Programs Biomed'26*) **Integrating EMT Dynamics in Model-Based Metastasis Prediction**
-  [[📝 Paper](https://doi.org/10.1016/j.cmpb.2026.109390)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42061167/)]
-
-- (*Heart Rhythm'26*) **High-Fidelity Postmyocardial Infarction Ventricular Tachycardia Simulation for Intraprocedure Ablation Guidance**
-  [[📝 Paper](https://doi.org/10.1016/j.hrthm.2026.03.1962)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41956268/)]
-
-- (*arXiv'26*) **An Open-Source Framework for Predicting Ultrasound Neuromodulation: Bridging Tissue Elastomechanics and Neuron Firing Dynamics**
-  [[📝 Paper](https://arxiv.org/abs/2608.06321)]
-
-- (*bioRxiv'26*) **Parameter-Dependent Effects of Spinal Cord Stimulation on Neural Activation and Evoked Compound Action Potentials**
-  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.08.03.742575v1)]
-
-- (*bioRxiv'26*) **A Dynamical Digital Twin Unmasks Hidden Neuromotor Control Policies and Catastrophic Tipping Points in Parkinson's Disease**
-  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.03.09.710685v2)]
 
 - (*arXiv'26*) **Optimal Stimulation Sites Are Not the Most Affected: Personalised Models of Resting-State fMRI in Alzheimer's Disease**
   [[📝 Paper](https://arxiv.org/abs/2607.24356)] [[💻 Code](https://github.com/cristianocapone/AD-reservoir-FC-stimulation)]
 
 - (*MICCAI'26 Workshop*) **Automatic Patient-Specific Microwave Ablation Planning Accelerated by a Physics-Guided Deep Learning Model**
-  [[📝 Paper](https://arxiv.org/abs/2608.03086)]
+  [[📝 Paper](https://arxiv.org/abs/2608.03086)] [[💻 Code](https://github.com/SeonAengCho/MWA-Planning)]
 
 - (*MICCAI'26 Workshop*) **Anticipatory Digital Twins for Online Head-and-Neck Adaptive Proton Therapy via Foundation-Model Registration**
   [[📝 Paper](https://arxiv.org/abs/2608.00831)]
@@ -2008,21 +1669,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*arXiv'26*) **EHR-MPC: Inference-Time Control for Sepsis Treatment with Generative Patient Digital Twins**
   [[📝 Paper](https://arxiv.org/abs/2607.08793)]
-
-- (*arXiv'26*) **Sectorial Customized Corneal Crosslinking for Keratoconus: An Inverse Biomechanical Design Study with an Anisotropic Reduced Shell Finite-Element Surrogate**
-  [[📝 Paper](https://arxiv.org/abs/2607.06385)]
-
-- (*medRxiv'26*) **Personalized Planning of Cardiac Resynchronization Therapy Through Integration of Coronary Sinus Geometry, Clinical Data, Digital Twins, and Machine Learning: Visualization, Stratification, and Optimization**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.07.01.26356827v1)]
-
-- (*Stem Cell Reports'26*) **In Silico Optimization of Regenerative Cell Therapy in the Infarcted Human Ventricles to Mitigate Arrhythmic Burden**
-  [[📝 Paper](https://doi.org/10.1016/j.stemcr.2026.103007)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42425090/)]
-
-- (*Med Image Anal'26*) **Electrophysiologically-Informed Digital Twins for Atrial Fibrillation**
-  [[📝 Paper](https://doi.org/10.1016/j.media.2026.104131)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42172939/)]
-
-- (*J Physiol'26*) **Prospective In Silico Trials Identify Combined SK and K2P Channel Block as an Effective Strategy for Atrial Fibrillation Cardioversion**
-  [[📝 Paper](https://doi.org/10.1113/JP287124)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/39557619/)]
 
 - (*Phys Med Biol'26*) **A Digital Twin Framework for Adaptive Treatment Planning in Radiotherapy**
   [[📝 Paper](https://doi.org/10.1088/1361-6560/ae835a)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42361838/)]
@@ -2054,9 +1700,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*arXiv'26*) **Brain-WM: Brain Glioblastoma World Model**
   [[📝 Paper](https://arxiv.org/abs/2603.07562)] [[💻 Code](https://github.com/thibault-wch/Brain-GBM-world-model)]
 
-- (*bioRxiv'25*) **Virtual Clinical Trials of BMP4 Differentiation Therapy: Digital Twins to Aid Successful Glioblastoma Trial Design**
-  [[📝 Paper](https://doi.org/10.1101/2024.08.22.609156)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/41279885/)] [[💻 Code](https://github.com/Harbour-N/Virtual-Clinical-Trials-of-BMP4-Differentiation-Therapy)]
-
 - (*arXiv'25*) **MM-DADM: Multimodal Drug-Aware Diffusion Model for Virtual Clinical Trials**
   [[📝 Paper](https://arxiv.org/abs/2502.07297)]
 
@@ -2073,9 +1716,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*arXiv'26*) **SurgTransfer: Multi-Step Latent Action Modeling for Action Transfer in Surgical World Model**
   [[📝 Paper](https://arxiv.org/abs/2611.05443)] [[💻 Code](https://github.com/bhattarailab/Surgical-Vision-World-Model)]
-
-- (*arXiv'26*) **ProCut: Probabilistic Cutting Topology for Autonomous Electrosurgical Tissue Dissection**
-  [[📝 Paper](https://arxiv.org/abs/2610.07515)]
 
 - (*arXiv'26*) **SurgGMF: Fully Causal Gaussian Motion Forecasting for Anticipatory Surgical Scene Rendering**
   [[📝 Paper](https://arxiv.org/abs/2609.34733)]
@@ -2097,9 +1737,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*Nat Mach Intell'25*) **Model-Based Reinforcement Learning for Ultrasound-Driven Autonomous Microrobots**
   [[📝 Paper](https://doi.org/10.1038/s42256-025-01054-2)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/40709099/)] [[💻 Code](https://github.com/M-Medany/Model-Based-Reinforcement-Learning-for-Ultrasound-Driven-Autonomous-Microrobots)]
-
-- (*Med Image Anal'26 Online*) **Towards Patient-Specific Optimization for Mandibular Reconstruction Planning Based on Predicted Bone-Union Propensity**
-  [[📝 Paper](https://doi.org/10.1016/j.media.2026.104281)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42700676/)] [[📝 Preprint](https://arxiv.org/abs/2605.01084)] [[💻 Code](https://github.com/hamidreza-aftabi/OsteoOpt)]
 
 - (*arXiv'26*) **S2-HWM: Sparse Event-Structured Hierarchical World Model for Long-Horizon Surgical Robot Manipulation**
   [[📝 Paper](https://arxiv.org/abs/2608.13103)]
@@ -2130,9 +1767,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*MIDL'26 rejected*) **Learning Action-Conditioned World Models for Cataract Surgery from Unlabeled Videos (SurgWorld)**
   [[📝 Paper](https://openreview.net/forum?id=aYQYOVm2AB)]
-
-- (*medRxiv'26*) **MedOS: AI-XR-Cobot World Model for Clinical Perception and Action**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.02.18.26345936v1)]
 
 - (*arXiv'26*) **Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics**
   [[📝 Paper](https://arxiv.org/abs/2604.21017)] [[💻 Code](https://huggingface.co/nvidia/Cosmos-H-Surgical-Simulator)] [[💻 Code](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator)] [[🌐 Project](https://open-h.github.io/open-h-embodiment/)]

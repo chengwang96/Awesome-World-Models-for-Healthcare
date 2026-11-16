@@ -63,19 +63,22 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_topic_set_drift_is_reported(self) -> None:
         marker = "## 🧭 By Topic"
         before, topics = README_TEXT.split(marker, 1)
-        topics = topics.replace(
-            "HemoPIC: A Physics-Informed Cerebral Hemodynamics Digital Twin for Brain Perfusion",
-            "HemoPIC: Altered Topic Title",
-            1,
-        )
+        first_topic = CatalogValidator.entries(topics)[0]
+        topics = topics.replace(first_topic.title, "Altered Topic Title", 1)
         errors = self.validate(before + marker + topics)
         self.assertTrue(any("missing from By Topic" in error for error in errors))
         self.assertTrue(any("missing from main list" in error for error in errors))
 
     def test_duplicate_identifier_is_reported(self) -> None:
-        mutated = README_TEXT.replace("2607.08793", "2607.08799", 1)
+        main = README_TEXT.split("## 📝 World Model Papers", 1)[1].split(
+            "## 🧭 By Topic", 1
+        )[0]
+        identifiers = list(dict.fromkeys(re.findall(r"arxiv\.org/abs/(\d{4}\.\d{4,5})", main)))
+        self.assertGreaterEqual(len(identifiers), 2)
+        target, source = identifiers[:2]
+        mutated = README_TEXT.replace(source, target, 1)
         errors = self.validate(mutated)
-        self.assertTrue(any("Duplicate identifier arXiv:2607.08799" in error for error in errors))
+        self.assertTrue(any(f"Duplicate identifier arXiv:{target}" in error for error in errors))
 
     def test_missing_resource_category_is_reported(self) -> None:
         mutated = README_TEXT.replace("### Simulators", "### Tools", 1)

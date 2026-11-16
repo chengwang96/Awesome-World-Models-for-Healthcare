@@ -14,9 +14,9 @@
 
 - **Medical task:**
 - **Modeled state:**
-- **State transition or dynamics:**
-- **Forecast, simulation, counterfactual, planning, or control use:**
-- **Implementation and evaluation evidence:**
+- **Learned state-evolution component:** <!-- Identify the transition, discovered structure, surrogate, residual, or closure; fixed-model parameter fitting alone is insufficient. -->
+- **Prediction or rollout use:** <!-- Direct future-state prediction or recursive simulation; explain how the learned component generates the evaluated states. -->
+- **Implementation and evaluation evidence:** <!-- Cite sections/tables/figures, training/evaluation separation, and limitations. Separate downstream probes alone are insufficient. -->
 
 ## Proposed Metadata
 
@@ -45,7 +45,7 @@
 <!-- Complete this subsection only when changing a paper entry. -->
 
 - [ ] I read the paper abstract and relevant methods rather than classifying it from the title alone.
-- [ ] I confirmed that the paper models state transitions and is not only static representation learning, conditional generation, or risk prediction.
+- [ ] I confirmed that a learned state-evolution component generates evaluated future or intervention-dependent states, not only static representations, ordinary conditional generation, fixed-simulator calibration/inversion, policy learning, classification, or scalar plan scores.
 - [ ] I searched for duplicate titles, arXiv identifiers, and DOIs in the README.
 - [ ] I added the full entry to the correct year and concise copies to all applicable **By Topic** sections.
 - [ ] The metadata uses only the controlled vocabulary in `CONTRIBUTING.md` and matches the linked assets.
