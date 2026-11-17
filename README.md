@@ -51,8 +51,6 @@ Fixed mechanistic ODE/PDE, agent-based, or discrete-event simulation does not qu
 
 Action conditioning is not mandatory for autonomous physiological processes such as disease progression or cardiac motion. However, a paper claiming intervention, treatment, or control capability must model how actions change subsequent states. Action-conditioned predictions and in-model planning do not by themselves establish causal treatment effects or clinical benefit.
 
-**Scope review in progress:** six legacy entries are explicitly marked **Scope review pending** in their qualification notes. They remain visible while the learned-dynamics or evaluation evidence is resolved; their presence is not confirmation that they meet the revised criteria. New submissions with unresolved evidence are not added to the main list.
-
 ### 🧬 Taxonomy
 
 Each main-list paper carries compact, controlled metadata so that methods with comparable modeled states and capabilities are easy to find.
@@ -161,7 +159,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Event sequence + Action-conditioned` · `Capability: Forecast + Simulate + Counterfactual` · `Assets: Project`
   <details>
   <summary>Why it qualifies</summary>
-  <p>A variational autoregressive transformer advances multimodal patient histories through event-level rollouts and zero-shot outcome estimation, then simulates saline-versus-Ringer's counterfactuals for sepsis patients; the SMART comparison supports only the sign of the subgroup effect, and autoregressive exposure bias remains.</p>
+  <p>A variational autoregressive transformer advances multimodal patient histories through event-level rollouts and zero-shot outcome estimation, then simulates saline-versus-Ringer's counterfactuals for sepsis patients; the SMART comparison supports only the direction of the subgroup effect, with an effect roughly twice as large and mortality overpredicted, and autoregressive exposure bias remains.</p>
   </details>
 
 - (*arXiv'26*) **Curiosity-0826-4B: Generative Medical Event Sequence Modeling Across Pediatric and Adult Populations**
@@ -340,14 +338,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Recursively advances latent patient states under recorded clinical actions and evaluates factual multistep forecasts across EHR cohorts; candidate-action ranking uses a narrow retrospective choice set and does not validate counterfactual effects or treatment benefit.</p>
   </details>
 
-- (*bioRxiv'26*) **A tissue time machine to forward-predict single-timepoint data applied to tuberculosis granulomas**
-  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.10.09.758083v1)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast + Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p><strong>Scope review pending:</strong> matches observed granulomas to simulated digital partners and predicts later outcomes. The available abstract does not establish a learned state-evolution component; full methods are needed to distinguish fixed agent-based simulation and state matching from learned dynamics, and to interpret the reported 22/28 outcome result.</p>
-  </details>
-
 - (*arXiv'26*) **Finsler Flow Matching: Dynamics-Aware Geodesic Interpolation for Single-Snapshot Trajectory Inference**
   [[📝 Paper](https://arxiv.org/abs/2610.11318)] [[💻 Code](https://github.com/mlbelab/FinslerFlowMatching)]
   **Metadata:** `State: Cell` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Code`
@@ -401,7 +391,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   **Metadata:** `State: Medical image` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Code + Project`
   <details>
   <summary>Why it qualifies</summary>
-  <p>A single diffusion process synthesizes a follow-up scan from a baseline scan and time interval while predicting spatial uncertainty, with explicit residual modeling and dataset-specific retraining; held-out lung CT and OASIS-3 evaluations match or beat anatomy-specific models, but the task is image-state synthesis rather than treatment-response simulation.</p>
+  <p>A single diffusion process synthesizes a follow-up scan from a baseline scan and time interval while predicting spatial uncertainty, with explicit residual modeling and dataset-specific retraining; held-out lung CT and OASIS-3 evaluations match or beat anatomy-specific models, and official code accompanies the WACV 2027 acceptance, but the task is image-state synthesis rather than treatment-response simulation.</p>
   </details>
 
 - (*arXiv'26*) **One Frame, Full Heartbeat: ECG-Free Cardiac Cine MRI Synthesis via Phase-Conditioned Flow Matching**
@@ -444,14 +434,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Discovers and fits executable dose-driven ODEs for tumor and platelet states, forecasts thrombocytopenia from first-cycle data in an independent 19-patient cohort, and simulates alternative radioligand schedules; those unobserved schedule outcomes are model projections.</p>
   </details>
 
-- (*arXiv'26*) **Ultrasound Operator Guidance Using World Modeling and Retrieval Based Action Planning**
-  [[📝 Paper](https://arxiv.org/abs/2610.06008)]
-  **Metadata:** `State: Medical image` · `Dynamics: Spatial/view + Action-conditioned` · `Capability: Simulate + Plan` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Plans multi-step carotid-probe motions over a learned image-state embedding and recorded action-state transitions, with retrospective navigation and a three-volunteer real-time feasibility study; the deployed transition operator is nonparametric retrieval, not a learned generative video model.</p>
-  </details>
-
 - (*npj Metab Health Dis'26*) **A Digital Twin for Tracking and Forecasting Glycemia with Septic Patients in ICUs**
   [[📝 Paper](https://doi.org/10.1038/s44324-026-00132-2)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42823439/)]
   **Metadata:** `State: Physiology` · `Dynamics: Temporal` · `Capability: Forecast` · `Assets: Paper only`
@@ -481,12 +463,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   **Metadata:** `State: Population` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate + Plan` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Learns an action-conditioned regional epidemic model with delay-aware encoding and graph coupling, then runs counterfactual rollouts to ground an LLM policy agent; it reports the best out-of-distribution peak error and lower simulated hospitalizations, but policy gains come from simulated futures rather than executed interventions.</p>
+  <p>Learns an action-conditioned regional epidemic model with delay-aware encoding and graph coupling, then runs counterfactual rollouts to ground an LLM policy agent; forecast accuracy is reported on real surveillance and simulator benchmarks, while lower hospitalizations and policy ranking come from learned or independent mechanistic simulations rather than executed interventions.</p>
   </details>
 
 - (*arXiv'26*) **An immune world model for multiscale forecasting and therapeutic hypothesis generation**
   [[📝 Paper](https://arxiv.org/abs/2609.14709)]
-  **Metadata:** `State: Cell` · `Dynamics: Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  **Metadata:** `State: Cell` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
   <p>An action-conditioned immune-state model is frozen before confirmation and evaluated on unseen interventions, biological contexts, and perturbation combinations while integrating cellular and tissue context into patient-response forecasts; the resulting IL-36γ plus SIRPα hypothesis remains prospectively untested.</p>
@@ -494,10 +476,10 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*arXiv'26*) **CellCanon: An Agentic Cellular World Model for Prediction, Explanation, and Observation-Driven Updating**
   [[📝 Paper](https://arxiv.org/abs/2611.05890)] [[💻 Code](https://github.com/ZhaokangLiang123/CellCanon)]
-  **Metadata:** `State: Cell` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Code`
+  **Metadata:** `State: Cell` · `Dynamics: Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Code`
   <details>
   <summary>Why it qualifies</summary>
-  <p>A from-scratch STATE transition core predicts single-cell expression responses to drug and dose actions, while a shared world state links predictions, measurements, and evidence for observation-driven revision; 339 held-out SciPlex3 conditions test drug-disjoint forecasting, but feedback experiments are simulated rather than wet-lab interventions.</p>
+  <p>A state-transition neural core predicts single-cell expression responses to drug and dose actions, while a shared world state links predictions, measurements, and evidence for observation-driven revision; 339 held-out SciPlex3 conditions test drug-disjoint forecasting, but feedback experiments are simulated rather than wet-lab interventions.</p>
   </details>
 
 - (*arXiv'26*) **Learning Continuous Patient Trajectories from Electronic Health Records**
@@ -505,7 +487,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate + Counterfactual` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>EHRFlow conditions multi-marginal flow matching on encoded patient history to learn continuous-time dynamics that forecast clinical codes at arbitrary horizons; external validation exceeds autoregressive baselines, and guided rollouts approximate a known antihypertensive effect, but that check uses a controlled simulation rather than trial data.</p>
+  <p>EHRFlow conditions multi-marginal flow matching on encoded patient history to learn continuous-time dynamics that forecast clinical codes at arbitrary horizons; external validation exceeds autoregressive baselines, and classifier-free guidance on a treatment embedding recovers a known antihypertensive effect in paired and split-arm Synthea simulations, not in real trial data.</p>
   </details>
 
 - (*arXiv'26*) **Intervention-Conditioned Counterfactual Human Digital Twin Generator**
@@ -514,14 +496,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <details>
   <summary>Why it qualifies</summary>
   <p>CHDT generates complete longitudinal patient-state trajectories under alternative interventions while explicitly handling irregular visit intervals and cross-mediator dependencies; ADNI and ALPACA evaluations test long-horizon fidelity, but identification rests on stated causal assumptions and ALPACA is simulator-generated.</p>
-  </details>
-
-- (*SASHIMI'26*) **Reverse Spatio-Temporal Disease Progression Modelling**
-  [[📝 Paper](https://arxiv.org/abs/2609.14590)]
-  **Metadata:** `State: Anatomy` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>A frozen 3D vector-quantized autoencoder defines a latent anatomy space and a neural ODE learns continuous-time dynamics that are integrated backward from later scans; Morpho-MNIST and ADNI evaluations recover unobserved earlier trajectories, but the work is retrospective and does not model treatment actions.</p>
   </details>
 
 - (*arXiv'26*) **SurgGMF: Fully Causal Gaussian Motion Forecasting for Anticipatory Surgical Scene Rendering**
@@ -566,7 +540,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*arXiv'26*) **MRFlow: Mechanism-Structured Residual Flow Matching for Virtual Cell Perturbation Prediction**
   [[📝 Paper](https://arxiv.org/abs/2610.13966)]
-  **Metadata:** `State: Cell` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate` · `Assets: Paper only`
+  **Metadata:** `State: Cell` · `Dynamics: Action-conditioned` · `Capability: Simulate` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
   <p>Learns a conditional flow-matching field that transports control-cell populations toward perturbed states, combining shared mechanism dictionaries with condition-specific and nonlinear residual terms; eight gene and drug benchmarks test population transport, but the method predicts one perturbation response rather than sequential treatment rollouts.</p>
@@ -574,10 +548,10 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*NeurIPS'26 Workshop*) **VCLMU: Mechanism-Centric Virtual Cell World Modeling for Perturbation Response**
   [[📝 Paper](https://arxiv.org/abs/2610.04475)]
-  **Metadata:** `State: Cell` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  **Metadata:** `State: Cell` · `Dynamics: Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Represents cells as latent mechanism units and applies genetic perturbations as actions that induce mechanism-specific stochastic transitions before decoding transcriptional responses; six perturbation-disjoint benchmarks test response recovery, while the transitions are learned from observational perturbation screens without sequential treatment evaluation.</p>
+  <p>Represents cells as latent mechanism units and applies genetic perturbations as actions that induce mechanism-specific stochastic transitions before decoding transcriptional responses; six perturbation-disjoint downstream benchmarks test response recovery, although test perturbations may still appear in separate pretraining corpora and the model is not evaluated on sequential treatments.</p>
   </details>
 
 - (*Cell'26*) **RegVelo: Gene-Regulatory-Informed Dynamics of Single Cells**
@@ -660,14 +634,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Jointly samples future-observation and robot-action tokens during inference, with actions attending to predicted futures before receding-horizon execution; evaluates control success on four SurRoL tasks, not standalone future-video prediction fidelity.</p>
   </details>
 
-- (*medRxiv'26*) **The Coupled Stochastic Dynamical System: A Generative Model for Simulating and Forecasting Youth Mental Health Trajectories**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.07.26.26358943v1)]
-  **Metadata:** `State: Patient` · `Dynamics: Temporal + Mechanistic` · `Capability: Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p><strong>Scope review pending:</strong> the core CSDS simulator uses prior causal rules and calibrated parameters, while a native autoregressive HMM is trained on virtual-twin trajectories. Whether its learned transitions drive recursive forecasts still needs verification; twin inversion uses full-series summaries, limiting prospective interpretation.</p>
-  </details>
-
 - (*Life AI'26*) **Diffusion-Pref: Diffusion World Model Guided Zero-Shot Preference Learning for Safe Glucose Control in Type 1 Diabetes**
   [[📝 Paper](https://www.sciltp.com/journals/lifeai/articles/2604003779)] [[💻 Code](https://github.com/aussie-bzhang/Diffusion-Pref)]
   **Metadata:** `State: Physiology` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate + Control` · `Assets: Code`
@@ -748,14 +714,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>LFLDNets evolve compact recurrent physiological states and reconstruct three-dimensional electrophysiology or flow fields, evaluating complete cardiac-cycle trajectories under held-out parameters and boundary conditions against numerical solvers; the journal article appeared online in December 2025.</p>
   </details>
 
-- (*arXiv'26*) **A Physiology-Informed Digital Twin Framework for Simulating Liver Health Progression**
-  [[📝 Paper](https://arxiv.org/abs/2608.14969)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p><strong>Scope review pending:</strong> hePaTwin combines mechanistic liver-state updates with a fitted disease-stage biomarker correction. Whether that correction feeds subsequent state evolution, how post-stage information is obtained, and how training is separated from evaluation remain unresolved; longitudinal agreement alone does not establish learned dynamics.</p>
-  </details>
-
 - (*arXiv'26*) **Intervention-Aware Clinical World Model for Post-Op Outcome Forecasting in Cardiology**
   [[📝 Paper](https://arxiv.org/abs/2608.13518)] [[💻 Code](https://github.com/cys1102/af-blanking-world-model)]
   **Metadata:** `State: Anatomy` · `Dynamics: Temporal + Event sequence + Action-conditioned` · `Capability: Forecast` · `Assets: Code`
@@ -777,7 +735,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   **Metadata:** `State: Cell` · `Dynamics: Temporal + Mechanistic` · `Capability: Forecast + Simulate` · `Assets: Code`
   <details>
   <summary>Why it qualifies</summary>
-  <p><strong>Scope review pending:</strong> learns a port-Hamiltonian vector field and recursively advances multi-omic cell states. The official implementation raises unresolved questions about training on the claimed held-out time segment and prediction/target time alignment; the paper-matched version and evaluation protocol must be checked before accepting forecast metrics.</p>
+  <p>Learns a graph-neural port-Hamiltonian vector field with a phase coordinate per molecular species and integrates it to advance multi-omic cell states; held-out-segment forecasting and thermodynamic-stability checks are reported alongside near-chance interaction-edge recovery, and the imposed port-Hamiltonian form supplies strong structural constraints.</p>
   </details>
 
 - (*arXiv'26*) **Optimal Stimulation Sites Are Not the Most Affected: Personalised Models of Resting-State fMRI in Alzheimer's Disease**
@@ -932,14 +890,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Learns probe-motion-conditioned latent dynamics and imagines future observations for registration planning.</p>
   </details>
 
-- (*Biomed Phys Eng Express'26*) **Physics-Informed Koopman-Constrained ImplicitQ-Learning for Safe Offline Reinforcement Learning in Mechanical Ventilation**
-  [[📝 Paper](https://doi.org/10.1088/2057-1976/ae7d30)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42296990/)]
-  **Metadata:** `State: Physiology` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Control` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p><strong>Scope review pending:</strong> the abstract describes a learned Koopman respiratory world model used for state representations and model-based rewards in offline ventilation policy learning. Full methods are needed to verify action-conditioned state propagation and its evaluated operational use; offline policy-value estimates alone do not verify learned respiratory simulation.</p>
-  </details>
-
 - (*arXiv'26*) **Learning Cardiac Electrophysiology Digital Twins Through Agentic Discovery of Hybrid Structure**
   [[📝 Paper](https://arxiv.org/abs/2606.18154)]
   **Metadata:** `State: Physiology` · `Dynamics: Temporal + Mechanistic` · `Capability: Simulate` · `Assets: Paper only`
@@ -969,7 +919,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Plan + Control` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Identifies a continuous-time Markov chain with state- and treatment-dependent transition rates from more than 3,000 ulcerative colitis records, then uses it inside model-predictive control to choose therapies; ten-patient closed-loop simulations track observed care reasonably, but the policy is not clinically deployed or prospectively validated.</p>
+  <p>Identifies a continuous-time Markov chain with state- and treatment-dependent transition rates from a single-center cohort of more than 3,000 ulcerative colitis records, then uses it inside model-predictive control to choose therapies; ten-patient closed-loop simulations are comparable to observed care in all cases but at or below it in most realizations for only four, and the policy is not clinically deployed.</p>
   </details>
 
 - (*arXiv'26*) **Transition-Based Digital Twin Modelling for Alzheimer's Disease under Sparse Longitudinal Data**
@@ -1020,22 +970,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Predicts post-intervention ECG trajectories from pre-intervention physiological state and treatment context.</p>
   </details>
 
-- (*arXiv'26*) **GazeWorld: A World Model of Radiologist Reading for Medical Image Representation Learning**
-  [[📝 Paper](https://arxiv.org/abs/2605.23992)]
-  **Metadata:** `State: Clinical workflow` · `Dynamics: Temporal + Event sequence` · `Capability: Forecast + Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Autoregressively models the evolving sequence of radiologist fixations as a diagnostic interaction trajectory.</p>
-  </details>
-
-- (*arXiv'26*) **SWoMo: Neuro-Symbolic World Model for Cataract Surgery Simulation**
-  [[📝 Paper](https://arxiv.org/abs/2605.16530)] [[🌐 Project](https://ssharvienkumar.github.io/SWoMo/)]
-  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate` · `Assets: Project`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Simulates tool-tissue state changes from symbolic surgical actions and renders their visual consequences.</p>
-  </details>
-
 - (*arXiv'26*) **Toward World Modeling of Physiological Signals with Chaos-Theoretic Balancing and Latent Dynamics (NormWear-2)**
   [[📝 Paper](https://arxiv.org/abs/2605.15465)]
   **Metadata:** `State: Physiology` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
@@ -1082,14 +1016,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <details>
   <summary>Why it qualifies</summary>
   <p>Learns endovascular environment dynamics and uses imagined rollouts for TD-MPC2 catheter control.</p>
-  </details>
-
-- (*arXiv'26*) **Sonata: A Hybrid World Model for Inertial Kinematics under Clinical Data Scarcity**
-  [[📝 Paper](https://arxiv.org/abs/2604.18058)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal` · `Capability: Forecast` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p><strong>Scope review pending:</strong> trains a future-latent-state prediction objective for clinical IMU representations, with clinical probes and a separately fitted forecasting probe. Evaluation of the learned predictor itself as an executable state-evolution model remains unclear; biomechanical dynamics and free-running rollouts are not established.</p>
   </details>
 
 - (*arXiv'26*) **Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics**
@@ -1140,14 +1066,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Predicts latent cataract-surgery state transitions conditioned on inferred atomic action tokens.</p>
   </details>
 
-- (*CVPR'26*) **X-WIN: Building Chest Radiograph World Model via Predictive Sensing**
-  [[📝 Paper](https://arxiv.org/abs/2511.14918)]
-  **Metadata:** `State: Medical image` · `Dynamics: Spatial/view + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Predicts how radiographic observations change under explicit 3D viewpoint and sensing transformations.</p>
-  </details>
-
 - (*arXiv'26*) **Brain-WM: Brain Glioblastoma World Model**
   [[📝 Paper](https://arxiv.org/abs/2603.07562)] [[💻 Code](https://github.com/thibault-wch/Brain-GBM-world-model)]
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate + Counterfactual` · `Assets: Code`
@@ -1188,20 +1106,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Learns AKI patient-state dynamics and uses model-generated transitions to optimize sequential interventions offline.</p>
   </details>
 
-- (*arXiv'26*) **The Patient is not a Moving Document: A World Model Training Paradigm for Longitudinal EHR**
-  [[📝 Paper](https://arxiv.org/abs/2601.22128)]
-  **Metadata:** `State: Patient` · `Dynamics: Temporal + Event sequence` · `Capability: Forecast + Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Predicts future patient states in latent and token space from longitudinal clinical histories.</p>
-  </details>
-
 - (*arXiv'26*) **Generating Counterfactual Patient Timelines from Real-World Data**
   [[📝 Paper](https://arxiv.org/abs/2604.02337)]
-  **Metadata:** `State: Patient` · `Dynamics: Temporal + Event sequence + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Event sequence` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Autoregressively generates alternative patient-event timelines under specified treatment choices.</p>
+  <p>Autoregressively generates alternative patient-event timelines after perturbing baseline covariates such as age, C-reactive protein, and serum creatinine, then checks that simulated seven-day outcomes reproduce known clinical associations; treatment choices are not the counterfactual action, and the validation is retrospective.</p>
   </details>
 
 - (*arXiv'26*) **Policy4OOD: A Knowledge-Guided World Model for Policy Intervention Simulation against the Opioid Overdose Crisis**
@@ -1334,14 +1244,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <p>Learns action-conditioned surgical grasping dynamics for model-based visuomotor control.</p>
   </details>
 
-- (*arXiv'25*) **Xray2Xray: World Model from Chest X-rays with Volumetric Context**
-  [[📝 Paper](https://arxiv.org/abs/2506.19055)]
-  **Metadata:** `State: Medical image` · `Dynamics: Spatial/view + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
-  <details>
-  <summary>Why it qualifies</summary>
-  <p>Predicts radiographic state transitions across view changes using an inferred volumetric patient state.</p>
-  </details>
-
 - (*ICCV'25*) **Medical World Model: Generative Simulation of Tumor Evolution for Treatment Planning**
   [[📝 Paper](https://arxiv.org/abs/2506.02327)] [[💻 Code](https://github.com/scott-yjyang/MeWM)] [[🌐 Project](https://yijun-yang.github.io/MeWM/)]
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate + Plan` · `Assets: Code + Project`
@@ -1376,10 +1278,10 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*arXiv'25*) **MM-DADM: Multimodal Drug-Aware Diffusion Model for Virtual Clinical Trials**
   [[📝 Paper](https://arxiv.org/abs/2502.07297)]
-  **Metadata:** `State: Physiology` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Counterfactual` · `Assets: Paper only`
+  **Metadata:** `State: Physiology` · `Dynamics: Action-conditioned` · `Capability: Simulate` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
-  <p>Generates drug-conditioned ECG state changes for virtual intervention trials.</p>
+  <p>Generates individualized ECG waveforms conditioned on drug regimen, patient covariates, and nominal time point, using counterfactual augmentation to separate pharmacological from demographic variation; nine thousand ECGs across eight regimens support conditional synthesis, but this is not a recursive model of state evolution under changing treatment.</p>
   </details>
 
 - (*MIDL'25*) **4D-VQ-GAN: A World Model for Synthesizing Medical Scans at Any Time Point for Personalized Disease Progression Modeling of Idiopathic Pulmonary Fibrosis**
@@ -1448,17 +1350,11 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*arXiv'26*) **MUMINS: Metadata-conditioned Uncertainty-aware Medical Image Next-state Synthesis**
   [[📝 Paper](https://arxiv.org/abs/2609.17169)] [[💻 Code](https://github.com/aolivtous/MUMINS)] [[🌐 Project](https://aolivtous.github.io/publications/mumins.html)]
 
-- (*SASHIMI'26*) **Reverse Spatio-Temporal Disease Progression Modelling**
-  [[📝 Paper](https://arxiv.org/abs/2609.14590)]
-
 - (*arXiv'26*) **One Frame, Full Heartbeat: ECG-Free Cardiac Cine MRI Synthesis via Phase-Conditioned Flow Matching**
   [[📝 Paper](https://arxiv.org/abs/2610.09397)]
 
 - (*arXiv'26*) **One Frame, Full Heartbeat: ECG-Free 4D Cardiac Cine MRI Synthesis via Radial-Decomposed Flow Matching**
   [[📝 Paper](https://arxiv.org/abs/2610.09185)]
-
-- (*arXiv'26*) **Ultrasound Operator Guidance Using World Modeling and Retrieval Based Action Planning**
-  [[📝 Paper](https://arxiv.org/abs/2610.06008)]
 
 - (*arXiv'26*) **An Uncertainty-Guided Digital Twin Framework for Online Adaptive Proton Therapy in Head and Neck Cancer: A Feasibility Study**
   [[📝 Paper](https://arxiv.org/abs/2609.39010)]
@@ -1496,9 +1392,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*arXiv'26*) **Learning Cardiac Electrophysiology Digital Twins Through Agentic Discovery of Hybrid Structure**
   [[📝 Paper](https://arxiv.org/abs/2606.18154)]
 
-- (*arXiv'26*) **GazeWorld: A World Model of Radiologist Reading for Medical Image Representation Learning**
-  [[📝 Paper](https://arxiv.org/abs/2605.23992)]
-
 - (*arXiv'26*) **Beyond Patient Invariance: Learning Cardiac Dynamics via Action-Conditioned JEPAs**
   [[📝 Paper](https://arxiv.org/abs/2604.22618)] [[💻 Code](https://github.com/cljosegfer/lesaude-dynamics)]
 
@@ -1508,14 +1401,8 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*arXiv'26*) **EyeWorld: A Generative World Model of Ocular State and Dynamics**
   [[📝 Paper](https://arxiv.org/abs/2603.14039)]
 
-- (*CVPR'26*) **X-WIN: Building Chest Radiograph World Model via Predictive Sensing**
-  [[📝 Paper](https://arxiv.org/abs/2511.14918)]
-
 - (*CVPR'26*) **MRI Contrast Enhancement Kinetics World Model**
   [[📝 Paper](https://arxiv.org/abs/2602.19285)] [[💻 Code](https://github.com/DD0922/MRI-Contrast-Enhancement-Kinetics-World-Model)]
-
-- (*arXiv'25*) **Xray2Xray: World Model from Chest X-rays with Volumetric Context**
-  [[📝 Paper](https://arxiv.org/abs/2506.19055)]
 
 - (*CVPR'25*) **EchoWorld: Learning Motion-Aware World Models for Echocardiography Probe Guidance**
   [[📝 Paper](https://arxiv.org/abs/2504.13065)]
@@ -1548,9 +1435,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*bioRxiv'26*) **scMTG reconstructs single-cell temporal dynamics with Markov transition generators**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.06.04.730241v2)] [[💻 Code](https://github.com/liuq-lab/scMTG)]
-
-- (*bioRxiv'26*) **A tissue time machine to forward-predict single-timepoint data applied to tuberculosis granulomas**
-  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.10.09.758083v1)]
 
 - (*arXiv'26*) **Finsler Flow Matching: Dynamics-Aware Geodesic Interpolation for Single-Snapshot Trajectory Inference**
   [[📝 Paper](https://arxiv.org/abs/2610.11318)] [[💻 Code](https://github.com/mlbelab/FinslerFlowMatching)]
@@ -1683,17 +1567,11 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*Front Med'26*) **Beyond Static Risk Scores: Dynamic World Models Simulating Patient-Specific Trajectories to Inform Preoperative Risk Mitigation Strategies**
   [[📝 Paper](https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2026.1913206/full)] [[💻 Code](https://github.com/ustive/Beyond-Static-Risk-Scores-Dynamic-World-Models)]
 
-- (*medRxiv'26*) **The Coupled Stochastic Dynamical System: A Generative Model for Simulating and Forecasting Youth Mental Health Trajectories**
-  [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.07.26.26358943v1)]
-
 - (*arXiv'26*) **FlatASCEND: Autoregressive Clinical Sequence Generation with Continuous Time Prediction and Association-Based Pharmacological Testing**
   [[📝 Paper](https://arxiv.org/abs/2605.04071)]
 
 - (*arXiv'26*) **High-Fidelity Longitudinal Patient Simulation Using Real-World Data**
   [[📝 Paper](https://arxiv.org/abs/2601.17310)] [[💻 Code](https://github.com/yuakagi/Watcher)]
-
-- (*arXiv'26*) **A Physiology-Informed Digital Twin Framework for Simulating Liver Health Progression**
-  [[📝 Paper](https://arxiv.org/abs/2608.14969)]
 
 - (*arXiv'26*) **Intervention-Aware Clinical World Model for Post-Op Outcome Forecasting in Cardiology**
   [[📝 Paper](https://arxiv.org/abs/2608.13518)] [[💻 Code](https://github.com/cys1102/af-blanking-world-model)]
@@ -1722,14 +1600,8 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*arXiv'26*) **Simulating Clinical Interventions with a Generative Multimodal Model of Human Physiology (HealthFormer)**
   [[📝 Paper](https://arxiv.org/abs/2604.27899)]
 
-- (*arXiv'26*) **Sonata: A Hybrid World Model for Inertial Kinematics under Clinical Data Scarcity**
-  [[📝 Paper](https://arxiv.org/abs/2604.18058)]
-
 - (*arXiv'26*) **EHRWorld: A Patient-Centric Medical World Model for Long-Horizon Clinical Trajectories**
   [[📝 Paper](https://arxiv.org/abs/2602.03569)]
-
-- (*arXiv'26*) **The Patient is not a Moving Document: A World Model Training Paradigm for Longitudinal EHR**
-  [[📝 Paper](https://arxiv.org/abs/2601.22128)]
 
 - (*arXiv'26*) **Generating Counterfactual Patient Timelines from Real-World Data**
   [[📝 Paper](https://arxiv.org/abs/2604.02337)]
@@ -1802,9 +1674,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 - (*npj Digit Med'25*) **Digital Twin Brain Simulator for Real-Time Consciousness Monitoring and Virtual Intervention Using Primate Electrocorticogram Data**
   [[📝 Paper](https://doi.org/10.1038/s41746-025-01444-1)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/39929926/)]
 
-- (*arXiv'26*) **A Physiology-Informed Digital Twin Framework for Simulating Liver Health Progression**
-  [[📝 Paper](https://arxiv.org/abs/2608.14969)]
-
 - (*arXiv'26*) **Intervention-Aware Clinical World Model for Post-Op Outcome Forecasting in Cardiology**
   [[📝 Paper](https://arxiv.org/abs/2608.13518)] [[💻 Code](https://github.com/cys1102/af-blanking-world-model)]
 
@@ -1837,9 +1706,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*arXiv'26*) **Neural Operator-Based Digital Twins for Modeling Amyloid-Beta and Tau Propagation and Treatment Optimization in Alzheimer's Disease**
   [[📝 Paper](https://arxiv.org/abs/2606.25185)]
-
-- (*Biomed Phys Eng Express'26*) **Physics-Informed Koopman-Constrained ImplicitQ-Learning for Safe Offline Reinforcement Learning in Mechanical Ventilation**
-  [[📝 Paper](https://doi.org/10.1088/2057-1976/ae7d30)] [[📝 PubMed](https://pubmed.ncbi.nlm.nih.gov/42296990/)]
 
 - (*arXiv'26*) **Treatment Response Optimized Clinical Decision Support AI System via Digital Twin Simulation**
   [[📝 Paper](https://arxiv.org/abs/2606.17405)]
@@ -1920,9 +1786,6 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 - (*arXiv'26*) **SurgVista: Long-Horizon Surgical World Modeling with Plausible Instrument-Tissue Dynamics**
   [[📝 Paper](https://arxiv.org/abs/2606.19889)]
-
-- (*arXiv'26*) **SWoMo: Neuro-Symbolic World Model for Cataract Surgery Simulation**
-  [[📝 Paper](https://arxiv.org/abs/2605.16530)] [[🌐 Project](https://ssharvienkumar.github.io/SWoMo/)]
 
 - (*arXiv'26*) **Toward Safe Autonomous Robotic Endovascular Interventions using World Models**
   [[📝 Paper](https://arxiv.org/abs/2604.20151)]
