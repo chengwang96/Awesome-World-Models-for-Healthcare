@@ -154,6 +154,14 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
+- (*arXiv'26*) **OICycle: Observe, Infer, and Intervene Cycle for Belief-State Learning in Longitudinal Clinical Decision Making**
+  [[📝 Paper](https://arxiv.org/abs/2611.22826)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Event sequence + Action-conditioned` · `Capability: Forecast` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A learned recurrent operator updates a Gaussian belief from the prior belief, new multimodal observations, and the intervention that produced them, then predicts the next intervention, time to the next episode, and next-episode mortality across 72,075 MIMIC admissions; the latent transition mixes physiological dynamics with clinician behavior, so it does not identify causal treatment effects.</p>
+  </details>
+
 - (*arXiv'26*) **NOAH: Learning the Full Patient Journey. A Longitudinal Multimodal Time-Aware Model for Representation and Forecasting**
   [[📝 Paper](https://arxiv.org/abs/2609.09140)] [[🌐 Project](https://tsusetzky.github.io/noah/)]
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Event sequence + Action-conditioned` · `Capability: Forecast + Simulate + Counterfactual` · `Assets: Project`
@@ -392,6 +400,14 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   <details>
   <summary>Why it qualifies</summary>
   <p>A single diffusion process synthesizes a follow-up scan from a baseline scan and time interval while predicting spatial uncertainty, with explicit residual modeling and dataset-specific retraining; held-out lung CT and OASIS-3 evaluations match or beat anatomy-specific models, and official code accompanies the WACV 2027 acceptance, but the task is image-state synthesis rather than treatment-response simulation.</p>
+  </details>
+
+- (*arXiv'26*) **AG-JEPA: Anatomically Guided Joint Embedding Predictive Architecture for Neurodegenerative Representation Learning**
+  [[📝 Paper](https://arxiv.org/abs/2611.18097)]
+  **Metadata:** `State: Anatomy` · `Dynamics: Temporal` · `Capability: Forecast` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>Adds anatomy-specific tokens to a JEPA encoder and then learns Prog-AG-JEPA, which models Alzheimer's progression as a conditioned displacement in the frozen latent space and predicts future diagnosis and regional brain-volume change on ADNI; evaluation is retrospective, and the progression head does not synthesize follow-up scans.</p>
   </details>
 
 - (*arXiv'26*) **One Frame, Full Heartbeat: ECG-Free Cardiac Cine MRI Synthesis via Phase-Conditioned Flow Matching**
@@ -1326,6 +1342,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Medical Imaging and Radiology
 
+- (*arXiv'26*) **AG-JEPA: Anatomically Guided Joint Embedding Predictive Architecture for Neurodegenerative Representation Learning**
+  [[📝 Paper](https://arxiv.org/abs/2611.18097)]
+
 - (*medRxiv'26*) **Prediction of Subsolid Pulmonary Nodule Evolution from Baseline CT Using Temporal Imaging Models**
   [[📝 Paper](https://www.medrxiv.org/content/10.64898/2026.08.12.26360292v2)]
 
@@ -1506,6 +1525,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2512.00306)]
 
 ### Longitudinal EHR and Clinical Trajectories
+
+- (*arXiv'26*) **OICycle: Observe, Infer, and Intervene Cycle for Belief-State Learning in Longitudinal Clinical Decision Making**
+  [[📝 Paper](https://arxiv.org/abs/2611.22826)]
 
 - (*arXiv'26*) **NOAH: Learning the Full Patient Journey. A Longitudinal Multimodal Time-Aware Model for Representation and Forecasting**
   [[📝 Paper](https://arxiv.org/abs/2609.09140)] [[🌐 Project](https://tsusetzky.github.io/noah/)]
