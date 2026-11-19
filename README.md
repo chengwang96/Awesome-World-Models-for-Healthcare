@@ -154,6 +154,38 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
+- (*arXiv'26*) **MitoWorld: A Stochastic World Model of the Single-Cell Cycle under Genetic Perturbation**
+  [[📝 Paper](https://arxiv.org/abs/2611.23953)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A gene-conditioned Ornstein-Uhlenbeck transition advances a Gaussian latent cell state through stochastic rollouts, a learned hazard terminates each trajectory at division, and a diffusion renderer produces future images. On 325 held-out MitoCheck tracks spanning 17 knockdowns and a control, it evaluates long-horizon appearance, same-cell correspondence, latent uncertainty, and division timing; the screen is retrospective and single-source, and no code is linked.</p>
+  </details>
+
+- (*arXiv'26*) **Horizontal Flow Matching for Single-Cell Spatiotemporal Dynamics**
+  [[📝 Paper](https://arxiv.org/abs/2611.24764)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal + Spatial/view` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>Jointly estimates snapshot alignment and unbalanced Wasserstein-Fisher-Rao bridges, then an equivariant transformer predicts velocity and growth to integrate tissue state continuously from a single initial snapshot. Four spatial transcriptomics time courses evaluate tissue geometry, gene expression, cell abundance, and held-out developmental stages; each series is fitted separately, shared rigid motion is quotiented out, and no intervention or clinical outcome is tested.</p>
+  </details>
+
+- (*arXiv'26*) **Elysium: Simulation-Free Unbalanced Schrödinger Bridges**
+  [[📝 Paper](https://arxiv.org/abs/2611.24763)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A killed-diffusion unbalanced Schrödinger bridge learns drift, exit rate, and entry flow from snapshot pairs, producing continuous state and population trajectories. Simulated benchmarks with known ground truth and four real single-cell time courses evaluate population matching, omitted-time interpolation, and biphasic drug response; anonymous snapshots identify only net exchange under a chosen reference, so birth-death timing and parent-offspring relations are not resolved.</p>
+  </details>
+
+- (*bioRxiv'26*) **Counterfactual aging in individual digital twin brains uncovers a latent dimension of resilience to aging**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.11.18.767485v1)]
+  **Metadata:** `State: Physiology` · `Dynamics: Temporal` · `Capability: Forecast + Simulate + Counterfactual` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A connectome-constrained variational recurrent network advances 52 regional latent states through multitask fMRI, learns condition effects on BOLD, and regenerates unseen individuals. Individual-level two-fold validation on 295 Dallas Lifespan Brain Study adults supports signal and aging-marker reproduction, future cognition, and simulated aging and BMI counterfactuals; the cohort is healthy and observational, intervention responses are model-generated, and code will be released only after formal publication.</p>
+  </details>
+
 - (*arXiv'26*) **OICycle: Observe, Infer, and Intervene Cycle for Belief-State Learning in Longitudinal Clinical Decision Making**
   [[📝 Paper](https://arxiv.org/abs/2611.22826)]
   **Metadata:** `State: Patient` · `Dynamics: Temporal + Event sequence + Action-conditioned` · `Capability: Forecast` · `Assets: Paper only`
@@ -1342,6 +1374,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Medical Imaging and Radiology
 
+- (*bioRxiv'26*) **Counterfactual aging in individual digital twin brains uncovers a latent dimension of resilience to aging**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.11.18.767485v1)]
+
 - (*arXiv'26*) **AG-JEPA: Anatomically Guided Joint Embedding Predictive Architecture for Neurodegenerative Representation Learning**
   [[📝 Paper](https://arxiv.org/abs/2611.18097)]
 
@@ -1439,6 +1474,15 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2406.13165)]
 
 ### Computational Biology and Cellular Dynamics
+
+- (*arXiv'26*) **MitoWorld: A Stochastic World Model of the Single-Cell Cycle under Genetic Perturbation**
+  [[📝 Paper](https://arxiv.org/abs/2611.23953)]
+
+- (*arXiv'26*) **Horizontal Flow Matching for Single-Cell Spatiotemporal Dynamics**
+  [[📝 Paper](https://arxiv.org/abs/2611.24764)]
+
+- (*arXiv'26*) **Elysium: Simulation-Free Unbalanced Schrödinger Bridges**
+  [[📝 Paper](https://arxiv.org/abs/2611.24763)]
 
 - (*arXiv'26*) **ProTEUS: A mutation-resolved world model for closed-loop protein evolution**
   [[📝 Paper](https://arxiv.org/abs/2611.13348)] [[💻 Code](https://github.com/yikunpku/ProTEUS)]
