@@ -154,6 +154,22 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
+- (*arXiv'26*) **LIFT: Latent Flow Matching for Probabilistic Cell Fate Dynamics with Single Cell Snapshots**
+  [[📝 Paper](https://arxiv.org/abs/2611.25917)] [[💻 Code](https://github.com/van-genshin-wander/LIFT)]
+  **Metadata:** `State: Cell` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Code`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A variational autoencoder encodes one-to-many outcomes into a latent state, a conditional prior samples from the initial cell state alone, and a Mean Flow decoder predicts the future molecular state directly. Synthetic branching and lineage-traced mouse hematopoiesis and fibroblast reprogramming evaluate population recovery and graded fate probabilities; the coupling and terminal states are observational, the method does not identify a unique intermediate trajectory, and the human evaluation is limited to publicly available lineage-tracing data.</p>
+  </details>
+
+- (*bioRxiv'26*) **Biologically Guided Deep Learning for Personalized PSA Forecasting in Intermittent Prostate Cancer Therapy**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.11.19.767900v1)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A physics-informed neural network combines a learned patient history representation with a Lotka-Volterra treatment response model to roll prostate-specific antigen trajectories forward under recorded intermittent androgen-deprivation schedules. Ten patients withheld from population pretraining are evaluated over recursive forecasts with patient-specific fine-tuning; the cohort is small, treatment inputs are observational, and the paper does not demonstrate learned treatment policies or causal schedule effects.</p>
+  </details>
+
 - (*arXiv'26*) **MitoWorld: A Stochastic World Model of the Single-Cell Cycle under Genetic Perturbation**
   [[📝 Paper](https://arxiv.org/abs/2611.23953)]
   **Metadata:** `State: Cell` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Paper only`
@@ -1475,6 +1491,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Computational Biology and Cellular Dynamics
 
+- (*arXiv'26*) **LIFT: Latent Flow Matching for Probabilistic Cell Fate Dynamics with Single Cell Snapshots**
+  [[📝 Paper](https://arxiv.org/abs/2611.25917)] [[💻 Code](https://github.com/van-genshin-wander/LIFT)]
+
 - (*arXiv'26*) **MitoWorld: A Stochastic World Model of the Single-Cell Cycle under Genetic Perturbation**
   [[📝 Paper](https://arxiv.org/abs/2611.23953)]
 
@@ -1685,6 +1704,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
 
 ### Treatment Planning and Clinical Decision Support
+
+- (*bioRxiv'26*) **Biologically Guided Deep Learning for Personalized PSA Forecasting in Intermittent Prostate Cancer Therapy**
+  [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.11.19.767900v1)]
 
 - (*Findings of EMNLP'26*) **EpiWorld: Grounding LLM Policy Agents in Epidemiological World Models**
   [[📝 Paper](https://arxiv.org/abs/2610.02744)]
