@@ -154,6 +154,14 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
+- (*arXiv'26*) **Feature-Space Latent Forecasting for Endoscopic Surgical Video Understanding**
+  [[📝 Paper](https://arxiv.org/abs/2611.18750)]
+  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal` · `Capability: Forecast` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A masked transformer predicts future multi-layer vision-foundation-model feature tokens for endoscopic clips from observed context alone, and lightweight heads consume these forecasts for phase anticipation, tool-presence prediction, and remaining-time estimation. On the held-out Cholec80 split, forecast features improve macro-F1 and timing error over feature persistence and RGB forecasting baselines at 1–5 s phase/tool horizons and 2–5 min remaining-time horizons; only short-term laparoscopic anticipation is tested, rare instruments remain weak, and no external-hospital or clinical-outcome validation is reported.</p>
+  </details>
+
 - (*arXiv'26*) **LIFT: Latent Flow Matching for Probabilistic Cell Fate Dynamics with Single Cell Snapshots**
   [[📝 Paper](https://arxiv.org/abs/2611.25917)] [[💻 Code](https://github.com/van-genshin-wander/LIFT)]
   **Metadata:** `State: Cell` · `Dynamics: Temporal` · `Capability: Forecast + Simulate` · `Assets: Code`
@@ -1832,6 +1840,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2510.24654)]
 
 ### Surgical Simulation and Embodied Healthcare
+
+- (*arXiv'26*) **Feature-Space Latent Forecasting for Endoscopic Surgical Video Understanding**
+  [[📝 Paper](https://arxiv.org/abs/2611.18750)]
 
 - (*arXiv'26*) **SurgCast: Action-Conditioned Future Skeletons for Controllable Surgical World Models**
   [[📝 Paper](https://arxiv.org/abs/2610.15645)] [[🌐 Project](https://surgcast.netlify.app/)]
