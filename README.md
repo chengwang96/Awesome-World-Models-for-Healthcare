@@ -154,6 +154,14 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
+- (*arXiv'26*) **ReliFlow: Reliability-Calibrated Residual Transport for Combinatorial Single-Cell Perturbation Prediction**
+  [[📝 Paper](https://arxiv.org/abs/2611.23999)]
+  **Metadata:** `State: Cell` · `Dynamics: Action-conditioned` · `Capability: Simulate` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A conditional flow-matching model transports control-cell populations toward combined genetic or chemical perturbation states, using training-only reliability estimates to calibrate an additive source and a learned residual field for non-additive interactions. Condition-disjoint Norman and ComboSciPlex splits evaluate transcriptomic distributions for unseen perturbation combinations and improve response MAE over scDFM; this is a one-step intervention-conditioned state distribution rather than a time-resolved lineage or sequential-treatment rollout, and the evidence is computational without wet-lab validation.</p>
+  </details>
+
 - (*arXiv'26*) **Feature-Space Latent Forecasting for Endoscopic Surgical Video Understanding**
   [[📝 Paper](https://arxiv.org/abs/2611.18750)]
   **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal` · `Capability: Forecast` · `Assets: Paper only`
@@ -1498,6 +1506,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2406.13165)]
 
 ### Computational Biology and Cellular Dynamics
+
+- (*arXiv'26*) **ReliFlow: Reliability-Calibrated Residual Transport for Combinatorial Single-Cell Perturbation Prediction**
+  [[📝 Paper](https://arxiv.org/abs/2611.23999)]
 
 - (*arXiv'26*) **LIFT: Latent Flow Matching for Probabilistic Cell Fate Dynamics with Single Cell Snapshots**
   [[📝 Paper](https://arxiv.org/abs/2611.25917)] [[💻 Code](https://github.com/van-genshin-wander/LIFT)]
