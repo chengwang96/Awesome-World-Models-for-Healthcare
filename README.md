@@ -154,6 +154,22 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
+- (*arXiv'26*) **KineState-SWAM: A Surgical World Action Model with Explicit Kinematics and Causal Interaction Dynamics**
+  [[📝 Paper](https://arxiv.org/abs/2611.28871)]
+  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A flow-matching policy predicts joint trajectories from a persistent interaction state, robot configuration, and task instruction; URDF kinematics convert them into surface-motion tokens, while recurrent geometry-guided state transport and a state-geometry adapter generate future surgical video. On 5,255 dVRK cholecystectomy clips spanning 17 tasks, it improves action accuracy and video fidelity over matched baselines, with long-horizon ablations supporting state carry; evaluation remains open-loop on held-out clips and does not include closed-loop robot-policy or patient-outcome validation.</p>
+  </details>
+
+- (*arXiv'26*) **A world model for longitudinal health-trajectory prediction in older adults across multinational cohorts**
+  [[📝 Paper](https://arxiv.org/abs/2611.28175)] [[💻 Code](https://github.com/wujingyipku/Health-World-Model)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate + Counterfactual` · `Assets: Code`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A JEPA state encoder and action- and context-conditioned latent predictor roll health states forward under specified lifestyle and medication regimes, with heads for mortality and ADL/IADL worsening. The model is trained on HRS and evaluated without refitting in ELSA and CHARLS across five horizons, and action-regime rollouts preserve clinically expected risk ordering; the action effects are learned from observational cohorts, two-year survey intervals limit temporal resolution, open-loop rollout can accumulate error, and causal or prospective clinical benefit is not established.</p>
+  </details>
+
 - (*arXiv'26*) **ReliFlow: Reliability-Calibrated Residual Transport for Combinatorial Single-Cell Perturbation Prediction**
   [[📝 Paper](https://arxiv.org/abs/2611.23999)]
   **Metadata:** `State: Cell` · `Dynamics: Action-conditioned` · `Capability: Simulate` · `Assets: Paper only`
@@ -1608,6 +1624,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Longitudinal EHR and Clinical Trajectories
 
+- (*arXiv'26*) **A world model for longitudinal health-trajectory prediction in older adults across multinational cohorts**
+  [[📝 Paper](https://arxiv.org/abs/2611.28175)] [[💻 Code](https://github.com/wujingyipku/Health-World-Model)]
+
 - (*arXiv'26*) **OICycle: Observe, Infer, and Intervene Cycle for Belief-State Learning in Longitudinal Clinical Decision Making**
   [[📝 Paper](https://arxiv.org/abs/2611.22826)]
 
@@ -1723,6 +1742,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2508.12104)]
 
 ### Treatment Planning and Clinical Decision Support
+
+- (*arXiv'26*) **A world model for longitudinal health-trajectory prediction in older adults across multinational cohorts**
+  [[📝 Paper](https://arxiv.org/abs/2611.28175)] [[💻 Code](https://github.com/wujingyipku/Health-World-Model)]
 
 - (*bioRxiv'26*) **Biologically Guided Deep Learning for Personalized PSA Forecasting in Intermittent Prostate Cancer Therapy**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.11.19.767900v1)]
@@ -1851,6 +1873,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2510.24654)]
 
 ### Surgical Simulation and Embodied Healthcare
+
+- (*arXiv'26*) **KineState-SWAM: A Surgical World Action Model with Explicit Kinematics and Causal Interaction Dynamics**
+  [[📝 Paper](https://arxiv.org/abs/2611.28871)]
 
 - (*arXiv'26*) **Feature-Space Latent Forecasting for Endoscopic Surgical Video Understanding**
   [[📝 Paper](https://arxiv.org/abs/2611.18750)]
