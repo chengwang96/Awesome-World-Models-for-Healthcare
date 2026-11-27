@@ -154,6 +154,30 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### 2026
 
+- (*arXiv'26*) **Beyond Pose Control: Anatomically Consistent Ultrasound Video Generation**
+  [[📝 Paper](https://arxiv.org/abs/2611.34622)]
+  **Metadata:** `State: Anatomy` · `Dynamics: Spatial/view + Action-conditioned` · `Capability: Simulate` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>Given a first ultrasound frame and a probe trajectory, a video diffusion transformer generates successive B-mode chunks while a population anatomy prior fills unscanned regions and a 3D latent memory reslices previously observed anatomy. Thyroid, kidney, and lumbar-spine experiments improve fidelity, pose following, revisit consistency, and expert rating; the evaluation is generative and observational, so closed-loop probe-navigation planning and clinical outcomes remain untested.</p>
+  </details>
+
+- (*arXiv'26*) **TWICE: Toward a digital twin of ICU patients with a generative event model for forecasting trajectories and simulating treatment response**
+  [[📝 Paper](https://arxiv.org/abs/2611.27028)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal + Event sequence + Action-conditioned` · `Capability: Forecast + Simulate + Counterfactual` · `Assets: Paper only`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>A 79M-parameter decoder-only transformer continues tokenized ICU event streams, sampling 50 future records per patient to read 19 outcomes without task-specific training and to simulate writing treatments into the record. On held-out patients it matches the best of 144 supervised configurations (mean AUROC 0.836 vs. 0.834) and reproduces known drug side effects, but it comes from one health system, medications are orders rather than administrations, and opposite treatments moved target forecasts like the correct treatment; simulated treatment effects are not yet valid causal estimates.</p>
+  </details>
+
+- (*IEEE TBME'26*) **InterGenEHR+: An Interactive Framework for Natural Language-Conditioned Generation of Longitudinal Patient Trajectories**
+  [[📝 Paper](https://arxiv.org/abs/2611.33788)] [[🌐 Project](https://panxulab.github.io/InterGenEHR/)]
+  **Metadata:** `State: Patient` · `Dynamics: Temporal` · `Capability: Simulate` · `Assets: Project`
+  <details>
+  <summary>Why it qualifies</summary>
+  <p>Conditional VAE and diffusion backbones fill masked cells in single-time or 96-step VV-ECMO EHR trajectories, with an optional LLM parser converting clinician scenarios into constraints. Across 874 Duke–Emory patients, synthetic trajectories preserve distributional fidelity, imputation accuracy, clinician-rated plausibility, and mortality-model utility; the models learn observational associations, are not counterfactual treatment simulators, can produce internally inconsistent records, and have not been tested on an external hospital.</p>
+  </details>
+
 - (*arXiv'26*) **KineState-SWAM: A Surgical World Action Model with Explicit Kinematics and Causal Interaction Dynamics**
   [[📝 Paper](https://arxiv.org/abs/2611.28871)]
   **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Action-conditioned` · `Capability: Forecast + Simulate` · `Assets: Paper only`
@@ -851,8 +875,8 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   </details>
 
 - (*MICCAI'26 Workshop*) **Automatic Patient-Specific Microwave Ablation Planning Accelerated by a Physics-Guided Deep Learning Model**
-  [[📝 Paper](https://arxiv.org/abs/2608.03086)] [[💻 Code](https://github.com/SeonAengCho/MWA-Planning)]
-  **Metadata:** `State: Anatomy` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Code`
+  [[📝 Paper](https://arxiv.org/abs/2608.03086)]
+  **Metadata:** `State: Anatomy` · `Dynamics: Mechanistic + Action-conditioned` · `Capability: Simulate + Counterfactual + Plan` · `Assets: Paper only`
   <details>
   <summary>Why it qualifies</summary>
   <p>Learns an anatomy- and action-conditioned forward surrogate of post-ablation regions from multiphysics simulations, then repeatedly queries it to optimize antenna trajectory, power, and duration; evaluation includes 13 unseen planning cases. This predicts a single intervention outcome, not recursive temperature or tissue-damage dynamics, and does not establish prospective clinical benefit.</p>
@@ -1115,8 +1139,8 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   </details>
 
 - (*arXiv'26*) **Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics**
-  [[📝 Paper](https://arxiv.org/abs/2604.21017)] [[💻 Code](https://huggingface.co/nvidia/Cosmos-H-Surgical-Simulator)] [[💻 Code](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator)] [[🌐 Project](https://open-h.github.io/open-h-embodiment/)]
-  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate` · `Assets: Code + Project`
+  [[📝 Paper](https://arxiv.org/abs/2604.21017)] [[🌐 Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical-Simulator)] [[💻 Code](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator)] [[🌐 Project](https://open-h.github.io/open-h-embodiment/)]
+  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate` · `Assets: Code + Weights + Project`
   <details>
   <summary>Why it qualifies</summary>
   <p>Beyond releasing data, it trains an action-conditioned surgical simulator that predicts multi-embodiment procedure rollouts.</p>
@@ -1269,8 +1293,8 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   </details>
 
 - (*arXiv'25*) **Cosmos-H-Surgical: Learning Surgical Robot Policies from Videos via World Modeling**
-  [[📝 Paper](https://arxiv.org/abs/2512.23162)] [[💻 Code](https://huggingface.co/nvidia/Cosmos-H-Surgical-Simulator)] [[💻 Code](https://github.com/nvidia-cosmos/cosmos-cookbook)]
-  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Control` · `Assets: Code`
+  [[📝 Paper](https://arxiv.org/abs/2512.23162)] [[🌐 Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical-Simulator)] [[💻 Code](https://github.com/nvidia-cosmos/cosmos-cookbook)]
+  **Metadata:** `State: Procedure/Robot` · `Dynamics: Temporal + Action-conditioned` · `Capability: Simulate + Control` · `Assets: Code + Weights`
   <details>
   <summary>Why it qualifies</summary>
   <p>Generates action-conditioned surgical video rollouts and uses them to learn robot policies.</p>
@@ -1421,6 +1445,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 > A complementary topic-wise view.
 
 ### Medical Imaging and Radiology
+
+- (*arXiv'26*) **Beyond Pose Control: Anatomically Consistent Ultrasound Video Generation**
+  [[📝 Paper](https://arxiv.org/abs/2611.34622)]
 
 - (*bioRxiv'26*) **Counterfactual aging in individual digital twin brains uncovers a latent dimension of resilience to aging**
   [[📝 Paper](https://www.biorxiv.org/content/10.64898/2026.11.18.767485v1)]
@@ -1624,6 +1651,12 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Longitudinal EHR and Clinical Trajectories
 
+- (*IEEE TBME'26*) **InterGenEHR+: An Interactive Framework for Natural Language-Conditioned Generation of Longitudinal Patient Trajectories**
+  [[📝 Paper](https://arxiv.org/abs/2611.33788)] [[🌐 Project](https://panxulab.github.io/InterGenEHR/)]
+
+- (*arXiv'26*) **TWICE: Toward a digital twin of ICU patients with a generative event model for forecasting trajectories and simulating treatment response**
+  [[📝 Paper](https://arxiv.org/abs/2611.27028)]
+
 - (*arXiv'26*) **A world model for longitudinal health-trajectory prediction in older adults across multinational cohorts**
   [[📝 Paper](https://arxiv.org/abs/2611.28175)] [[💻 Code](https://github.com/wujingyipku/Health-World-Model)]
 
@@ -1743,6 +1776,9 @@ The labels describe demonstrated method capabilities, not claims inferred from a
 
 ### Treatment Planning and Clinical Decision Support
 
+- (*arXiv'26*) **TWICE: Toward a digital twin of ICU patients with a generative event model for forecasting trajectories and simulating treatment response**
+  [[📝 Paper](https://arxiv.org/abs/2611.27028)]
+
 - (*arXiv'26*) **A world model for longitudinal health-trajectory prediction in older adults across multinational cohorts**
   [[📝 Paper](https://arxiv.org/abs/2611.28175)] [[💻 Code](https://github.com/wujingyipku/Health-World-Model)]
 
@@ -1810,7 +1846,7 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://arxiv.org/abs/2607.24356)] [[💻 Code](https://github.com/cristianocapone/AD-reservoir-FC-stimulation)]
 
 - (*MICCAI'26 Workshop*) **Automatic Patient-Specific Microwave Ablation Planning Accelerated by a Physics-Guided Deep Learning Model**
-  [[📝 Paper](https://arxiv.org/abs/2608.03086)] [[💻 Code](https://github.com/SeonAengCho/MWA-Planning)]
+  [[📝 Paper](https://arxiv.org/abs/2608.03086)]
 
 - (*MICCAI'26 Workshop*) **Anticipatory Digital Twins for Online Head-and-Neck Adaptive Proton Therapy via Foundation-Model Registration**
   [[📝 Paper](https://arxiv.org/abs/2608.00831)]
@@ -1935,10 +1971,10 @@ The labels describe demonstrated method capabilities, not claims inferred from a
   [[📝 Paper](https://openreview.net/forum?id=aYQYOVm2AB)]
 
 - (*arXiv'26*) **Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics**
-  [[📝 Paper](https://arxiv.org/abs/2604.21017)] [[💻 Code](https://huggingface.co/nvidia/Cosmos-H-Surgical-Simulator)] [[💻 Code](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator)] [[🌐 Project](https://open-h.github.io/open-h-embodiment/)]
+  [[📝 Paper](https://arxiv.org/abs/2604.21017)] [[🌐 Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical-Simulator)] [[💻 Code](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator)] [[🌐 Project](https://open-h.github.io/open-h-embodiment/)]
 
 - (*arXiv'25*) **Cosmos-H-Surgical: Learning Surgical Robot Policies from Videos via World Modeling**
-  [[📝 Paper](https://arxiv.org/abs/2512.23162)] [[💻 Code](https://huggingface.co/nvidia/Cosmos-H-Surgical-Simulator)] [[💻 Code](https://github.com/nvidia-cosmos/cosmos-cookbook)]
+  [[📝 Paper](https://arxiv.org/abs/2512.23162)] [[🌐 Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical-Simulator)] [[💻 Code](https://github.com/nvidia-cosmos/cosmos-cookbook)]
 
 - (*arXiv'25*) **Cosmos-Surg-dVRK: World Foundation Model-based Automated Online Evaluation of Surgical Robot Policy Learning**
   [[📝 Paper](https://arxiv.org/abs/2510.16240)]
